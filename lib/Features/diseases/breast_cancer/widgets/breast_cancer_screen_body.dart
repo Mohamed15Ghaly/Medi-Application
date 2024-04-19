@@ -8,6 +8,7 @@ import 'package:team/Features/diseases/breast_cancer/widgets/breast_cancer_risk_
 import 'package:team/Features/diseases/presentation/widgets/symptoms.dart';
 import 'package:team/Features/diseases/diabetes_screen/widgets/diabetes_vedio_presentation.dart';
 import 'package:team/Features/diseases/view_model/breast_cancer_model.dart';
+
 class BreastCancerScreenBody extends StatelessWidget {
   const BreastCancerScreenBody({
     super.key,
@@ -36,14 +37,14 @@ class BreastCancerScreenBody extends StatelessWidget {
         Doctor(doctor: BreastCancerViewModel.breastCancerDoctor),
         Divider(),
         Causes(
+          causes1: BreastCancerViewModel.breastCancerCauses1,
           causes: BreastCancerViewModel.breastCancerCauses,
         ),
         Divider(),
-        BreastCancerRiskFactors(),
+        // RiskFactors(),
         Divider(),
         BreastCancerPrevention(),
         Divider(),
-        
         BreastCancerComplications()
       ],
     );
