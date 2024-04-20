@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:showcaseview/showcaseview.dart';
-import 'package:team/core/utils/medi_assets.dart';
+import 'package:team/core/utils/medi_image.dart';
 import 'package:team/cubits/cubit/index_screen_cubit.dart';
 import '../../../../core/cache/cache_helper.dart';
 import '../widgets/home_screen_body.dart';
@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: CacheHelper().getData(key: "showcase") == true
             ? Image.asset(
-          MediAssets.appLogo,
+          MediImage.appLogo,
           width: 30,
           height: 30,
         )
@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
             title: "Home",
             description: "This is the home screen",
             child: Image.asset(
-              MediAssets.appLogo,
+              MediImage.appLogo,
               width: 30,
               height: 30,
             )),

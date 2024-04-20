@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:team/Features/chatBot/presentation/view/chat_screen.dart';
 import 'package:team/cubits/cubit/cubit/recorder_cubit.dart';
-import 'package:team/Features/settings/voice_assistant_screen/view/voice_assistant_screen.dart';
-import 'package:team/Features/settings/profile_screen/view/profile_screen.dart';
+import 'package:team/Features/settings/presentation/views/voice_assistant_screen.dart';
+import 'package:team/Features/settings/presentation/views/profile_screen.dart';
 
 class FloatingButton extends StatelessWidget {
   const FloatingButton({

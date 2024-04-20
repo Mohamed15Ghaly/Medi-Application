@@ -2,7 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:team/core/utils/medi_assets.dart';
+import 'package:team/core/utils/medi_image.dart';
 
 class ChatBotResponse extends StatelessWidget {
   const ChatBotResponse({
@@ -20,7 +20,7 @@ class ChatBotResponse extends StatelessWidget {
           backgroundColor: Colors.blue,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Image.asset(MediAssets.chatBotPhoto),
+            child: Image.asset(MediImage.chatBotPhoto),
           ),
         ),
         const Gap(5),

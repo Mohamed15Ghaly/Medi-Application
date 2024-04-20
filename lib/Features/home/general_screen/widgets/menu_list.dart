@@ -5,12 +5,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:team/Features/chatBot/presentation/view/chat_screen.dart';
 import 'package:team/cubits/cubit/index_screen_cubit.dart';
-import 'package:team/Features/settings/help_screen/view/help_screen.dart';
-import 'package:team/Features/settings/settings_screen/view/settings_screen.dart';
-import 'package:team/Features/settings/voice_assistant_screen/view/voice_assistant_screen.dart';
+import 'package:team/Features/settings/presentation/views/help_screen.dart';
+import 'package:team/Features/settings/presentation/views/settings_screen.dart';
+import 'package:team/Features/settings/presentation/views/voice_assistant_screen.dart';
 import 'package:team/Features/user_authentication/presentation/views/login_screen.dart';
-import 'package:team/Features/notification/notification_screen/view/notification_screen.dart';
-import 'package:team/Features/settings/profile_screen/view/profile_screen.dart';
+import 'package:team/Features/notification/presentation/views/notification_screen.dart';
+import 'package:team/Features/settings/presentation/views/profile_screen.dart';
 import '../../../../components/response_font_size.dart';
 
 class MenuList extends StatelessWidget {

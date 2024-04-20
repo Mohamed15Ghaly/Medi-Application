@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:team/components/response_font_size.dart';
-import 'package:team/core/utils/medi_assets.dart';
+import 'package:team/core/utils/medi_image.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 import '../article.dart';
 import 'article_body.dart';
@@ -44,12 +44,13 @@ class HomeAppHeader extends StatelessWidget {
                     Flexible(
                       child: FittedBox(
                         child: SizedBox(
-                          width: width/2.2,
+                          width: width / 2.2,
                           child: AutoSizeText(
                             'Welcom to Medi',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: GetResponseFontSize(context: context, fontsize: 20),
+                              fontSize: GetResponseFontSize(
+                                  context: context, fontsize: 20),
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -60,15 +61,16 @@ class HomeAppHeader extends StatelessWidget {
                       flex: 3,
                       child: FittedBox(
                         child: SizedBox(
-                          width: width/2,
+                          width: width / 2,
                           child: AutoSizeText(
                             maxLines: 6,
                             overflow: TextOverflow.ellipsis,
                             "In medi app you serve you with all love , work for your comfort and all our concern is your health. "
-                                "Fell free to contact us if you have problem",
+                            "Fell free to contact us if you have problem",
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: GetResponseFontSize(context: context, fontsize: 16),
+                              fontSize: GetResponseFontSize(
+                                  context: context, fontsize: 16),
                             ),
                           ),
                         ),
@@ -81,9 +83,8 @@ class HomeAppHeader extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   SizedBox(
-                    width: width/2.8,
-                    child: Image.asset(
-                        MediAssets.homeAppHeaderTitle),
+                    width: width / 2.8,
+                    child: Image.asset(MediImage.homeAppHeaderTitle),
                   ),
                 ],
               ),
@@ -92,7 +93,7 @@ class HomeAppHeader extends StatelessWidget {
         ),
         const Gap(20),
         SizedBox(
-          height:50,
+          height: 50,
           width: width,
           child: Swiper(
             autoplay: true,
@@ -120,9 +121,9 @@ class HomeAppHeader extends StatelessWidget {
             children: [
               Expanded(
                 child: Image.asset(
-                  height: height/4,
-                  width:width/4,
-                  MediAssets.homeAppBody,
+                  height: height / 4,
+                  width: width / 4,
+                  MediImage.homeAppBody,
                 ),
               ),
               Text(

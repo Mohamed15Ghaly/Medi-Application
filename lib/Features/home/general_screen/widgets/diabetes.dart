@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:team/Features/diseases/diabetes_screen/view/diabetes_prediction_input.dart';
-import 'package:team/Features/diseases/diabetes_screen/view/diabetes_screen.dart';
-import 'package:team/Features/diseases/diabetes_screen/widgets/diabetes_screen_body.dart';
+import 'package:team/Features/diseases/presentation/views/breast_cancer_prediction.dart';
+import 'package:team/Features/diseases/presentation/views/breast_cancer_screen.dart';
+import 'package:team/Features/diseases/presentation/views/diabetes_prediction.dart';
+import 'package:team/Features/diseases/presentation/views/diabetes_screen.dart';
 import 'package:team/Features/diseases/diagnosis_screen/view/diagnosis_screen.dart';
+import 'package:team/Features/diseases/presentation/views/heart_disease_prediction.dart';
+import 'package:team/Features/diseases/presentation/views/heart_disease_screen.dart';
+import 'package:team/Features/diseases/presentation/views/parkinson_prediction.dart';
+import 'package:team/Features/diseases/presentation/views/parkinson_screen.dart';
 
 import '../../../../components/response_font_size.dart';
 
@@ -16,7 +21,10 @@ class Diabetes extends StatelessWidget {
   Widget build(BuildContext context) {
     return ExpansionTile(
       collapsedIconColor: Colors.blue,
-      title: const DefaultText(txt: 'Diabetes',color: Colors.blue,),
+      title: const DefaultText(
+        txt: 'Diabetes',
+        color: Colors.blue,
+      ),
       leading: const Icon(
         Icons.medical_services,
         color: Colors.blue,
@@ -24,8 +32,8 @@ class Diabetes extends StatelessWidget {
       children: [
         ListTile(
           onTap: () => Get.to(() => const DiagnosisScreen(
-                diagnosisScreen: DiabetesScreen(),
-                predictionInput: Text("data"),
+                diagnosisScreen: ParkinsonScreen(),
+                predictionInput: ParkinsonPredictionScreen(),
               )),
           title: const Text('Parkinson', style: TextStyle(color: Colors.blue)),
           leading: const Icon(
@@ -36,8 +44,8 @@ class Diabetes extends StatelessWidget {
         ),
         ListTile(
           onTap: () => Get.to(() => const DiagnosisScreen(
-                diagnosisScreen: DiabetesScreen(),
-                predictionInput: Text("data"),
+                diagnosisScreen: BreastCancerScreen(),
+                predictionInput: BreastCancerPredictionScreen(),
               )),
           title: const Text('Breast Cancer',
               style: TextStyle(
@@ -51,8 +59,8 @@ class Diabetes extends StatelessWidget {
         ),
         ListTile(
           onTap: () => Get.to(() => const DiagnosisScreen(
-                diagnosisScreen: DiabetesScreenBody(),
-                predictionInput: Text("data"),
+                diagnosisScreen: HeartDiseasesScreen(),
+                predictionInput: HeartDiseasesPredictionScreen(),
               )),
           title: const Text('Heart Disease',
               style: TextStyle(color: Colors.blue
@@ -67,7 +75,7 @@ class Diabetes extends StatelessWidget {
         ListTile(
           onTap: () => Get.to(() => const DiagnosisScreen(
               diagnosisScreen: DiabetesScreen(),
-              predictionInput: DiabetesPredictionInput())),
+              predictionInput: DiabetesPredictionScreen())),
           title: const Text('Diagnosis', style: TextStyle(color: Colors.blue)),
           leading: const Icon(
             Icons.medical_services,

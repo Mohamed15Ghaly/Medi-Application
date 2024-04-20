@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:team/components/response_font_size.dart';
-import 'package:team/core/utils/medi_assets.dart';
+import 'package:team/core/utils/medi_image.dart';
 
 class ArticleBody extends StatelessWidget {
   const ArticleBody({
@@ -102,7 +102,7 @@ class ArticleBody extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Image.asset(
-                        MediAssets.homeAppHeaderArticleDescription,),
+                        MediImage.homeAppHeaderArticleDescription,),
                     ],
                   ),
                 ],

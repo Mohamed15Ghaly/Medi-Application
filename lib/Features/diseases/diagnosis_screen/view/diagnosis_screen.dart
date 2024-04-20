@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:team/core/utils/medi_assets.dart';
+import 'package:team/core/utils/medi_image.dart';
 import 'package:team/Features/diseases/diagnosis_screen/widgets/diagnosis_body.dart';
 
 class DiagnosisScreen extends StatelessWidget {
@@ -15,12 +15,12 @@ class DiagnosisScreen extends StatelessWidget {
     return Scaffold(
       body: FutureBuilder(
         future: Future.delayed(
-          const Duration(seconds: 0),
+          const Duration(seconds: 2),
         ),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
-              child: LottieBuilder.asset(MediAssets.diabetesSplash),
+              child: LottieBuilder.asset(MediImage.diabetesSplash),
             );
           } else {
             return DiagnosisBody(

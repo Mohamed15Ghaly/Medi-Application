@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:team/components/response_font_size.dart';
-import '../../../notification/notification_screen/view/notification_screen.dart';
+import '../../../notification/presentation/views/notification_screen.dart';
 
 class NotificationButton extends StatelessWidget {
   const NotificationButton({

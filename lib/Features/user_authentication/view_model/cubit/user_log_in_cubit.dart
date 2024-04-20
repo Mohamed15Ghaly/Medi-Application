@@ -18,19 +18,22 @@ class UserLoginCubit extends Cubit<UserLoginState> {
   final loginFormKey = GlobalKey<FormState>();
   TextEditingController loginPassword = TextEditingController();
   TextEditingController loginEmail = TextEditingController();
+
   LogInModel? userLogIn;
 
   loginValidation() {
     if (loginFormKey.currentState!.validate()) {
       logIn();
     } else if (loginEmail.text.isEmpty && loginPassword.text.isEmpty) {
-      emit(UserLoginFailure(error: "Please Enter Email and Password"));
+      emit(const UserLoginFailure(error: "Please Enter Email and Password"));
     } else {
       emit(UserLoginFailure(
           error:
               "Please Enter ${loginEmail.text.isEmpty ? 'Email' : 'Password'}"));
     }
   }
+
+  
 
   @override
   Future<void> close() {

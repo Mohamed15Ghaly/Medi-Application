@@ -1,14 +1,13 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:team/Features/user_authentication/view_model/cubit/user_log_in_cubit.dart';
+import 'package:team/Features/user_authentication/view_model/cubit/user_on_pressed_cubit.dart';
 import 'package:team/core/components/custom_material_button.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
-import 'package:team/core/utils/medi_assets.dart';
+import 'package:team/core/utils/medi_image.dart';
 import 'package:team/Features/user_authentication/presentation/views/forget_password_screen.dart';
 import 'package:team/Features/home/general_screen/view/general_screen.dart';
 import 'package:team/core/utils/response_font_size.dart';
@@ -49,7 +48,7 @@ class LoginScreenBody extends StatelessWidget {
               Image.asset(
                 height: MediaQuery.sizeOf(context).height / 2.5,
                 width: MediaQuery.sizeOf(context).width,
-                MediAssets.loginImage,
+                MediImage.loginImage,
                 fit: BoxFit.cover,
               ),
               const Gap(25),
@@ -82,16 +81,32 @@ class LoginScreenBody extends StatelessWidget {
                                       .loginEmail,
                               textInputType: TextInputType.emailAddress)),
                       const Gap(15),
-                      DefaultTextFelidForm(
-                          textFelidFormModel: TextFelidFormModel(
-                        hintText: "Enter Your Password",
-                        labelText: "Password",
-                        prefixIcon: Icons.lock,
-                        suffixIcon: Icons.visibility,
-                        controller: BlocProvider.of<UserLoginCubit>(context)
-                            .loginPassword,
-                        textInputType: TextInputType.visiblePassword,
-                      )),
+                      BlocConsumer<UserOnPressedCubit, UserOnPressedState>(
+                        listener: (context, state) {},
+                        builder: (context, state) {
+                          return DefaultTextFelidForm(
+                              textFelidFormModel: TextFelidFormModel(
+                            hintText: "Enter Your Password",
+                            labelText: "Password",
+                            prefixIcon: Icons.lock,
+                            suffixIcon:
+                                BlocProvider.of<UserOnPressedCubit>(context)
+                                        .loginObscureText
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                            suffixOnPressed: () {
+                              BlocProvider.of<UserOnPressedCubit>(context)
+                                  .changeLoginObscureText();
+                            },
+                            obscureText:
+                                BlocProvider.of<UserOnPressedCubit>(context)
+                                    .loginObscureText,
+                            controller: BlocProvider.of<UserLoginCubit>(context)
+                                .loginPassword,
+                            textInputType: TextInputType.visiblePassword,
+                          ));
+                        },
+                      ),
                     ],
                   )),
               const Gap(5),

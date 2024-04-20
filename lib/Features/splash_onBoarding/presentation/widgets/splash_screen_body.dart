@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:lottie/lottie.dart';
-import 'package:team/core/utils/medi_assets.dart';
+import 'package:team/core/utils/medi_image.dart';
 import 'package:team/core/utils/medi_duration.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 import 'package:team/core/utils/medi_strings.dart';
@@ -50,7 +50,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
         children: [
           Flexible(
             child: Lottie.asset(
-              MediAssets.appSplash,
+              MediImage.appSplash,
               width: context.width * 0.5,
             ),
           ),

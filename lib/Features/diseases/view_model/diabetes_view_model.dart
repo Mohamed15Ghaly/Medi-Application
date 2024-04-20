@@ -1,1 +1,3 @@
-class DiabetesViewModel{}
+class DiabetesViewModel{
+  
+}

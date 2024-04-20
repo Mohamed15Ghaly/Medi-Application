@@ -3,10 +3,18 @@ class ApiKey {
   static const String errorMessage = "msg";
   static const String msg = "msg";
   static const String id = "_id";
+
+
+
   static const String name = "Name";
   static const String email = "email";
+
   static const String password = "password";
+  static const String newPassword = "NewPassword";
   static const String confirmPassword = "confirmPassword";
+
+
+
   static const String pregnancies = "Pregnancies";
   static const String glucose = "Glucose";
   static const String bloodPressure = "BloodPressure";
@@ -17,7 +25,7 @@ class ApiKey {
   static const String age = "Age";
   
   
-  static const String clumpThicknes = "clump_thickness";
+  static const String clumpThickness = "clump_thickness";
   static const String uniformCellSize = "uniform_cell_size";
   static const String uniformCellShape = "uniform_cell_shape";
   static const String marginalAdhesion = "marginal_adhesion";
@@ -28,7 +36,7 @@ class ApiKey {
   static const String mitoses = "mitoses";
 
 
-  static const String mdvpFoHZ = "MDVP_fo_HZ";
+  static const String mdvpFoHz = "MDVP_fo_HZ";
   static const String mdvpFhiHz = "MDVP_Fhi_HZ";
   static const String mdvpFloHz = "MDVP_Flo_HZ";
   static const String mdvpJitterPercentage = "MDVP_Jitter_percentage";
@@ -45,6 +53,7 @@ class ApiKey {
   static const String nhr = "NHR";
   static const String hnr = "HNR";
   static const String rpde = "RPDE";
+  static const String dfa = "DFA";
   static const String spread1 = "spread1";
   static const String spread2 = "spread2";
   static const String d2 = "D2";
@@ -54,7 +63,7 @@ class ApiKey {
 
   static const String sex = "Sex";
   static const String cp = "Cp";
-  static const String trestbps = "MDVP_Flo_HZ";
+  static const String trestbps = "Trestbps";
   static const String chol = "Chol";
   static const String fbs = "Fbs";
   static const String restecg = "Restecg";

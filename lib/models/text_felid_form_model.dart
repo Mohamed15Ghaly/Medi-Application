@@ -9,12 +9,14 @@ class TextFelidFormModel{
     required this.textInputType,
     this.suffixIcon,
     this.suffixOnPressed,
+    this.obscureText
 
   });
   final String hintText, labelText;
   final IconData prefixIcon;
   final TextEditingController controller;
   final TextInputType textInputType;
+  bool? obscureText;
   IconData? suffixIcon;
   Function()? suffixOnPressed;
 }

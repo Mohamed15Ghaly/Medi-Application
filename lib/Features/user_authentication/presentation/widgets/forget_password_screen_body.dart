@@ -3,7 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:team/components/response_font_size.dart';
 import 'package:team/core/components/custom_material_button.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
-import 'package:team/core/utils/medi_assets.dart';
+import 'package:team/core/utils/medi_image.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 import 'package:team/models/text_felid_form_model.dart';
 
@@ -30,7 +30,7 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
               height:context.height/2.5,
               width:context.width,
               fit: BoxFit.cover,
-              MediAssets.forgetPasswordImage,
+              MediImage.forgetPasswordImage,
             ),
             const Gap(25),
             Text(
@@ -50,6 +50,7 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
             ),
             const Gap(25),
             DefaultTextFelidForm(
+              
                 textFelidFormModel: TextFelidFormModel(
               hintText: "Enter Your Email",
               labelText: "Email",

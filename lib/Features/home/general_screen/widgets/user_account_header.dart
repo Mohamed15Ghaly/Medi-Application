@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:team/Features/settings/cubit/user_actions_cubit.dart';
+import 'package:team/Features/settings/view_model/cubit/user_actions_cubit.dart';
 import 'package:team/components/response_font_size.dart';
 
 class UserAccountsHeader extends StatelessWidget {

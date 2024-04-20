@@ -16,11 +16,14 @@ class UserSignUpCubit extends Cubit<UserSignUpState> {
   TextEditingController signUpPassword = TextEditingController();
   TextEditingController signUpConfirmPassword = TextEditingController();
   TextEditingController signUpUserName = TextEditingController();
+  
 
-  signUpValidation() {
+  signUpValidation({required bool userAcceptPrivacy }) {
     if (signUpPassword.text.trim() != signUpConfirmPassword.text.trim()) {
       emit(const UserSignUpFailure(
           error: "Password Not Matched With Confirm Password"));
+    } else if (userAcceptPrivacy == false) {
+      emit(const UserSignUpFailure(error: "Please Accept User Privacy Policy"));
     } else if (signUpFormKey.currentState!.validate()) {
       signUp();
     } else if (signUpFormKey.currentState!.validate() == false) {
@@ -41,7 +44,7 @@ class UserSignUpCubit extends Cubit<UserSignUpState> {
   userSignUpInitial() {
     emit(UserSignUpInitial());
   }
-  
+
   signUp() async {
     emit(UserSignUpLoading());
     try {

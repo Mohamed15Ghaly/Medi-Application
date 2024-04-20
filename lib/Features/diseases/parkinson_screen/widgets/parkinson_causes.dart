@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:team/core/utils/medi_assets.dart';
+import 'package:team/core/utils/medi_image.dart';
 
 class ParkinsonCauses extends StatelessWidget {
   ParkinsonCauses({
@@ -41,7 +41,7 @@ class ParkinsonCauses extends StatelessWidget {
                 )),
             Expanded(
               child: Image.asset(
-                  MediAssets.diseasesCauses),
+                  MediImage.diseasesCauses),
             )
           ],
         ),

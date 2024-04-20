@@ -18,8 +18,7 @@ class DefaultTextFelidForm extends StatelessWidget {
           return null;
         }
       },
-      obscureText:
-          textFelidFormModel.textInputType == TextInputType.visiblePassword,
+      obscureText: textFelidFormModel.obscureText ?? false,
       keyboardType: textFelidFormModel.textInputType,
       controller: textFelidFormModel.controller,
       decoration: InputDecoration(

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:team/Features/diseases/presentation/views/breast_cancer_screen.dart';
-import 'package:team/Features/diseases/heart_diseases/view/heart_screen.dart';
-import 'package:team/Features/diseases/parkinson_screen/view/parkinson_screen.dart';
+import 'package:team/Features/diseases/presentation/views/heart_disease_screen.dart';
+import 'package:team/Features/diseases/presentation/views/parkinson_screen.dart';
 import 'package:team/components/response_font_size.dart';
 import 'package:team/core/utils/medi_colors.dart';
-import '../../../diseases/diabetes_screen/view/diabetes_screen.dart';
+import '../../../diseases/presentation/views/diabetes_screen.dart';
 import 'home_app_headrer.dart';
 
 class HomeScreenBody extends StatefulWidget {
