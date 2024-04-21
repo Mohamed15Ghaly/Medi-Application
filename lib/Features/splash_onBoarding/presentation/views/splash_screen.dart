@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:team/Features/splash_onBoarding/presentation/widgets/splash_screen_body.dart';
 import 'package:team/core/cache/cache_helper.dart';
-import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_duration.dart';
 import 'package:team/core/utils/medi_share.dart';
 import 'package:team/Features/user_authentication/presentation/views/login_screen.dart';

@@ -22,6 +22,8 @@ class MediImage {
       "$userAuthenticationFolder/Tablet login-cuate (1).png";
   static const String signInImage =
       "$userAuthenticationFolder/Sign up-cuate (1).png";
+  static const String signInVerifyImage =
+      "$userAuthenticationFolder/New message-rafiki.png";
   static const String forgetPasswordImage =
       "$userAuthenticationFolder/Forgot password-cuate.png";
   static const String userAuthenticationCheckAccount =
@@ -56,7 +58,6 @@ class MediImage {
   static const String predictionInput =
       "$diseasesFolder/45067080-c1dc-40de-baf8-13efc1a6e6fd.png";
   static const String appMenuFolder = "$imagePath/appMenu";
-  static const String graph = "$appMenuFolder/graph (1).png";
   static const String editUserName = "$appMenuFolder/Placeholder-cuate (1).png";
   static const String changePhoto =
       "$appMenuFolder/Image folder-rafiki (1).png";

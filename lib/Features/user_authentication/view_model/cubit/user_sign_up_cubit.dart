@@ -16,19 +16,18 @@ class UserSignUpCubit extends Cubit<UserSignUpState> {
   TextEditingController signUpPassword = TextEditingController();
   TextEditingController signUpConfirmPassword = TextEditingController();
   TextEditingController signUpUserName = TextEditingController();
-  
 
-  signUpValidation({required bool userAcceptPrivacy }) {
+  signUpValidation({required bool userAcceptPrivacy}) {
     if (signUpPassword.text.trim() != signUpConfirmPassword.text.trim()) {
       emit(const UserSignUpFailure(
           error: "Password Not Matched With Confirm Password"));
+    } else if (signUpFormKey.currentState!.validate() == false) {
+      emit(const UserSignUpFailure(
+          error: "Please Enter fill all fields with valid information"));
     } else if (userAcceptPrivacy == false) {
       emit(const UserSignUpFailure(error: "Please Accept User Privacy Policy"));
     } else if (signUpFormKey.currentState!.validate()) {
       signUp();
-    } else if (signUpFormKey.currentState!.validate() == false) {
-      emit(const UserSignUpFailure(
-          error: "Please Enter fill all fields with valid information"));
     }
   }
 
@@ -45,6 +44,13 @@ class UserSignUpCubit extends Cubit<UserSignUpState> {
     emit(UserSignUpInitial());
   }
 
+  userSignUpDataClear() {
+    signUpUserName.clear();
+    signUpEmail.clear();
+    signUpPassword.clear();
+    signUpConfirmPassword.clear();
+  }
+
   signUp() async {
     emit(UserSignUpLoading());
     try {
@@ -54,6 +60,7 @@ class UserSignUpCubit extends Cubit<UserSignUpState> {
         ApiKey.password: signUpPassword.text.trim(),
         ApiKey.confirmPassword: signUpConfirmPassword.text.trim(),
       });
+      userSignUpDataClear();
       emit(UserSignUpSuccess());
     } on ServiceExceptions catch (e) {
       emit(UserSignUpFailure(

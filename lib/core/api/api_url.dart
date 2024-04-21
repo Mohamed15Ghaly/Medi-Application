@@ -1,12 +1,16 @@
 class ApiUrl {
   static const String userSignUp =
-      "https://clinic-server-4pyg.vercel.app/api/users/register";
+      "https://clinic-server-1.onrender.com/api/users/register";
   static const String userLogIn =
       "https://clinic-server-4pyg.vercel.app/api/users/login";
   static const String userForgetPassword =
-      "https://clinic-server-4pyg.vercel.app/api/users/forgotpassword";
+      "https://clinic-server-1.onrender.com/api/users/forgotpassword";
   static const String userUpdate =
-      "https://clinic-server-4pyg.vercel.app/api/users/";
+      "https://clinic-server-1.onrender.com/api/users/";
+  static const String resetPassword =
+      "https://clinic-server-1.onrender.com/api/users/resetpassword/";
+  static const String deleteAccount =
+      "https://clinic-server-1.onrender.com/api/users/";
   static const String diabetesPrediction =
       "https://web-production-59d8.up.railway.app/diabetes_prediction";
   static const String heartDiseasePrediction =

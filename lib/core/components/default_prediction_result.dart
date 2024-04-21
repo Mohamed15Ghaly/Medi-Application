@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:team/Features/user_authentication/presentation/views/login_screen.dart';
 import 'package:team/core/components/custom_material_button.dart';
+import 'package:team/core/utils/medi_image.dart';
 
 Future<dynamic> defaultActionResult(
     {required BuildContext context, required Widget resultWidget}) {
@@ -117,29 +118,31 @@ class NotDiagnosed extends StatelessWidget {
 class Verified extends StatelessWidget {
   const Verified({
     super.key,
+    required this.title1,
+    required this.title2,
   });
-
+  final String title1, title2;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset("assets/images/userAuthentication/New message-rafiki.png"),
-        const Text("Verify your email address to get access to your account.",
+        Image.asset(MediImage.signInVerifyImage),
+        Text(title1,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
             )),
         const Divider(),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.email, color: Colors.grey, size: 15),
-            Gap(5),
+            const Icon(Icons.email, color: Colors.grey, size: 15),
+            const Gap(5),
             Text(
-              "We have sent an email to your email address for verification.",
+              title2,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.grey, fontSize: 10),
+              style: const TextStyle(color: Colors.grey, fontSize: 10),
             ),
           ],
         ),
@@ -147,7 +150,7 @@ class Verified extends StatelessWidget {
         CustomButton(
             title: "Ok",
             onPressed: () {
-              Get.offAll(() => const LoginScreen());
+              Get.back();
             }),
       ],
     );

@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -26,13 +27,19 @@ class MenuList extends StatelessWidget {
           onTap: () => BlocProvider.of<IndexScreenCubit>(context)
               .drawerController
               .close!(),
-          title: const DefaultText(txt: 'Home',color: Colors.blue,),
+          title: const DefaultText(
+            txt: 'Home',
+            color: Colors.blue,
+          ),
           leading: const Icon(Icons.home, color: Colors.blue),
           trailing: const Icon(Icons.chevron_right, color: Colors.blue),
         ),
         ListTile(
           onTap: () => Get.to(() => const ProfileScreen()),
-          title:const DefaultText(txt: 'Profile',color: Colors.blue,),
+          title: const DefaultText(
+            txt: 'Profile',
+            color: Colors.blue,
+          ),
           leading: const Icon(Icons.person_2, color: Colors.blue
               // color: Colors.green,
               ),
@@ -40,7 +47,10 @@ class MenuList extends StatelessWidget {
         ),
         ListTile(
           onTap: () => Get.to(() => const NotificationScreen()),
-          title: const DefaultText(txt: 'Notifications',color: Colors.blue,),
+          title: const DefaultText(
+            txt: 'Notifications',
+            color: Colors.blue,
+          ),
           leading: const Icon(Icons.notifications_active, color: Colors.blue
               // color: Colors.amber,
               ),
@@ -48,7 +58,10 @@ class MenuList extends StatelessWidget {
         ),
         ListTile(
           onTap: () => Get.to(() => const ChatScreen()),
-          title:const DefaultText(txt: 'Chat',color: Colors.blue,),
+          title: const DefaultText(
+            txt: 'Chat',
+            color: Colors.blue,
+          ),
           leading: const Icon(Icons.chat, color: Colors.blue
               // color: Colors.tealAccent
               ),
@@ -56,7 +69,10 @@ class MenuList extends StatelessWidget {
         ),
         ListTile(
           onTap: () => Get.to(() => const VoiceAssistantScreen()),
-          title: const DefaultText(txt: 'Voice Assistant',color: Colors.blue,),
+          title: const DefaultText(
+            txt: 'Voice Assistant',
+            color: Colors.blue,
+          ),
           leading: const Icon(Icons.mic, color: Colors.blue
               // color: Colors.purple,
               ),
@@ -64,40 +80,44 @@ class MenuList extends StatelessWidget {
         ),
         ListTile(
           onTap: () => Get.to(() => const SettingsScreen()),
-          title: const DefaultText(txt: 'Settings',color: Colors.blue,),
+          title: const DefaultText(
+            txt: 'Settings',
+            color: Colors.blue,
+          ),
           leading: const Icon(Icons.settings, color: Colors.blue),
           trailing: const Icon(Icons.chevron_right, color: Colors.blue),
         ),
         ListTile(
           onTap: () => Get.to(() => const HelpScreen()),
-          title: const DefaultText(txt: 'Help',color: Colors.blue,),
+          title: const DefaultText(
+            txt: 'Help',
+            color: Colors.blue,
+          ),
           leading: const Icon(Icons.help_outline, color: Colors.blue
               // color: Colors.yellow,
               ),
           trailing: const Icon(Icons.chevron_right, color: Colors.blue),
         ),
         ListTile(
-          onTap: () => showCupertinoDialog(
-              context: context,
-              builder: (builder) => CupertinoAlertDialog(
-                      title: const Text('Logout'),
-                      content: const Text('Are you sure you want to logout'),
-                      actions: [
-                        CupertinoDialogAction(
-                          isDestructiveAction: true,
-                          child: const Text('Cancel'),
-                          onPressed: () {
-                            Get.back();
-                          },
-                        ),
-                        CupertinoDialogAction(
-                          child: const Text('Logout'),
-                          onPressed: () {
-                            Get.offAll(() => const LoginScreen());
-                          },
-                        )
-                      ])),
-          title: const DefaultText(txt: 'Logout',color: Colors.red,),
+          onTap: () => AwesomeDialog(
+            context: context,
+            dialogType: DialogType.info,
+            animType: AnimType.scale,
+            title: "Logout",
+            desc: "Are you sure you want to logout?",
+            btnOkOnPress: () {
+              Get.offAll(() => const LoginScreen());
+            },
+            btnCancelOnPress: () {
+              Get.back();
+            },
+            btnOkColor: Colors.blue,
+            btnCancelColor: Colors.blue,
+          ).show(),
+          title: const DefaultText(
+            txt: 'Logout',
+            color: Colors.red,
+          ),
           leading: const Icon(
             Icons.logout,
             color: Colors.red,

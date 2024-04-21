@@ -7,7 +7,7 @@ import 'package:gap/gap.dart';
 import 'package:team/components/response_font_size.dart';
 import 'package:team/core/utils/medi_image.dart';
 import 'package:team/core/utils/medi_media_query.dart';
-import '../article.dart';
+import '../../view_model/article.dart';
 import 'article_body.dart';
 
 class HomeAppHeader extends StatelessWidget {
@@ -37,7 +37,7 @@ class HomeAppHeader extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Gap(10),
@@ -50,27 +50,28 @@ class HomeAppHeader extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: GetResponseFontSize(
-                                  context: context, fontsize: 20),
+                                  context: context, fontsize: 24),
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
                       ),
                     ),
+                    const Gap(10),
                     Flexible(
-                      flex: 3,
+                      flex: 4,
                       child: FittedBox(
                         child: SizedBox(
                           width: width / 2,
                           child: AutoSizeText(
                             maxLines: 6,
                             overflow: TextOverflow.ellipsis,
-                            "In medi app you serve you with all love , work for your comfort and all our concern is your health. "
-                            "Fell free to contact us if you have problem",
+                            "In medi app you serve you with all love , work for your comfort and all our concern is your health , "
+                            "Fell free to contact us if you have problem or need any help.",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: GetResponseFontSize(
-                                  context: context, fontsize: 16),
+                                  context: context, fontsize: 14),
                             ),
                           ),
                         ),
@@ -115,14 +116,12 @@ class HomeAppHeader extends StatelessWidget {
         const Gap(10),
         SizedBox(
           width: width,
-          height: height / 4,
+          height: height / 3,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Expanded(
                 child: Image.asset(
-                  height: height / 4,
-                  width: width / 4,
                   MediImage.homeAppBody,
                 ),
               ),
@@ -130,7 +129,7 @@ class HomeAppHeader extends StatelessWidget {
                 "Let's take a look about the symptoms and causes of each disease ",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: GetResponseFontSize(context: context, fontsize: 16),
+                  fontSize: GetResponseFontSize(context: context, fontsize: 13),
                   fontWeight: FontWeight.bold,
                   color: Colors.blue,
                 ),

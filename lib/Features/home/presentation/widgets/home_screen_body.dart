@@ -71,7 +71,7 @@ class _HomeScreenBodyState extends State<HomeScreenBody>
                   DiabetesScreen(),
                   ParkinsonScreen(),
                   BreastCancerScreen(),
-                  HeartDiseasesScreen()
+                  HeartDiseaseScreen()
                 ])),
       ),
     );

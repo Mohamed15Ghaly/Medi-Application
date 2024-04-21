@@ -35,9 +35,9 @@ class UserForgetPasswordCubit extends Cubit<UserForgetPasswordState> {
   forgetPassword() async {
     emit(UserForgetPasswordLoading());
     try {
-      await apiConsumer.post(ApiUrl.userForgetPassword, body: {
-        ApiKey.email: forgetPasswordEmail.text.trim(),
-      });
+      await apiConsumer.post(ApiUrl.userForgetPassword,
+          body: {ApiKey.email: "mohamedghaly07@gmail.com"});
+      forgetPasswordEmail.clear();
       emit(UserForgetPasswordSuccess());
     } on ServiceExceptions catch (e) {
       emit(UserForgetPasswordFailure(

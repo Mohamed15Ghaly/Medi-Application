@@ -7,13 +7,28 @@ import 'package:team/core/api/api_key.dart';
 import 'package:team/core/api/api_url.dart';
 import 'package:team/core/errors/exceptions.dart';
 
-part 'diseases_cubit_state.dart';
+part 'diseases_state.dart';
 
-class DiseasesPredictionCubit extends Cubit<DiseasesPredictionState> {
-  DiseasesPredictionCubit(this.apiConsumer)
-      : super(DiseasesPredictionInitial());
+class DiseasesCubit extends Cubit<DiseasesState> {
+  DiseasesCubit(this.apiConsumer) : super(DiseasesInitial());
+
+  GlobalKey input = GlobalKey();
+  GlobalKey prediction = GlobalKey();
+  
+  Widget? diseasesPredictionScreen, diseasesScreen;
+  String? diseaseName;
+
+  setDiseaseScreen(
+      {required Widget diseasesScreen,
+      required Widget diseasesPredictionScreen,
+      required String diseaseName}) {
+    this.diseasesScreen = diseasesScreen;
+    this.diseasesPredictionScreen = diseasesPredictionScreen;
+    this.diseaseName = diseaseName;
+    emit(SetDiseasesScreen());
+  }
+
   final ApiConsumer apiConsumer;
-
   final diabetesFormKey = GlobalKey<FormState>();
   TextEditingController pregnancies = TextEditingController();
   TextEditingController glucose = TextEditingController();
@@ -83,50 +98,50 @@ class DiseasesPredictionCubit extends Cubit<DiseasesPredictionState> {
 
   heartDiseasePredictionValidation() {
     if (validInput(input: age.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ClumpThickness Without ',' or '.'"));
     } else if (validInput(input: sex.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter UniformCellSize without ',' or '.'"));
     } else if (validInput(input: trestbps.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter UniformCellShape without ',' or '.'"));
     } else if (validInput(input: chol.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter UniformCellShape without ',' or '.'"));
     } else if (validInput(input: fbs.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter MarginalAdhesion without ',' or '.'"));
     } else if (validInput(input: restecg.text.trim(), integer: false)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter SingleEpithelialSize without ','"));
     } else if (validInput(input: thalach.text.trim(), integer: false)) {
-      emit(const DiseasesPredictionFailure(
-          error: "Please Enter BareNuclei without ',' "));
+      emit(
+          const DiseasesFailure(error: "Please Enter BareNuclei without ',' "));
     } else if (validInput(input: exang.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter BlandChromatin without ',' or '.'"));
     } else if (validInput(input: oldpeak.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter NormalNucleoli without ',' or '.'"));
     } else if (validInput(input: slope.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter Mitoses without ',' or '.'"));
     } else if (validInput(input: ca.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter Mitoses without ',' or '.'"));
     } else if (validInput(input: thal.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter Mitoses without ',' or '.'"));
     } else if (heartDiseaseFormKey.currentState!.validate()) {
       heartDiseasePrediction();
     } else {
-      emit(const DiseasesPredictionFailure(error: "Please Enter All Fields"));
+      emit(const DiseasesFailure(error: "Please Enter All Fields"));
     }
   }
 
   heartDiseasePrediction() async {
-    emit(DiseasesPredictionLoading());
+    emit(DiseasesLoading());
     try {
       String response = await apiConsumer.post(
         ApiUrl.heartDiseasePrediction,
@@ -146,54 +161,54 @@ class DiseasesPredictionCubit extends Cubit<DiseasesPredictionState> {
           ApiKey.thal: double.tryParse(thal.text.trim()),
         },
       );
-      emit(DiseasesPredictionSuccess(predict: response));
+      emit(DiseasesSuccess(predict: response));
     } on ServiceExceptions catch (e) {
-      emit(DiseasesPredictionFailure(error: e.errorMessageModel.errorMessage));
+      emit(DiseasesFailure(error: e.errorMessageModel.errorMessage));
     }
   }
 
   breastCancerPredictionValidation() {
     if (validInput(input: clumpThickness.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.clumpThickness} Without ',' or '.'"));
     } else if (validInput(input: uniformCellSize.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.uniformCellSize} without ',' or '.'"));
     } else if (validInput(input: uniformCellShape.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.uniformCellShape} without ',' or '.'"));
     } else if (validInput(input: uniformCellShape.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.marginalAdhesion} without ',' or '.'"));
     } else if (validInput(input: marginalAdhesion.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error:
               "Please Enter ${ApiKey.singleEpithelialSize} without ',' or '.'"));
     } else if (validInput(
         input: singleEpithelialSize.text.trim(), integer: false)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.singleEpithelialSize} without ','"));
     } else if (validInput(input: bareNuclei.text.trim(), integer: false)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.bareNuclei} without ',' "));
     } else if (validInput(input: blandChromatin.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.blandChromatin} without ',' or '.'"));
     } else if (validInput(input: normalNucleoli.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.normalNucleoli} without ',' or '.'"));
     } else if (validInput(input: mitoses.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mitoses} without ',' or '.'"));
     } else if (breastCancerFormKey.currentState!.validate()) {
       breastCancerPrediction();
     } else {
-      emit(const DiseasesPredictionFailure(error: "Please Enter All Fields"));
+      emit(const DiseasesFailure(error: "Please Enter All Fields"));
     }
   }
 
   breastCancerPrediction() async {
-    emit(DiseasesPredictionLoading());
+    emit(DiseasesLoading());
     try {
       String response = await apiConsumer.post(
         ApiUrl.breastCancerPrediction,
@@ -212,90 +227,90 @@ class DiseasesPredictionCubit extends Cubit<DiseasesPredictionState> {
           ApiKey.mitoses: double.tryParse(mitoses.text.trim()),
         },
       );
-      emit(DiseasesPredictionSuccess(predict: response));
+      emit(DiseasesSuccess(predict: response));
     } on ServiceExceptions catch (e) {
-      emit(DiseasesPredictionFailure(error: e.errorMessageModel.errorMessage));
+      emit(DiseasesFailure(error: e.errorMessageModel.errorMessage));
     }
   }
 
   parkinsonPredictionValidation() {
     if (validInput(input: mdvpFoHz.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpFoHz} Without ',' or '.'"));
     } else if (validInput(input: mdvpFhiHz.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter  ${ApiKey.mdvpFhiHz} without ',' or '.'"));
     } else if (validInput(input: mdvpFloHz.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpFloHz} without ',' or '.'"));
     } else if (validInput(
         input: mdvpJitterPercentage.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error:
               "Please Enter ${ApiKey.mdvpJitterPercentage} without ',' or '.'"));
     } else if (validInput(input: mdvpJitterAbs.text.trim(), integer: false)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpJitterAbs} without ','"));
     } else if (validInput(input: mdvpRap.text.trim(), integer: false)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpRap} without ',' "));
     } else if (validInput(input: mdvpPpq.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpPpq} without ',' or '.'"));
     } else if (validInput(input: jitterDdf.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.jitterDdf} without ',' or '.'"));
     } else if (validInput(input: mdvpShimmer.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpShimmer} without ',' or '.'"));
     } else if (validInput(input: mdvpShimmerDb.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpShimmerDb} without ',' or '.'"));
     } else if (validInput(input: shimmerApq3.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.shimmerApq3} without ',' or '.'"));
     } else if (validInput(input: shimmerApq5.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.shimmerApq5} without ',' or '.'"));
     } else if (validInput(input: mdvpApq.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpPpq} without ',' or '.'"));
     } else if (validInput(input: shimmerDda.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.shimmerDda} without ',' or '.'"));
     } else if (validInput(input: nhr.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.nhr} without ',' or '.'"));
     } else if (validInput(input: hnr.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.hnr} without ',' or '.'"));
     } else if (validInput(input: rpde.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.hnr} without ',' or '.'"));
     } else if (validInput(input: dfa.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.dfa} without ',' or '.'"));
     } else if (validInput(input: spread1.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.spread1} without ',' or '.'"));
     } else if (validInput(input: spread2.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.spread2} without ',' or '.'"));
     } else if (validInput(input: d2.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.d2} without ',' or '.'"));
     } else if (validInput(input: ppe.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.ppe} without ',' or '.'"));
     } else if (parkinsonFormKey.currentState!.validate()) {
       parkinsonPrediction();
     } else {
-      emit(const DiseasesPredictionFailure(error: "Please Enter All Fields"));
+      emit(const DiseasesFailure(error: "Please Enter All Fields"));
     }
   }
 
   parkinsonPrediction() async {
-    emit(DiseasesPredictionLoading());
+    emit(DiseasesLoading());
     try {
       String response = await apiConsumer.post(
         ApiUrl.parkinsonPrediction,
@@ -325,52 +340,52 @@ class DiseasesPredictionCubit extends Cubit<DiseasesPredictionState> {
           ApiKey.ppe: double.tryParse(ppe.text.trim()),
         },
       );
-      emit(DiseasesPredictionSuccess(predict: response));
+      emit(DiseasesSuccess(predict: response));
     } on ServiceExceptions catch (e) {
-      emit(DiseasesPredictionFailure(error: e.errorMessageModel.errorMessage));
+      emit(DiseasesFailure(error: e.errorMessageModel.errorMessage));
     }
   }
 
   diabetesPredictionValidation() {
     if (validInput(input: pregnancies.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.pregnancies} Without ',' or '.'"));
     } else if (validInput(input: glucose.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.glucose} without ',' or '.'"));
     } else if (validInput(input: bloodPressure.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.bloodPressure} without ',' or '.'"));
     } else if (validInput(input: skinThickness.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.skinThickness} without ',' or '.'"));
     } else if (validInput(input: insulin.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.insulin} without ',' or '.'"));
     } else if (validInput(input: bmi.text.trim(), integer: false)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.bmi} without ','"));
     } else if (validInput(
         input: diabetesPedigreeFunction.text.trim(), integer: false)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error:
               "Please Enter ${ApiKey.diabetesPedigreeFunction} without ',' "));
     } else if (validInput(input: age.text.trim(), integer: true)) {
-      emit(const DiseasesPredictionFailure(
+      emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.age} without ',' or '.'"));
     } else if (diabetesFormKey.currentState!.validate()) {
       diabetesPrediction();
     } else {
-      emit(const DiseasesPredictionFailure(error: "Please Enter All Fields"));
+      emit(const DiseasesFailure(error: "Please Enter All Fields"));
     }
   }
 
   setInitialState() {
-    emit(DiseasesPredictionInitial());
+    emit(DiseasesInitial());
   }
 
   diabetesPrediction() async {
-    emit(DiseasesPredictionLoading());
+    emit(DiseasesLoading());
     try {
       String response = await apiConsumer.post(
         ApiUrl.diabetesPrediction,
@@ -386,9 +401,9 @@ class DiseasesPredictionCubit extends Cubit<DiseasesPredictionState> {
           ApiKey.age: double.tryParse(age.text.trim()),
         },
       );
-      emit(DiseasesPredictionSuccess(predict: response));
+      emit(DiseasesSuccess(predict: response));
     } on ServiceExceptions catch (e) {
-      emit(DiseasesPredictionFailure(error: e.errorMessageModel.errorMessage));
+      emit(DiseasesFailure(error: e.errorMessageModel.errorMessage));
     }
   }
 }
