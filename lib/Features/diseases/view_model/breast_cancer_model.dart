@@ -49,3 +49,4 @@ class BreastCancerViewModel {
   static const String breastCancerComplications =
       "The most significant complication is metastatic breast cancer — breast cancer that spreads to other areas of your body, including your brain, bones, liver and lungs. Studies show about 1 in 3 women and people AFAB who have early-stage cancer later develop metastatic breast cancer";
 }
+

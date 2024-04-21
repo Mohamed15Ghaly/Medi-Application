@@ -24,7 +24,7 @@ class ParkinsonPrevention extends StatelessWidget {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                     ),
                     Text(
-                        "Because the cause of Parkinson's is unknown, there are no proven ways to prevent the disease.")
+                        "Because the cause of Parkinson's is unknown, there are no proven ways to prevent the disease but:")
                   ],
                 )),
             const Gap(10),
