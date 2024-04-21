@@ -4,16 +4,12 @@ class ApiKey {
   static const String msg = "msg";
   static const String id = "_id";
 
-
-
   static const String name = "Name";
   static const String email = "email";
+  static const String token = "token";
 
   static const String password = "password";
-  static const String newPassword = "NewPassword";
   static const String confirmPassword = "confirmPassword";
-
-
 
   static const String pregnancies = "Pregnancies";
   static const String glucose = "Glucose";
@@ -23,8 +19,7 @@ class ApiKey {
   static const String bmi = "BMI";
   static const String diabetesPedigreeFunction = "DiabetesPedigreeFunction";
   static const String age = "Age";
-  
-  
+
   static const String clumpThickness = "clump_thickness";
   static const String uniformCellSize = "uniform_cell_size";
   static const String uniformCellShape = "uniform_cell_shape";
@@ -34,7 +29,6 @@ class ApiKey {
   static const String blandChromatin = "bland_chromatin";
   static const String normalNucleoli = "normal_nucleoli";
   static const String mitoses = "mitoses";
-
 
   static const String mdvpFoHz = "MDVP_fo_HZ";
   static const String mdvpFhiHz = "MDVP_Fhi_HZ";
@@ -59,8 +53,6 @@ class ApiKey {
   static const String d2 = "D2";
   static const String ppe = "PPE";
 
-
-
   static const String sex = "Sex";
   static const String cp = "Cp";
   static const String trestbps = "Trestbps";
@@ -73,6 +65,4 @@ class ApiKey {
   static const String slope = "Slope";
   static const String ca = "Ca";
   static const String thal = "Thal";
-
-
 }

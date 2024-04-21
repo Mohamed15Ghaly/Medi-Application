@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:team/Features/settings/view_model/cubit/user_actions_cubit.dart';
+import 'package:team/Features/user_authentication/view_model/cubit/user_log_in_cubit.dart';
 import 'package:team/components/response_font_size.dart';
 
 class UserAccountsHeader extends StatelessWidget {
@@ -18,7 +19,7 @@ class UserAccountsHeader extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         return UserAccountsDrawerHeader(
-          decoration:const BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.blue,
           ),
           accountName: Row(
@@ -36,12 +37,11 @@ class UserAccountsHeader extends StatelessWidget {
               const Gap(5),
               Flexible(
                 child: AutoSizeText(
-                  "BlocProvider.of<UserAuthenticationCubit>(context).userLogIn!.name",
+                  BlocProvider.of<UserLoginCubit>(context).userLogIn!.name,
                   style: TextStyle(
-                      // fontWeight: FontWeight.bold,
                       color: Colors.white,
-                    fontSize: GetResponseFontSize(context: context, fontsize: 16)
-                  ),
+                      fontSize:
+                          GetResponseFontSize(context: context, fontsize: 10)),
                 ),
               ),
             ],
@@ -60,8 +60,14 @@ class UserAccountsHeader extends StatelessWidget {
               const Gap(5),
               Flexible(
                 child: AutoSizeText(
-                  " BlocProvider.of<UserAuthenticationCubit>(context).userLogIn!.email",
-                  style: TextStyle(color: Colors.white,fontSize: GetResponseFontSize(context: context, fontsize: 16,),),
+                  BlocProvider.of<UserLoginCubit>(context).userLogIn!.email,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: GetResponseFontSize(
+                      context: context,
+                      fontsize: 10,
+                    ),
+                  ),
                 ),
               ),
             ],

@@ -1,9 +1,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:team/Features/user_authentication/view_model/cubit/user_log_in_cubit.dart';
 import 'package:team/core/api/api_consumer.dart';
 import 'package:team/core/api/api_key.dart';
+import 'package:team/core/api/api_url.dart';
 import 'package:team/core/errors/exceptions.dart';
 
 part 'user_actions_state.dart';
@@ -11,6 +13,24 @@ part 'user_actions_state.dart';
 class UserActionsCubit extends Cubit<UserActionsState> {
   UserActionsCubit(this.apiConsumer) : super(UserActionsInitial());
   final ApiConsumer apiConsumer;
+XFile? profilePhoto  , userProfilePhoto;
+  uploadProfilePhoto(XFile newImage){
+    profilePhoto = newImage;
+    emit(UserActionsLoadingSave());
+  }
+  saveProfilePhoto(){
+    userProfilePhoto = profilePhoto;
+    emit(const UserActionsSuccess(
+      message: "Profile Photo Changed Successfully",
+    ));
+  }
+
+
+
+
+
+
+
 
   TextEditingController newUserName = TextEditingController();
   changeUserNameValidation(
@@ -25,8 +45,8 @@ class UserActionsCubit extends Cubit<UserActionsState> {
   userChangeUserNameValidation(String userId, BuildContext context) async {
     emit(UserActionsLoading());
     try {
-      await apiConsumer
-          .put("users/$userId", body: {ApiKey.name: newUserName.text.trim()});
+      await apiConsumer.put(ApiUrl.userUpdate + userId,
+          body: {ApiKey.name: newUserName.text.trim()});
       BlocProvider.of<UserLoginCubit>(context).userLogIn!.name =
           newUserName.text.trim();
       newUserName.clear();
@@ -41,14 +61,15 @@ class UserActionsCubit extends Cubit<UserActionsState> {
   }
 
   userDeleteAccount({required String userId}) async {
-    emit(UserActionsLoading());
-    userAcceptedDelete(userId: userId);
+    emit(const UserDeleteAccountLoading(
+      message: "Are you sure you want to delete your account ?",
+    ));
   }
 
   userAcceptedDelete({required String userId}) async {
     try {
-      await apiConsumer.delete("users/$userId");
-      emit(const UserActionsSuccess(
+      await apiConsumer.delete(ApiUrl.deleteAccount + userId);
+      emit(const UserDeleteAccountSuccess(
         message: "User Deleted Successfully",
       ));
     } on ServiceExceptions catch (e) {
@@ -67,22 +88,26 @@ class UserActionsCubit extends Cubit<UserActionsState> {
   TextEditingController newPassword = TextEditingController();
   TextEditingController confirmNewPassword = TextEditingController();
 
-  resetPasswordValidation() {
+  resetPasswordValidation({required String userId, required String token}) {
     if (newPassword.text.trim() != confirmNewPassword.text.trim()) {
-      emit(const UserActionsFailure(error: "Passwords Don't Match With Confirm Password"));
+      emit(const UserActionsFailure(
+          error: "Passwords Don't Match With Confirm Password"));
     } else if (resetPasswordFormKey.currentState!.validate()) {
+      resetPassword(userId, token);
     } else {
       emit(const UserActionsFailure(error: "Please Enter Your Passwords"));
     }
   }
 
-  resetPassword() async {
+  setInitialState() {
+    emit(UserActionsInitial());
+  }
+
+  resetPassword(String userId, String token) async {
     emit(UserActionsLoading());
     try {
-      await apiConsumer.put("", body: {
-        ApiKey.password: oldPassword.text.trim(),
-        ApiKey.newPassword: newPassword.text.trim(),
-        ApiKey.confirmPassword: confirmNewPassword.text.trim(),
+      await apiConsumer.post("${ApiUrl.resetPassword}$userId/$token", body: {
+        ApiKey.password: newPassword.text.trim(),
       });
       emit(const UserActionsSuccess(
         message: "Password Changed Successfully",
@@ -97,6 +122,7 @@ class UserActionsCubit extends Cubit<UserActionsState> {
     if (rateUs.text.trim().isEmpty) {
       emit(const UserActionsFailure(error: "Please Enter Your Opinion"));
     } else {
+      rateUs.clear();
       emit(const UserActionsSuccess(
         message: "Thank You For Your Opinion",
       ));

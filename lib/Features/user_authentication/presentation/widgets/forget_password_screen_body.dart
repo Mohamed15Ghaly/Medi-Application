@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:team/Features/user_authentication/view_model/cubit/user_forget_password_cubit.dart';
 import 'package:team/components/response_font_size.dart';
 import 'package:team/core/components/custom_material_button.dart';
+import 'package:team/core/components/default_prediction_result.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
 import 'package:team/core/utils/medi_image.dart';
 import 'package:team/core/utils/medi_media_query.dart';
@@ -18,8 +21,6 @@ class ForgetPasswordScreenBody extends StatefulWidget {
 }
 
 class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
-  TextEditingController forgetPasswordEmail = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -27,8 +28,8 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
         child: Column(
           children: [
             Image.asset(
-              height:context.height/2.5,
-              width:context.width,
+              height: context.height / 2.5,
+              width: context.width,
               fit: BoxFit.cover,
               MediImage.forgetPasswordImage,
             ),
@@ -49,17 +50,27 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
               textAlign: TextAlign.center,
             ),
             const Gap(25),
-            DefaultTextFelidForm(
-              
-                textFelidFormModel: TextFelidFormModel(
-              hintText: "Enter Your Email",
-              labelText: "Email",
-              prefixIcon: Icons.email,
-              controller: forgetPasswordEmail,
-              textInputType: TextInputType.emailAddress,
-            )),
+            Form(
+              key:
+                  context.read<UserForgetPasswordCubit>().forgetPasswordFormKey,
+              child: DefaultTextFelidForm(
+                  textFelidFormModel: TextFelidFormModel(
+                hintText: "Enter Your Email",
+                labelText: "Email",
+                prefixIcon: Icons.email,
+                controller: BlocProvider.of<UserForgetPasswordCubit>(context)
+                    .forgetPasswordEmail,
+                textInputType: TextInputType.emailAddress,
+              )),
+            ),
             const Gap(25),
-            CustomButton(title: "Send", onPressed: () {}),
+            CustomButton(
+                title: "Send",
+                onPressed: () {
+                  
+                  BlocProvider.of<UserForgetPasswordCubit>(context)
+                      .forgetPasswordValidation();
+                }),
           ],
         ),
       ),

@@ -4,12 +4,14 @@ class LogInModel {
   final String id;
   String name;
   final String email;
+  final String token;
   // final String photo;
 
   LogInModel({
     required this.id,
     required this.name,
     required this.email,
+    required this.token,
     // required this.photo,
   });
 
@@ -18,6 +20,7 @@ class LogInModel {
       id: json[ApiKey.id],
       name: json[ApiKey.name.toLowerCase()],
       email: json[ApiKey.email],
+      token: json[ApiKey.token],
       // photo: json['photo'],
     );
   }

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:showcaseview/showcaseview.dart';
 import 'package:team/core/utils/medi_image.dart';
-import 'package:team/Features/diseases/diagnosis_screen/widgets/diagnosis_body.dart';
+import 'package:team/Features/diseases/presentation/widgets/diagnosis_body.dart';
 
 class DiagnosisScreen extends StatelessWidget {
-  const DiagnosisScreen(
-      {super.key,
-      required this.diagnosisScreen,
-      required this.predictionInput});
-  final Widget diagnosisScreen, predictionInput;
+  const DiagnosisScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +22,10 @@ class DiagnosisScreen extends StatelessWidget {
               child: LottieBuilder.asset(MediImage.diabetesSplash),
             );
           } else {
-            return DiagnosisBody(
-              diabetesScreenBody: diagnosisScreen,
-              predictionInputBody: predictionInput,
+            return ShowCaseWidget(
+              builder: Builder(builder: (context) => const DiagnosisBody()),
+              autoPlay: true,
+              autoPlayDelay: const Duration(seconds: 5),
             );
           }
         },
@@ -33,5 +33,3 @@ class DiagnosisScreen extends StatelessWidget {
     );
   }
 }
-
-// ignore: must_be_immutable

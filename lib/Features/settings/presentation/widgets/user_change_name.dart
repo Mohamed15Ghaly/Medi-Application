@@ -15,7 +15,8 @@ class UserChangeName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<UserActionsCubit, UserActionsState>(
+    return BlocConsumer<UserActionsCubit, UserActionsState>(
+      listener: (context, state) {},
       builder: (context, state) {
         return SingleChildScrollView(
           child: Column(
@@ -33,27 +34,23 @@ class UserChangeName extends StatelessWidget {
                   prefixIcon: Icons.person,
                   suffixIcon: Icons.edit,
                   textInputType: TextInputType.name,
-                  labelText: BlocProvider.of<UserLoginCubit>(context)
-                      .userLogIn!
-                      .name,
-                  controller: BlocProvider.of<UserActionsCubit>(context).newUserName,
+                  labelText:
+                      BlocProvider.of<UserLoginCubit>(context).userLogIn!.name,
+                  controller:
+                      BlocProvider.of<UserActionsCubit>(context).newUserName,
                 ),
               ),
               const Gap(20),
-              state is UserActionsLoading
-                  ? const CircularProgressIndicator()
-                  : CustomButton(
-                      title: "Save",
-                      onPressed: () {
-                        BlocProvider.of<UserActionsCubit>(context)
-                            .changeUserNameValidation(
-                                userId:
-                                    BlocProvider.of<UserLoginCubit>(
-                                            context)
-                                        .userLogIn!
-                                        .id,
-                                context: context);
-                      }),
+              CustomButton(
+                  title: "Save",
+                  onPressed: () {
+                    BlocProvider.of<UserActionsCubit>(context)
+                        .changeUserNameValidation(
+                            userId: BlocProvider.of<UserLoginCubit>(context)
+                                .userLogIn!
+                                .id,
+                            context: context);
+                  }),
             ],
           ),
         );

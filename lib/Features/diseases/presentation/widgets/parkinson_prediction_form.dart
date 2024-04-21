@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:team/Features/diseases/view_model/cubit/diseases_cubit_cubit.dart';
+import 'package:team/Features/diseases/view_model/cubit/diseases_cubit.dart';
 import 'package:team/Features/diseases/view_model/diagnosis_input_data.dart';
 import 'package:team/core/api/api_key.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
@@ -15,7 +15,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-        key: BlocProvider.of<DiseasesPredictionCubit>(context).parkinsonFormKey,
+        key: BlocProvider.of<DiseasesCubit>(context).parkinsonFormKey,
         child: Column(
           children: [
             DefaultTextFelidForm(
@@ -23,8 +23,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.mdvpFoHz}",
                   labelText: ApiKey.mdvpFoHz,
                   prefixIcon: Icons.medical_information,
-                  controller: BlocProvider.of<DiseasesPredictionCubit>(context)
-                      .mdvpFoHz,
+                  controller: BlocProvider.of<DiseasesCubit>(context).mdvpFoHz,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
@@ -36,8 +35,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.mdvpFhiHz}",
                   labelText: ApiKey.mdvpFhiHz,
                   prefixIcon: Icons.medical_information,
-                  controller: BlocProvider.of<DiseasesPredictionCubit>(context)
-                      .mdvpFhiHz,
+                  controller: BlocProvider.of<DiseasesCubit>(context).mdvpFhiHz,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
@@ -49,8 +47,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.mdvpFloHz}",
                   labelText: ApiKey.mdvpFloHz,
                   prefixIcon: Icons.medical_information,
-                  controller: BlocProvider.of<DiseasesPredictionCubit>(context)
-                      .mdvpFloHz,
+                  controller: BlocProvider.of<DiseasesCubit>(context).mdvpFloHz,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
@@ -62,7 +59,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.mdvpJitterPercentage}",
                   labelText: ApiKey.mdvpJitterPercentage,
                   prefixIcon: Icons.medical_information,
-                  controller: BlocProvider.of<DiseasesPredictionCubit>(context)
+                  controller: BlocProvider.of<DiseasesCubit>(context)
                       .mdvpJitterPercentage,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
@@ -75,8 +72,8 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.mdvpJitterAbs}",
                   labelText: ApiKey.mdvpJitterAbs,
                   prefixIcon: Icons.medical_information,
-                  controller: BlocProvider.of<DiseasesPredictionCubit>(context)
-                      .mdvpJitterAbs,
+                  controller:
+                      BlocProvider.of<DiseasesCubit>(context).mdvpJitterAbs,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
@@ -88,8 +85,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.mdvpRap}",
                   labelText: ApiKey.mdvpRap,
                   prefixIcon: Icons.medical_information,
-                  controller:
-                      BlocProvider.of<DiseasesPredictionCubit>(context).mdvpRap,
+                  controller: BlocProvider.of<DiseasesCubit>(context).mdvpRap,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () =>
@@ -101,8 +97,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.mdvpPpq}",
                   labelText: ApiKey.mdvpPpq,
                   prefixIcon: Icons.medical_information,
-                  controller:
-                      BlocProvider.of<DiseasesPredictionCubit>(context).mdvpPpq,
+                  controller: BlocProvider.of<DiseasesCubit>(context).mdvpPpq,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () =>
@@ -114,8 +109,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.jitterDdf}",
                   labelText: ApiKey.jitterDdf,
                   prefixIcon: Icons.medical_information,
-                  controller: BlocProvider.of<DiseasesPredictionCubit>(context)
-                      .jitterDdf,
+                  controller: BlocProvider.of<DiseasesCubit>(context).jitterDdf,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
@@ -127,8 +121,8 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.mdvpShimmer}",
                   labelText: ApiKey.mdvpShimmer,
                   prefixIcon: Icons.medical_information,
-                  controller: BlocProvider.of<DiseasesPredictionCubit>(context)
-                      .mdvpShimmer,
+                  controller:
+                      BlocProvider.of<DiseasesCubit>(context).mdvpShimmer,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
@@ -140,8 +134,8 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.mdvpShimmerDb}",
                   labelText: ApiKey.mdvpShimmerDb,
                   prefixIcon: Icons.medical_information,
-                  controller: BlocProvider.of<DiseasesPredictionCubit>(context)
-                      .mdvpShimmerDb,
+                  controller:
+                      BlocProvider.of<DiseasesCubit>(context).mdvpShimmerDb,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
@@ -153,8 +147,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.mdvpApq}",
                   labelText: ApiKey.mdvpApq,
                   prefixIcon: Icons.medical_information,
-                  controller:
-                      BlocProvider.of<DiseasesPredictionCubit>(context).mdvpApq,
+                  controller: BlocProvider.of<DiseasesCubit>(context).mdvpApq,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () =>
@@ -166,8 +159,8 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.shimmerApq3}",
                   labelText: ApiKey.shimmerApq3,
                   prefixIcon: Icons.medical_information,
-                  controller: BlocProvider.of<DiseasesPredictionCubit>(context)
-                      .shimmerApq3,
+                  controller:
+                      BlocProvider.of<DiseasesCubit>(context).shimmerApq3,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
@@ -179,8 +172,8 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.shimmerApq5}",
                   labelText: ApiKey.shimmerApq5,
                   prefixIcon: Icons.medical_information,
-                  controller: BlocProvider.of<DiseasesPredictionCubit>(context)
-                      .shimmerApq5,
+                  controller:
+                      BlocProvider.of<DiseasesCubit>(context).shimmerApq5,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
@@ -192,8 +185,8 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.shimmerDda}",
                   labelText: ApiKey.shimmerDda,
                   prefixIcon: Icons.medical_information,
-                  controller: BlocProvider.of<DiseasesPredictionCubit>(context)
-                      .shimmerDda,
+                  controller:
+                      BlocProvider.of<DiseasesCubit>(context).shimmerDda,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
@@ -205,8 +198,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.nhr}",
                   labelText: ApiKey.nhr,
                   prefixIcon: Icons.medical_information,
-                  controller:
-                      BlocProvider.of<DiseasesPredictionCubit>(context).nhr,
+                  controller: BlocProvider.of<DiseasesCubit>(context).nhr,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () =>
@@ -218,8 +210,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.hnr}",
                   labelText: ApiKey.mdvpPpq,
                   prefixIcon: Icons.medical_information,
-                  controller:
-                      BlocProvider.of<DiseasesPredictionCubit>(context).hnr,
+                  controller: BlocProvider.of<DiseasesCubit>(context).hnr,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () =>
@@ -231,8 +222,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.rpde}",
                   labelText: ApiKey.rpde,
                   prefixIcon: Icons.medical_information,
-                  controller:
-                      BlocProvider.of<DiseasesPredictionCubit>(context).rpde,
+                  controller: BlocProvider.of<DiseasesCubit>(context).rpde,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () =>
@@ -244,8 +234,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.dfa}",
                   labelText: ApiKey.dfa,
                   prefixIcon: Icons.medical_information,
-                  controller:
-                      BlocProvider.of<DiseasesPredictionCubit>(context).dfa,
+                  controller: BlocProvider.of<DiseasesCubit>(context).dfa,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () =>
@@ -257,8 +246,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.spread1}",
                   labelText: ApiKey.spread1,
                   prefixIcon: Icons.medical_information,
-                  controller:
-                      BlocProvider.of<DiseasesPredictionCubit>(context).spread1,
+                  controller: BlocProvider.of<DiseasesCubit>(context).spread1,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () =>
@@ -270,8 +258,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.spread2}",
                   labelText: ApiKey.spread2,
                   prefixIcon: Icons.medical_information,
-                  controller:
-                      BlocProvider.of<DiseasesPredictionCubit>(context).spread2,
+                  controller: BlocProvider.of<DiseasesCubit>(context).spread2,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () =>
@@ -283,8 +270,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.d2}",
                   labelText: ApiKey.d2,
                   prefixIcon: Icons.medical_information,
-                  controller:
-                      BlocProvider.of<DiseasesPredictionCubit>(context).d2,
+                  controller: BlocProvider.of<DiseasesCubit>(context).d2,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () =>
@@ -296,8 +282,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   hintText: "Enter Your ${ApiKey.ppe}",
                   labelText: ApiKey.ppe,
                   prefixIcon: Icons.medical_information,
-                  controller:
-                      BlocProvider.of<DiseasesPredictionCubit>(context).ppe,
+                  controller: BlocProvider.of<DiseasesCubit>(context).ppe,
                   textInputType: TextInputType.number,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () =>
