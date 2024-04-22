@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:lottie/lottie.dart';
-import 'package:team/Features/chatBot/view_model/cubit/chat_bot_operation_cubit.dart';
+import 'package:team/Features/chatBot/presentation/cubit/chat_bot_operation_cubit.dart';
+import 'package:team/core/utils/medi_colors.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 
 class ChatStartRecording extends StatelessWidget {
   const ChatStartRecording({
@@ -12,9 +14,7 @@ class ChatStartRecording extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ChatBotOperationCubit, ChatBotOperationState>(
-      listener: (context, state) {
-  
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         return Row(
           children: [
@@ -53,14 +53,14 @@ class ChatStartRecording extends StatelessWidget {
             state is ChatBotOperationEndRecording
                 ? IconButton(
                     iconSize: 25,
-                    color: Colors.blue,
+                    color: MediColors.primaryColor,
                     onPressed: () {},
                     icon: Icon(
                       state is ChatBotOperationStartListening
                           ? Icons.play_arrow
                           : Icons.pause,
                     ))
-                : const Gap(5),
+                :  Gap(context.height * .005),
           ],
         );
       },

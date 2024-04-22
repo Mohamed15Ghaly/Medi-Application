@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:team/components/response_font_size.dart';
+import 'package:team/core/utils/medi_colors.dart';
+import 'package:team/core/utils/response_font_size.dart';
 
 class NotificationItem extends StatelessWidget {
   const NotificationItem({
@@ -26,17 +27,18 @@ class NotificationItem extends StatelessWidget {
         children: [
           CircleAvatar(
               radius: 30,
-              backgroundColor: Colors.blue.shade50,
+              backgroundColor:Colors.blue.shade50,
               child: Shimmer.fromColors(
                 baseColor: Colors.blue.shade300,
                 highlightColor: Colors.blue.shade500,
                 child: const Icon(
                   Icons.notifications_active,
-                  color: Colors.blue,
+                  color: MediColors.primaryColor,
                   size: 25,
                 ),
               )),
-          const Gap(10),
+                        Gap(context.height * .01),
+
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,14 +46,23 @@ class NotificationItem extends StatelessWidget {
                 Text(
                   "Notification Title",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blue,
-                      fontSize: GetResponseFontSize(context: context, fontsize: 16),),
+                    fontWeight: FontWeight.bold,
+                    color: MediColors.primaryColor,
+                    fontSize:
+                        getResponseFontSize(context: context, fontSize: 16),
+                  ),
                 ),
-                const Gap(5),
+                              Gap(context.height * .005),
+
                 Text(
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  style: TextStyle(color: Colors.blue, fontSize: GetResponseFontSize(context: context, fontsize: 10,),),
+                  style: TextStyle(
+                    color: MediColors.primaryColor,
+                    fontSize: getResponseFontSize(
+                      context: context,
+                      fontSize: 10,
+                    ),
+                  ),
                 ),
               ],
             ),

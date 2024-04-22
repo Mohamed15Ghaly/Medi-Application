@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:team/Features/chatBot/presentation/widgets/chat_bot_response.dart';
 import 'package:team/Features/chatBot/presentation/widgets/user_response.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 
 class ChatResponse extends StatefulWidget {
   const ChatResponse({
@@ -25,7 +26,7 @@ class _ChatResponseState extends State<ChatResponse> {
         UserResponse(
           question: widget.question,
         ),
-        const Gap(10),
+        Gap(context.height * .01),
         ChatBotResponse(
           answer: widget.answer,
         ),

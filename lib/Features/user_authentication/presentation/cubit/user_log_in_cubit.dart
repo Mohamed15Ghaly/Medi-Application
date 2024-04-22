@@ -15,7 +15,7 @@ class UserLoginCubit extends Cubit<UserLoginState> {
   ) : super(UserLoginInitial());
 
   final ApiConsumer apiConsumer;
-  final loginFormKey = GlobalKey<FormState>();
+  GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   TextEditingController loginPassword = TextEditingController();
   TextEditingController loginEmail = TextEditingController();
 
@@ -32,8 +32,6 @@ class UserLoginCubit extends Cubit<UserLoginState> {
               "Please Enter ${loginEmail.text.isEmpty ? 'Email' : 'Password'}"));
     }
   }
-
-  
 
   @override
   Future<void> close() {

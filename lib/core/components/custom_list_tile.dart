@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team/core/utils/medi_colors.dart';
 
 class CustomListTile extends StatelessWidget {
   const CustomListTile({
@@ -10,13 +11,13 @@ class CustomListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: const Text('flutter team members'),
-      leading: const Icon(Icons.people, color: Colors.blue),
+      leading: const Icon(Icons.people, color: MediColors.primaryColor),
       onTap: onTap,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
-      tileColor: Colors.grey.withOpacity(.05),
-      trailing: const Icon(Icons.chevron_right, color: Colors.blue),
+      tileColor: MediColors.fourthColor.withOpacity(.05),
+      trailing: const Icon(Icons.chevron_right, color: MediColors.primaryColor),
     );
   }
 }

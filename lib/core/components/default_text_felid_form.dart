@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/models/text_felid_form_model.dart';
 
 class DefaultTextFelidForm extends StatelessWidget {
@@ -22,14 +23,14 @@ class DefaultTextFelidForm extends StatelessWidget {
       keyboardType: textFelidFormModel.textInputType,
       controller: textFelidFormModel.controller,
       decoration: InputDecoration(
-        // fillColor: Colors.grey,
+        // fillColor: MediColors.fourthColor,
         filled: true,
         border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(10),
           ),
         ),
-        hintStyle: const TextStyle(color: Colors.grey, fontSize: 16),
+        hintStyle: const TextStyle(color: MediColors.fourthColor, fontSize: 16),
         hintText: textFelidFormModel.hintText,
         labelText: textFelidFormModel.labelText,
         prefixIcon: Icon(textFelidFormModel.prefixIcon),

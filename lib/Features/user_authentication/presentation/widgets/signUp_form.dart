@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_on_pressed_cubit.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_sign_up_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_on_pressed_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_sign_up_cubit.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 import 'package:team/models/text_felid_form_model.dart';
 
 class SignUpForm extends StatelessWidget {
@@ -29,7 +30,7 @@ class SignUpForm extends StatelessWidget {
                     BlocProvider.of<UserSignUpCubit>(context).signUpUserName,
                 textInputType: TextInputType.name,
               )),
-              const Gap(15),
+              Gap(context.height * .015),
               DefaultTextFelidForm(
                   textFelidFormModel: TextFelidFormModel(
                 hintText: "Enter Your Email",
@@ -39,7 +40,7 @@ class SignUpForm extends StatelessWidget {
                     BlocProvider.of<UserSignUpCubit>(context).signUpEmail,
                 textInputType: TextInputType.emailAddress,
               )),
-              const Gap(15),
+              Gap(context.height * .015),
               DefaultTextFelidForm(
                   textFelidFormModel: TextFelidFormModel(
                 obscureText: BlocProvider.of<UserOnPressedCubit>(context)
@@ -59,7 +60,7 @@ class SignUpForm extends StatelessWidget {
                     BlocProvider.of<UserSignUpCubit>(context).signUpPassword,
                 textInputType: TextInputType.visiblePassword,
               )),
-              const Gap(15),
+              Gap(context.height * .015),
               DefaultTextFelidForm(
                   textFelidFormModel: TextFelidFormModel(
                       obscureText: BlocProvider.of<UserOnPressedCubit>(context)

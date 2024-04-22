@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:team/Features/user_authentication/presentation/widgets/forget_password_screen_body.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_forget_password_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_forget_password_cubit.dart';
 import 'package:team/core/api/dio_consumer.dart';
 import 'package:team/core/components/default_prediction_result.dart';
+import 'package:team/core/utils/medi_colors.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   const ForgetPasswordScreen({super.key});
@@ -46,7 +47,7 @@ class ForgetPasswordScreen extends StatelessWidget {
           return ModalProgressHUD(
             inAsyncCall: state is UserForgetPasswordLoading,
             progressIndicator: const CircularProgressIndicator(),
-            color: Colors.black54,
+            color: MediColors.thirdColor.withOpacity(.5),
             child: Scaffold(
               appBar: AppBar(
                 title: const Text("Forget Password"),

@@ -2,11 +2,14 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 
 class ChatBotResponse extends StatelessWidget {
   const ChatBotResponse({
-    super.key, required this.answer,
+    super.key,
+    required this.answer,
   });
   final String answer;
 
@@ -17,13 +20,13 @@ class ChatBotResponse extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 20,
-          backgroundColor: Colors.blue,
+          backgroundColor: MediColors.primaryColor,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Image.asset(MediImage.chatBotPhoto),
           ),
         ),
-        const Gap(5),
+        Gap(context.height * .005),
         CupertinoContextMenu(
           actions: [
             CupertinoContextMenuAction(
@@ -41,6 +44,7 @@ class ChatBotResponse extends StatelessWidget {
                 child: const Text("Share")),
           ],
           child: Container(
+              width: context.width,
               padding: const EdgeInsets.all(10),
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -48,14 +52,15 @@ class ChatBotResponse extends StatelessWidget {
                   bottomRight: Radius.circular(10),
                   bottomLeft: Radius.circular(10),
                 ),
-                color: Colors.blue,
+                color: MediColors.primaryColor,
               ),
               child: AnimatedTextKit(
                 animatedTexts: [
                   TypewriterAnimatedText(
                     answer,
                     speed: const Duration(milliseconds: 150),
-                    textStyle: const TextStyle(color: Colors.white),
+                    textStyle:
+                        const TextStyle(color: MediColors.secondaryColor),
                   )
                 ],
                 isRepeatingAnimation: false,

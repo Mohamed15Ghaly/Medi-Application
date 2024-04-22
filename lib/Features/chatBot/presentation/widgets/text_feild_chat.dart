@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:team/Features/chatBot/view_model/cubit/chat_bot_operation_cubit.dart';
+import 'package:team/Features/chatBot/presentation/cubit/chat_bot_operation_cubit.dart';
+import 'package:team/core/utils/medi_colors.dart';
 
 class TextFelidChat extends StatelessWidget {
   const TextFelidChat({
@@ -15,7 +16,6 @@ class TextFelidChat extends StatelessWidget {
         onChanged: (value) {
           BlocProvider.of<ChatBotOperationCubit>(context).start();
         },
-        
         controller: BlocProvider.of<ChatBotOperationCubit>(context)
             .chatBotTextController,
         keyboardType: TextInputType.text,
@@ -27,9 +27,9 @@ class TextFelidChat extends StatelessWidget {
           ),
           hintText: 'Type a message',
           prefixIcon: Icon(Icons.keyboard_rounded),
-          hintStyle: TextStyle(color: Colors.grey),
+          hintStyle: TextStyle(color: MediColors.fourthColor),
           labelText: 'Start new chat',
-          labelStyle: TextStyle(color: Colors.blue),
+          labelStyle: TextStyle(color: MediColors.primaryColor),
           filled: true,
           floatingLabelBehavior: FloatingLabelBehavior.always,
           contentPadding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
@@ -37,13 +37,13 @@ class TextFelidChat extends StatelessWidget {
             borderRadius: BorderRadius.all(
               Radius.circular(10),
             ),
-            borderSide: BorderSide(color: Colors.grey),
+            borderSide: BorderSide(color: MediColors.fourthColor),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(10),
             ),
-            borderSide: BorderSide(color: Colors.blue),
+            borderSide: BorderSide(color: MediColors.primaryColor),
           ),
         ),
       ),

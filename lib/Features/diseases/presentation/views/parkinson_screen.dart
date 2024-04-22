@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:team/Features/diseases/parkinson_screen/widgets/parkinson_screen_body.dart';
+import 'package:team/Features/diseases/presentation/widgets/parkinson_screen_body.dart';
 
 class ParkinsonScreen extends StatelessWidget {
   const ParkinsonScreen({

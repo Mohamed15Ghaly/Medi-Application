@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:team/Features/diseases/presentation/views/breast_cancer_screen.dart';
 import 'package:team/Features/diseases/presentation/views/heart_disease_screen.dart';
 import 'package:team/Features/diseases/presentation/views/parkinson_screen.dart';
-import 'package:team/components/response_font_size.dart';
 import 'package:team/core/utils/medi_colors.dart';
+import 'package:team/core/utils/response_font_size.dart';
 import '../../../diseases/presentation/views/diabetes_screen.dart';
 import 'home_app_headrer.dart';
 
@@ -46,12 +46,12 @@ class _HomeScreenBodyState extends State<HomeScreenBody>
                       unselectedLabelColor: MediColors.fourthColor,
                       indicatorSize: TabBarIndicatorSize.tab,
                       labelStyle: TextStyle(
-                        fontSize: GetResponseFontSize(context: context, fontsize: 16),
+                        fontSize: getResponseFontSize(context: context, fontSize: 16),
                         fontWeight: FontWeight.bold,
                         fontFamily: "ClashDisplay",
                       ),
                       unselectedLabelStyle: TextStyle(
-                        fontSize: GetResponseFontSize(context: context, fontsize: 16),
+                        fontSize: getResponseFontSize(context: context, fontSize: 16),
                         fontFamily: "ClashDisplay",
                       ),
                       isScrollable: true,

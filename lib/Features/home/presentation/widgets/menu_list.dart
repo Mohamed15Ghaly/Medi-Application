@@ -5,6 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:team/Features/chatBot/presentation/view/chat_screen.dart';
+import 'package:team/core/utils/medi_colors.dart';
+import 'package:team/core/utils/response_font_size.dart';
 import 'package:team/cubits/cubit/index_screen_cubit.dart';
 import 'package:team/Features/settings/presentation/views/help_screen.dart';
 import 'package:team/Features/settings/presentation/views/settings_screen.dart';
@@ -12,7 +14,6 @@ import 'package:team/Features/settings/presentation/views/voice_assistant_screen
 import 'package:team/Features/user_authentication/presentation/views/login_screen.dart';
 import 'package:team/Features/notification/presentation/views/notification_screen.dart';
 import 'package:team/Features/settings/presentation/views/profile_screen.dart';
-import '../../../../components/response_font_size.dart';
 
 class MenuList extends StatelessWidget {
   const MenuList({
@@ -29,74 +30,82 @@ class MenuList extends StatelessWidget {
               .close!(),
           title: const DefaultText(
             txt: 'Home',
-            color: Colors.blue,
+            color: MediColors.primaryColor,
           ),
-          leading: const Icon(Icons.home, color: Colors.blue),
-          trailing: const Icon(Icons.chevron_right, color: Colors.blue),
+          leading: const Icon(Icons.home, color: MediColors.primaryColor),
+          trailing:
+              const Icon(Icons.chevron_right, color: MediColors.primaryColor),
         ),
         ListTile(
           onTap: () => Get.to(() => const ProfileScreen()),
           title: const DefaultText(
             txt: 'Profile',
-            color: Colors.blue,
+            color: MediColors.primaryColor,
           ),
-          leading: const Icon(Icons.person_2, color: Colors.blue
+          leading: const Icon(Icons.person_2, color: MediColors.primaryColor
               // color: Colors.green,
               ),
-          trailing: const Icon(Icons.chevron_right, color: Colors.blue),
+          trailing:
+              const Icon(Icons.chevron_right, color: MediColors.primaryColor),
         ),
         ListTile(
           onTap: () => Get.to(() => const NotificationScreen()),
           title: const DefaultText(
             txt: 'Notifications',
-            color: Colors.blue,
+            color: MediColors.primaryColor,
           ),
-          leading: const Icon(Icons.notifications_active, color: Colors.blue
+          leading: const Icon(Icons.notifications_active,
+              color: MediColors.primaryColor
               // color: Colors.amber,
               ),
-          trailing: const Icon(Icons.chevron_right, color: Colors.blue),
+          trailing:
+              const Icon(Icons.chevron_right, color: MediColors.primaryColor),
         ),
         ListTile(
           onTap: () => Get.to(() => const ChatScreen()),
           title: const DefaultText(
             txt: 'Chat',
-            color: Colors.blue,
+            color: MediColors.primaryColor,
           ),
-          leading: const Icon(Icons.chat, color: Colors.blue
+          leading: const Icon(Icons.chat, color: MediColors.primaryColor
               // color: Colors.tealAccent
               ),
-          trailing: const Icon(Icons.chevron_right, color: Colors.blue),
+          trailing:
+              const Icon(Icons.chevron_right, color: MediColors.primaryColor),
         ),
         ListTile(
           onTap: () => Get.to(() => const VoiceAssistantScreen()),
           title: const DefaultText(
             txt: 'Voice Assistant',
-            color: Colors.blue,
+            color: MediColors.primaryColor,
           ),
-          leading: const Icon(Icons.mic, color: Colors.blue
+          leading: const Icon(Icons.mic, color: MediColors.primaryColor
               // color: Colors.purple,
               ),
-          trailing: const Icon(Icons.chevron_right, color: Colors.blue),
+          trailing:
+              const Icon(Icons.chevron_right, color: MediColors.primaryColor),
         ),
         ListTile(
           onTap: () => Get.to(() => const SettingsScreen()),
           title: const DefaultText(
             txt: 'Settings',
-            color: Colors.blue,
+            color: MediColors.primaryColor,
           ),
-          leading: const Icon(Icons.settings, color: Colors.blue),
-          trailing: const Icon(Icons.chevron_right, color: Colors.blue),
+          leading: const Icon(Icons.settings, color: MediColors.primaryColor),
+          trailing:
+              const Icon(Icons.chevron_right, color: MediColors.primaryColor),
         ),
         ListTile(
           onTap: () => Get.to(() => const HelpScreen()),
           title: const DefaultText(
             txt: 'Help',
-            color: Colors.blue,
+            color: MediColors.primaryColor,
           ),
-          leading: const Icon(Icons.help_outline, color: Colors.blue
+          leading: const Icon(Icons.help_outline, color: MediColors.primaryColor
               // color: Colors.yellow,
               ),
-          trailing: const Icon(Icons.chevron_right, color: Colors.blue),
+          trailing:
+              const Icon(Icons.chevron_right, color: MediColors.primaryColor),
         ),
         ListTile(
           onTap: () => AwesomeDialog(
@@ -108,11 +117,9 @@ class MenuList extends StatelessWidget {
             btnOkOnPress: () {
               Get.offAll(() => const LoginScreen());
             },
-            btnCancelOnPress: () {
-              Get.back();
-            },
-            btnOkColor: Colors.blue,
-            btnCancelColor: Colors.blue,
+            btnCancelOnPress: () {},
+            btnOkColor: MediColors.primaryColor,
+            btnCancelColor: MediColors.primaryColor,
           ).show(),
           title: const DefaultText(
             txt: 'Logout',

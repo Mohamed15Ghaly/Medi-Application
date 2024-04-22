@@ -6,7 +6,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
 import 'package:team/Features/chatBot/presentation/widgets/chat_button.dart';
 import 'package:team/Features/chatBot/presentation/widgets/text_feild_chat.dart';
-import 'package:team/Features/chatBot/view_model/cubit/chat_bot_operation_cubit.dart';
+import 'package:team/Features/chatBot/presentation/cubit/chat_bot_operation_cubit.dart';
 
 class ChatBotTextFelid extends StatefulWidget {
   const ChatBotTextFelid({

@@ -4,9 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:team/Features/settings/presentation/widgets/settings_screen_body.dart';
-import 'package:team/Features/settings/view_model/cubit/user_actions_cubit.dart';
+import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
 import 'package:team/Features/user_authentication/presentation/views/login_screen.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_log_in_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_log_in_cubit.dart';
+import 'package:team/core/utils/medi_colors.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -34,7 +35,7 @@ class SettingsScreen extends StatelessWidget {
               BlocProvider.of<UserActionsCubit>(context).setInitialState();
             },
             btnOkColor: Colors.red,
-            btnCancelColor: Colors.blue,
+            btnCancelColor: MediColors.primaryColor,
           ).show();
         }
         if (state is UserActionsSuccess) {
@@ -70,7 +71,7 @@ class SettingsScreen extends StatelessWidget {
         return ModalProgressHUD(
           inAsyncCall: state is UserActionsLoading,
           progressIndicator: const CircularProgressIndicator(),
-          color: Colors.black54,
+          color: MediColors.thirdColor,
           child: Scaffold(
               appBar: AppBar(
                 title: const Text("Settings"),

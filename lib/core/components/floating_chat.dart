@@ -20,10 +20,10 @@
 //               blurRadius: 5,
 //               // offset: const Offset(0, 3),
 //             ) // changes position of shadow
-//           ], color: Colors.blue, borderRadius: BorderRadius.circular(30)),
+//           ], color: MediColors.primaryColor, borderRadius: BorderRadius.circular(30)),
 //           child: const Icon(
 //             Icons.sentiment_very_satisfied,
-//             color: Colors.white,
+//             color: MediColors.secondaryColor,
 //           )),
 //       closeWidget: Container(
 //           height: 60,
@@ -38,7 +38,7 @@
 //           ], color: Colors.red, borderRadius: BorderRadius.circular(30)),
 //           child: const Icon(
 //             Icons.close,
-//             color: Colors.white,
+//             color: MediColors.secondaryColor,
 //           )),
 
 //       childrenCount: 1,

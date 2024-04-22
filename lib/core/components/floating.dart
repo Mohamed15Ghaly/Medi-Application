@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:team/Features/chatBot/presentation/view/chat_screen.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/cubits/cubit/cubit/recorder_cubit.dart';
 import 'package:team/Features/settings/presentation/views/voice_assistant_screen.dart';
 import 'package:team/Features/settings/presentation/views/profile_screen.dart';
@@ -27,27 +28,28 @@ class FloatingButton extends StatelessWidget {
                     : Get.showSnackbar(GetSnackBar(
                         messageText: const Text(
                             "You must pronounce it correctly",
-                            style: TextStyle(color: Colors.blue)),
+                            style: TextStyle(color: MediColors.primaryColor)),
                         snackPosition: SnackPosition.TOP,
                         duration: const Duration(seconds: 5),
-                        icon: const Icon(Icons.error, color: Colors.blue),
+                        icon: const Icon(Icons.error,
+                            color: MediColors.primaryColor),
                         mainButton: TextButton(
                           onPressed: () {
                             Get.to(() => const VoiceAssistantScreen());
                           },
                           child: const Text(
                             "view",
-                            style: TextStyle(color: Colors.blue),
+                            style: TextStyle(color: MediColors.primaryColor),
                           ),
                         ),
-                        backgroundColor: Colors.white,
+                        backgroundColor: MediColors.secondaryColor,
                         borderRadius: 10,
                         snackStyle: SnackStyle.FLOATING,
-                        leftBarIndicatorColor: Colors.blue,
+                        leftBarIndicatorColor: MediColors.primaryColor,
                         showProgressIndicator: true,
                         titleText: const Text("Wraring",
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: MediColors.primaryColor,
                                 fontWeight: FontWeight.bold)),
                       ));
 

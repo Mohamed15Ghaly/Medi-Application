@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_log_in_cubit.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_on_pressed_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_log_in_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_on_pressed_cubit.dart';
 import 'package:team/core/components/custom_material_button.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
 import 'package:team/Features/user_authentication/presentation/views/forget_password_screen.dart';
 import 'package:team/core/utils/response_font_size.dart';
@@ -28,7 +29,7 @@ class LoginScreenBody extends StatelessWidget {
             MediImage.loginImage,
             fit: BoxFit.cover,
           ),
-          const Gap(25),
+          Gap(context.height * .025),
           Text(
             "Hello Again!",
             style: TextStyle(
@@ -42,7 +43,7 @@ class LoginScreenBody extends StatelessWidget {
               fontSize: getResponseFontSize(context: context, fontSize: 16),
             ),
           ),
-          const Gap(25),
+          Gap(context.height * .025),
           Form(
               key: BlocProvider.of<UserLoginCubit>(context).loginFormKey,
               autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -56,7 +57,7 @@ class LoginScreenBody extends StatelessWidget {
                           controller: BlocProvider.of<UserLoginCubit>(context)
                               .loginEmail,
                           textInputType: TextInputType.emailAddress)),
-                  const Gap(15),
+                  Gap(context.height * .010),
                   BlocConsumer<UserOnPressedCubit, UserOnPressedState>(
                     listener: (context, state) {},
                     builder: (context, state) {
@@ -84,7 +85,6 @@ class LoginScreenBody extends StatelessWidget {
                   ),
                 ],
               )),
-          const Gap(5),
           Align(
             alignment: Alignment.centerRight,
             child: TextButton(
@@ -93,15 +93,18 @@ class LoginScreenBody extends StatelessWidget {
               },
               child: const DefaultText(
                 txt: "Forget Password?",
-                color: Colors.blue,
+                color: MediColors.primaryColor,
+                
               ),
             ),
           ),
+          Gap(context.height * .015),
           CustomButton(
               title: "Login",
               onPressed: () {
                 BlocProvider.of<UserLoginCubit>(context).loginValidation();
               }),
+          Gap(context.height * .015),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -109,7 +112,7 @@ class LoginScreenBody extends StatelessWidget {
                 child: FittedBox(
                   child: Text(
                     "Don't have an account?",
-                    style: TextStyle(color: Colors.grey),
+                    style: TextStyle(color: MediColors.fourthColor),
                   ),
                 ),
               ),
@@ -120,7 +123,7 @@ class LoginScreenBody extends StatelessWidget {
                         Get.to(() => const SignUpScreen());
                       },
                       child: const DefaultText(
-                          txt: "Sign up", color: Colors.blue)),
+                          txt: "Sign up", color: MediColors.primaryColor)),
                 ),
               )
             ],

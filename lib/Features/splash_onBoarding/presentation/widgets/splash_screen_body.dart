@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:lottie/lottie.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
 import 'package:team/core/utils/medi_duration.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 import 'package:team/core/utils/medi_strings.dart';
 import 'package:team/core/utils/response_font_size.dart';
-
 
 class SplashScreenBody extends StatefulWidget {
   const SplashScreenBody({
@@ -64,7 +64,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
                   child: FittedBox(
                     child: DefaultText(
                       txt: MediStrings.appSplashText,
-                      color:Colors.white,
+                      color: MediColors.secondaryColor,
                     ),
                   ),
                 ),

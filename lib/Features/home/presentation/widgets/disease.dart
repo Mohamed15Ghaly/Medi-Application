@@ -10,9 +10,10 @@ import 'package:team/Features/diseases/presentation/views/heart_disease_predicti
 import 'package:team/Features/diseases/presentation/views/heart_disease_screen.dart';
 import 'package:team/Features/diseases/presentation/views/parkinson_prediction.dart';
 import 'package:team/Features/diseases/presentation/views/parkinson_screen.dart';
-import 'package:team/Features/diseases/view_model/cubit/diseases_cubit.dart';
+import 'package:team/Features/diseases/presentation/cubit/diseases_cubit.dart';
+import 'package:team/core/utils/medi_colors.dart';
+import 'package:team/core/utils/response_font_size.dart';
 
-import '../../../../components/response_font_size.dart';
 
 class Disease extends StatelessWidget {
   const Disease({
@@ -22,14 +23,14 @@ class Disease extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-      collapsedIconColor: Colors.blue,
+      collapsedIconColor: MediColors.primaryColor,
       title: const DefaultText(
-        txt: 'Diabetes',
-        color: Colors.blue,
+        txt: 'Disease',
+        color: MediColors.primaryColor,
       ),
       leading: const Icon(
         Icons.medical_services,
-        color: Colors.blue,
+        color: MediColors.primaryColor,
       ),
       children: [
         ListTile(
@@ -37,15 +38,17 @@ class Disease extends StatelessWidget {
             BlocProvider.of<DiseasesCubit>(context).setDiseaseScreen(
                 diseasesScreen: const ParkinsonScreen(),
                 diseasesPredictionScreen: const ParkinsonPredictionScreen(),
-                diseaseName: 'Diabetes');
-            Get.to(() => const ParkinsonScreen());
+                diseaseName: 'Parkinson');
+            Get.to(() => const DiagnosisScreen());
           },
-          title: const Text('Parkinson', style: TextStyle(color: Colors.blue)),
+          title: const Text('Parkinson',
+              style: TextStyle(color: MediColors.primaryColor)),
           leading: const Icon(
             Icons.medical_services,
-            color: Colors.blue,
+            color: MediColors.primaryColor,
           ),
-          trailing: const Icon(Icons.chevron_right, color: Colors.blue),
+          trailing:
+              const Icon(Icons.chevron_right, color: MediColors.primaryColor),
         ),
         ListTile(
           onTap: () {
@@ -57,13 +60,14 @@ class Disease extends StatelessWidget {
           },
           title: const Text('Breast Cancer',
               style: TextStyle(
-                color: Colors.blue,
+                color: MediColors.primaryColor,
               )),
           leading: const Icon(
             Icons.medical_services,
-            color: Colors.blue,
+            color: MediColors.primaryColor,
           ),
-          trailing: const Icon(Icons.chevron_right, color: Colors.blue),
+          trailing:
+              const Icon(Icons.chevron_right, color: MediColors.primaryColor),
         ),
         ListTile(
           onTap: () {
@@ -74,14 +78,15 @@ class Disease extends StatelessWidget {
             Get.to(() => const DiagnosisScreen());
           },
           title: const Text('Heart Disease',
-              style: TextStyle(color: Colors.blue
+              style: TextStyle(color: MediColors.primaryColor
                   // fontWeight: FontWeight.bold,
                   )),
           leading: const Icon(
             Icons.medical_services,
-            color: Colors.blue,
+            color: MediColors.primaryColor,
           ),
-          trailing: const Icon(Icons.chevron_right, color: Colors.blue),
+          trailing:
+              const Icon(Icons.chevron_right, color: MediColors.primaryColor),
         ),
         ListTile(
           onTap: () {
@@ -91,12 +96,14 @@ class Disease extends StatelessWidget {
                 diseaseName: 'Diagnosis');
             Get.to(() => const DiagnosisScreen());
           },
-          title: const Text('Diagnosis', style: TextStyle(color: Colors.blue)),
+          title: const Text('Diagnosis',
+              style: TextStyle(color: MediColors.primaryColor)),
           leading: const Icon(
             Icons.medical_services,
-            color: Colors.blue,
+            color: MediColors.primaryColor,
           ),
-          trailing: const Icon(Icons.chevron_right, color: Colors.blue),
+          trailing:
+              const Icon(Icons.chevron_right, color: MediColors.primaryColor),
         ),
       ],
     );

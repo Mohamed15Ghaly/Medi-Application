@@ -2,7 +2,8 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:team/Features/chatBot/view_model/cubit/chat_bot_operation_cubit.dart';
+import 'package:team/Features/chatBot/presentation/cubit/chat_bot_operation_cubit.dart';
+import 'package:team/core/utils/medi_colors.dart';
 
 class ChatBotButton extends StatelessWidget {
   const ChatBotButton({
@@ -20,11 +21,11 @@ class ChatBotButton extends StatelessWidget {
         return AvatarGlow(
           animate: state is ChatBotOperationStartRecording ? true : false,
           glowRadiusFactor: .2,
-          glowColor: Colors.blue,
+          glowColor: MediColors.primaryColor,
           child: MaterialButton(
             padding: const EdgeInsets.all(10),
             height: 60,
-            color: Colors.blue,
+            color: MediColors.primaryColor,
             shape: const CircleBorder(),
             onPressed: () async {
               if (state is ChatBotOperationStartRecording) {
@@ -48,7 +49,7 @@ class ChatBotButton extends StatelessWidget {
                     : state is ChatBotOperationStartTyping
                         ? Icons.send
                         : Icons.mic,
-                color: Colors.white),
+                color: MediColors.secondaryColor),
           ),
         );
       },

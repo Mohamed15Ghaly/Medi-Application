@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team/core/utils/medi_colors.dart';
 
 class QuestionsItem extends StatelessWidget {
   const QuestionsItem({
@@ -16,7 +17,7 @@ class QuestionsItem extends StatelessWidget {
         children: [
           Text(
             answer,
-            style: const TextStyle(color: Colors.grey),
+            style: const TextStyle(color: MediColors.fourthColor),
           ),
         ]);
   }

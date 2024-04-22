@@ -5,7 +5,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:team/Features/chatBot/presentation/widgets/chat_history_body.dart';
 import 'package:team/Features/chatBot/presentation/widgets/chat_initial_state.dart';
 import 'package:team/Features/chatBot/presentation/widgets/chat_loading.dart';
-import 'package:team/Features/chatBot/view_model/cubit/chat_bot_operation_cubit.dart';
+import 'package:team/Features/chatBot/presentation/cubit/chat_bot_operation_cubit.dart';
 
 class ChatContent extends StatefulWidget {
   const ChatContent({

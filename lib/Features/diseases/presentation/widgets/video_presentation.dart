@@ -5,7 +5,8 @@ import 'package:team/core/utils/medi_media_query.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPresentation extends StatefulWidget {
-  const VideoPresentation({super.key});
+  const VideoPresentation({super.key, required this.videoPath});
+  final String videoPath;
 
   @override
   State<VideoPresentation> createState() => _VideoPresentationState();
@@ -17,8 +18,7 @@ class _VideoPresentationState extends State<VideoPresentation> {
   void initState() {
     _flickManager = FlickManager(
       autoPlay: false,
-      videoPlayerController:
-          VideoPlayerController.asset("assets/images/Diabetes.mp4"),
+      videoPlayerController: VideoPlayerController.asset(widget.videoPath),
     );
     super.initState();
   }
@@ -33,17 +33,17 @@ class _VideoPresentationState extends State<VideoPresentation> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: context.width,
-      height:context.height/4,
+      height: context.height / 4,
       child: ClipRRect(
         // borderRadius: BorderRadius.circular(10),
         child: FlickVideoPlayer(
           flickVideoWithControls: FlickVideoWithControls(
             controls: IconTheme(
-                data: const IconThemeData(color:MediColors.thirdColor),
+                data: const IconThemeData(color: MediColors.thirdColor),
                 child: FlickPortraitControls(
                   progressBarSettings: FlickProgressBarSettings(
                     bufferedColor: MediColors.secondaryColor.withOpacity(0.2),
-                    playedColor: Colors.black54,
+                    playedColor: MediColors.thirdColor,
                     handleColor: MediColors.thirdColor,
                   ),
                 )),

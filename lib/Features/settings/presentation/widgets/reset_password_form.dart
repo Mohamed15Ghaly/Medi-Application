@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:team/Features/settings/view_model/cubit/user_actions_cubit.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_on_pressed_cubit.dart';
+import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_on_pressed_cubit.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 import 'package:team/models/text_felid_form_model.dart';
 
 class ResetPasswordForm extends StatelessWidget {
@@ -39,7 +40,8 @@ class ResetPasswordForm extends StatelessWidget {
                         .changeResetPasswordObscureText();
                   },
                 )),
-                const Gap(15),
+                              Gap(context.height * .005),
+
                 DefaultTextFelidForm(
                     textFelidFormModel: TextFelidFormModel(
                   obscureText: BlocProvider.of<UserOnPressedCubit>(context)

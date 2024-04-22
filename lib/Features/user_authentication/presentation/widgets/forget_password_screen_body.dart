@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_forget_password_cubit.dart';
-import 'package:team/components/response_font_size.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_forget_password_cubit.dart';
 import 'package:team/core/components/custom_material_button.dart';
-import 'package:team/core/components/default_prediction_result.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
 import 'package:team/core/utils/medi_image.dart';
 import 'package:team/core/utils/medi_media_query.dart';
+import 'package:team/core/utils/response_font_size.dart';
 import 'package:team/models/text_felid_form_model.dart';
 
 class ForgetPasswordScreenBody extends StatefulWidget {
@@ -33,23 +32,23 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
               fit: BoxFit.cover,
               MediImage.forgetPasswordImage,
             ),
-            const Gap(25),
+            Gap(context.height * .025),
             Text(
               "Forgot Password",
               style: TextStyle(
-                fontSize: GetResponseFontSize(context: context, fontsize: 30),
+                fontSize: getResponseFontSize(context: context, fontSize: 30),
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const Gap(5),
+            Gap(context.height * .005),
             Text(
               "Please Enter Your Email Address To Reset Your Password",
               style: TextStyle(
-                fontSize: GetResponseFontSize(context: context, fontsize: 16),
+                fontSize: getResponseFontSize(context: context, fontSize: 16),
               ),
               textAlign: TextAlign.center,
             ),
-            const Gap(25),
+            Gap(context.height * .025),
             Form(
               key:
                   context.read<UserForgetPasswordCubit>().forgetPasswordFormKey,
@@ -63,11 +62,10 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
                 textInputType: TextInputType.emailAddress,
               )),
             ),
-            const Gap(25),
+            Gap(context.height * .025),
             CustomButton(
                 title: "Send",
                 onPressed: () {
-                  
                   BlocProvider.of<UserForgetPasswordCubit>(context)
                       .forgetPasswordValidation();
                 }),

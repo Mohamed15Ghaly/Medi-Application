@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:team/Features/diseases/diabetes_screen/widgets/diabetes_screen_body.dart';
+import 'package:team/Features/diseases/presentation/widgets/diabetes_screen_body.dart';
 
 
 class DiabetesScreen extends StatelessWidget {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:team/core/cache/cache_helper.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/medi_app.dart';
 
 main() {
@@ -18,9 +19,9 @@ main() {
     // ),
   );
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor:Colors.blue,
+      statusBarColor: MediColors.primaryColor,
       statusBarIconBrightness: Brightness.light,
       statusBarBrightness: Brightness.light,
       systemNavigationBarIconBrightness: Brightness.dark,
-      systemNavigationBarColor:Colors.white));
+      systemNavigationBarColor: MediColors.secondaryColor));
 }

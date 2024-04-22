@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:team/Features/settings/view_model/cubit/user_actions_cubit.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_log_in_cubit.dart';
+import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_log_in_cubit.dart';
 import 'package:team/core/components/custom_material_button.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
-
-import '../../../../components/response_font_size.dart';
+import 'package:team/core/utils/response_font_size.dart';
 
 class DeleteAccount extends StatelessWidget {
   const DeleteAccount({
@@ -21,7 +21,7 @@ class DeleteAccount extends StatelessWidget {
           fit: BoxFit.scaleDown,
           child: DefaultText(
             txt: "Delete Account",
-            color: Colors.black,
+            color: MediColors.thirdColor,
           )),
       collapsedBackgroundColor: Colors.blue.shade100,
       collapsedShape: RoundedRectangleBorder(
@@ -37,10 +37,11 @@ class DeleteAccount extends StatelessWidget {
           "Are you sure you want to delete your account Ready to say goodbye ?",
           textAlign: TextAlign.center,
           style: TextStyle(
-              color: Colors.blue,
-              fontSize: GetResponseFontSize(context: context, fontsize: 14)),
+              color: MediColors.primaryColor,
+              fontSize: getResponseFontSize(context: context, fontSize: 14)),
         ),
-        const Gap(15),
+                      Gap(context.height * .005),
+
         CustomButton(
             title: "Delete Account",
             onPressed: () {

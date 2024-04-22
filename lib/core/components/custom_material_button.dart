@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 
 class CustomButton extends StatelessWidget {
@@ -15,13 +16,13 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       height: 50,
       minWidth: context.width,
-      color: Colors.blue,
+      color: MediColors.primaryColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
       child: Text(
         title,
-        style: const TextStyle(color: Colors.white),
+        style: const TextStyle(color: MediColors.secondaryColor),
       ),
     );
   }

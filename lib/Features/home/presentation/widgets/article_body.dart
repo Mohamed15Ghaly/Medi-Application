@@ -1,11 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:team/components/response_font_size.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
+import 'package:team/core/utils/response_font_size.dart';
 
 class ArticleBody extends StatelessWidget {
   const ArticleBody({
@@ -19,7 +18,7 @@ class ArticleBody extends StatelessWidget {
     double width = context.width;
     return Container(
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: MediColors.primaryColor,
         borderRadius: BorderRadius.circular(10),
       ),
       child: ListTile(
@@ -27,23 +26,23 @@ class ArticleBody extends StatelessWidget {
           articleText,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style:TextStyle(
-            color: Colors.white,
-            fontSize: GetResponseFontSize(context: context, fontsize: 10),
+          style: TextStyle(
+            color: MediColors.secondaryColor,
+            fontSize: getResponseFontSize(context: context, fontSize: 10),
           ),
         ),
         onTap: () {
           Get.bottomSheet(
             SizedBox(
-              height:height/4,
+              height: height / 4,
               width: MediaQuery.sizeOf(context).width,
               child: Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
                   Container(
                     padding: const EdgeInsets.all(16),
-                    height: height/8,
-                    color: Colors.blue,
+                    height: height / 8,
+                    color: MediColors.primaryColor,
                     width: MediaQuery.sizeOf(context).width,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -56,40 +55,51 @@ class ArticleBody extends StatelessWidget {
                                 child: FittedBox(
                                   child: Icon(
                                     Icons.article,
-                                    color: Colors.white,
+                                    color: MediColors.secondaryColor,
                                   ),
                                 ),
                               ),
-                              const Gap(5),
+                                           Gap(context.height * .005),
+
                               Flexible(
                                 child: FittedBox(
                                   child: AutoSizeText(
                                     'Medical Article',
                                     style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: GetResponseFontSize(context: context, fontsize: 20),
+                                      color: MediColors.secondaryColor,
+                                      fontSize: getResponseFontSize(
+                                          context: context, fontSize: 20),
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
                               ),
-                              const Gap(5),
+                                           Gap(context.height * .005),
+
                               const Flexible(
-                                child: FittedBox(child: Icon(Icons.favorite, color: Colors.white,),),),
+                                child: FittedBox(
+                                  child: Icon(
+                                    Icons.favorite,
+                                    color: MediColors.secondaryColor,
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         ),
-                        const Gap(10),
+                                     Gap(context.height * .01),
+
                         Flexible(
                           child: FittedBox(
                             child: SizedBox(
-                              width:width/1.5,
+                              width: width / 1.5,
                               child: AutoSizeText(
                                 articleText,
                                 maxLines: 7,
                                 style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: GetResponseFontSize(context: context, fontsize: 10),
+                                  color: MediColors.secondaryColor,
+                                  fontSize: getResponseFontSize(
+                                      context: context, fontSize: 10),
                                 ),
                               ),
                             ),
@@ -102,7 +112,8 @@ class ArticleBody extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Image.asset(
-                        MediImage.homeAppHeaderArticleDescription,),
+                        MediImage.homeAppHeaderArticleDescription,
+                      ),
                     ],
                   ),
                 ],
@@ -110,7 +121,7 @@ class ArticleBody extends StatelessWidget {
             ),
           );
         },
-        leading: const Icon(Icons.article, color: Colors.white),
+        leading: const Icon(Icons.article, color: MediColors.secondaryColor),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),

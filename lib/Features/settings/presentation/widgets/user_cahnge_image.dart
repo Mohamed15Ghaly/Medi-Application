@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:team/Features/settings/view_model/cubit/user_actions_cubit.dart';
+import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
 import 'package:team/core/components/custom_material_button.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
 
 class UserChangePhoto extends StatelessWidget {
@@ -22,7 +23,7 @@ class UserChangePhoto extends StatelessWidget {
               const Text(" Upload new photo to change it ",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+                    color: MediColors.primaryColor,
                   )),
               const Divider(),
               CustomButton(

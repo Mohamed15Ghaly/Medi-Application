@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/cubits/cubit/is_selected_cubit.dart';
 
 class ListBuilderItem extends StatefulWidget {
@@ -33,7 +34,7 @@ class _ListBuilderItemState extends State<ListBuilderItem> {
       builder: (context, state) {
         return ListTile(
           selectedTileColor: Colors.blue.shade100,
-          selectedColor: Colors.black,
+          selectedColor: MediColors.thirdColor,
           selected:
               widget.index == BlocProvider.of<IsSelectedCubit>(context).index
                   ? true
@@ -47,10 +48,10 @@ class _ListBuilderItemState extends State<ListBuilderItem> {
             fit: BoxFit.scaleDown,
             child: Icon(
               widget.iconPage,
-              color:
-                  widget.index == BlocProvider.of<IsSelectedCubit>(context).index
-                      ? Colors.blue.shade900
-                      : Colors.blue,
+              color: widget.index ==
+                      BlocProvider.of<IsSelectedCubit>(context).index
+                  ? Colors.blue.shade900
+                  : MediColors.primaryColor,
             ),
           ),
           title: FittedBox(
@@ -61,7 +62,7 @@ class _ListBuilderItemState extends State<ListBuilderItem> {
                 color: widget.index ==
                         BlocProvider.of<IsSelectedCubit>(context).index
                     ? Colors.blue.shade900
-                    : Colors.blue,
+                    : MediColors.primaryColor,
               ),
             ),
           ),
@@ -72,10 +73,10 @@ class _ListBuilderItemState extends State<ListBuilderItem> {
               BlocProvider.of<IsSelectedCubit>(context).index == widget.index
                   ? Icons.volume_up
                   : Icons.volume_off,
-              color:
-                  widget.index == BlocProvider.of<IsSelectedCubit>(context).index
-                      ? Colors.blue.shade900
-                      : Colors.blue,
+              color: widget.index ==
+                      BlocProvider.of<IsSelectedCubit>(context).index
+                  ? Colors.blue.shade900
+                  : MediColors.primaryColor,
             ),
           ),
         );

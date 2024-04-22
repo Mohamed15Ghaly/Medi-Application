@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:team/core/utils/medi_image.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 
 class Prevention extends StatelessWidget {
   const Prevention({
@@ -27,7 +28,8 @@ final List<String> prevention;
                     Text(prevention1)
                   ],
                 )),
-            const Gap(10),
+                         Gap(context.height * .01),
+
             Expanded(
               child: Image.asset(
                   MediImage.diseasesPrevention),

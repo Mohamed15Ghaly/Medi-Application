@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:team/core/utils/medi_image.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 
 class OverView extends StatelessWidget {
   const OverView({
@@ -28,18 +29,18 @@ class OverView extends StatelessWidget {
                     "Overview : ",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                   ),
-                  const Gap(10),
+                   Gap(context.height * .01),
                   Text(overView1),
-                  const Gap(10),
+                   Gap(context.height * .01),
                   Text(overView2),
                 ],
               ),
             )
           ],
         ),
-        const Gap(10),
+         Gap(context.height * .01),
         Text(textAlign: TextAlign.center, overView3),
-        const Gap(10),
+         Gap(context.height * .01),
       ],
     );
   }

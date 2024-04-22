@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:team/core/utils/medi_image.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 
 class RiskFactors extends StatelessWidget {
   const RiskFactors({
@@ -27,13 +28,17 @@ class RiskFactors extends StatelessWidget {
                   const Text("Risk factors : ",
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
-                  const Gap(10),
+                              Gap(context.height * .01),
+
                   Text(riskFactors1),
-                  const Gap(10),
+                               Gap(context.height * .01),
+
                   Text(riskFactors2),
-                  const Gap(10),
+                               Gap(context.height * .01),
+
                   Text(riskFactors3),
-                  const Gap(10),
+                             Gap(context.height * .01),
+
                   Text(riskFactors4),
                 ],
               ),

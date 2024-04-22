@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:team/core/utils/medi_image.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 
 class Causes extends StatelessWidget {
   const Causes({
@@ -26,9 +27,9 @@ class Causes extends StatelessWidget {
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                     ),
-                    const Gap(5),
+                     Gap(context.height * .005),
                     Text(causes1),
-                    const Gap(20),
+                     Gap(context.height * .02),
                   ],
                 )),
             Expanded(
@@ -36,15 +37,15 @@ class Causes extends StatelessWidget {
             )
           ],
         ),
-        const Gap(5),
+         Gap(context.height * .005),
         ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) =>
                 Text("${index + 1} : ${causes[index]}"),
-            separatorBuilder: (context, index) => const Gap(5),
+            separatorBuilder: (context, index) =>  Gap(context.height * .005),
             itemCount: causes.length),
-        const Gap(10),
+         Gap(context.height * .01),
       ],
     );
   }

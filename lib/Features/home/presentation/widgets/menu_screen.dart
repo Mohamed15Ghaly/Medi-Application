@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:team/core/utils/response_font_size.dart';
 import 'package:team/cubits/cubit/index_screen_cubit.dart';
 import 'package:team/Features/home/presentation/widgets/menu_app.dart';
 import 'package:team/Features/home/presentation/widgets/user_account_header.dart';
 
-import '../../../../components/response_font_size.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({

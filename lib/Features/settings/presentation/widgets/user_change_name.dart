@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:team/Features/settings/view_model/cubit/user_actions_cubit.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_log_in_cubit.dart';
+import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_log_in_cubit.dart';
 import 'package:team/core/components/custom_material_button.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 import 'package:team/models/text_felid_form_model.dart';
 
 class UserChangeName extends StatelessWidget {
@@ -26,7 +28,7 @@ class UserChangeName extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: Colors.blue)),
+                      color: MediColors.primaryColor)),
               const Divider(),
               DefaultTextFelidForm(
                 textFelidFormModel: TextFelidFormModel(
@@ -40,7 +42,8 @@ class UserChangeName extends StatelessWidget {
                       BlocProvider.of<UserActionsCubit>(context).newUserName,
                 ),
               ),
-              const Gap(20),
+                            Gap(context.height * .02),
+
               CustomButton(
                   title: "Save",
                   onPressed: () {

@@ -1,4 +1,4 @@
-class ArticleDate {
+class ArticleData {
   static const List<String> article = [
     "Health is a healthy mind in a healthy body",
     "He who has health has hope, and he who has hope has everything",

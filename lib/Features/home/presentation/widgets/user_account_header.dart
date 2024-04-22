@@ -1,12 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:team/Features/settings/view_model/cubit/user_actions_cubit.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_log_in_cubit.dart';
-import 'package:team/components/response_font_size.dart';
+import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_log_in_cubit.dart';
+import 'package:team/core/utils/medi_colors.dart';
+import 'package:team/core/utils/medi_media_query.dart';
+import 'package:team/core/utils/response_font_size.dart';
 
 class UserAccountsHeader extends StatelessWidget {
   const UserAccountsHeader({
@@ -20,7 +20,7 @@ class UserAccountsHeader extends StatelessWidget {
       builder: (context, state) {
         return UserAccountsDrawerHeader(
           decoration: const BoxDecoration(
-            color: Colors.blue,
+            color: MediColors.primaryColor,
           ),
           accountName: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,19 +29,20 @@ class UserAccountsHeader extends StatelessWidget {
                 child: FittedBox(
                   child: Icon(
                     Icons.person,
-                    color: Colors.white,
+                    color: MediColors.secondaryColor,
                     size: 15,
                   ),
                 ),
               ),
-              const Gap(5),
+                            Gap(context.height * .005),
+
               Flexible(
                 child: AutoSizeText(
-                  BlocProvider.of<UserLoginCubit>(context).userLogIn!.name,
+                  "                  BlocProvider.of<UserLoginCubit>(context).userLogIn!.name,",
                   style: TextStyle(
-                      color: Colors.white,
+                      color: MediColors.secondaryColor,
                       fontSize:
-                          GetResponseFontSize(context: context, fontsize: 10)),
+                          getResponseFontSize(context: context, fontSize: 10)),
                 ),
               ),
             ],
@@ -52,7 +53,7 @@ class UserAccountsHeader extends StatelessWidget {
                 child: FittedBox(
                   child: Icon(
                     Icons.email,
-                    color: Colors.white,
+                    color: MediColors.secondaryColor,
                     size: 15,
                   ),
                 ),
@@ -60,12 +61,12 @@ class UserAccountsHeader extends StatelessWidget {
               const Gap(5),
               Flexible(
                 child: AutoSizeText(
-                  BlocProvider.of<UserLoginCubit>(context).userLogIn!.email,
+                  "BlocProvider.of<UserLoginCubit>(context).userLogIn!.email",
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: GetResponseFontSize(
+                    color: MediColors.secondaryColor,
+                    fontSize: getResponseFontSize(
                       context: context,
-                      fontsize: 10,
+                      fontSize: 10,
                     ),
                   ),
                 ),

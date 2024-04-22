@@ -7,10 +7,10 @@ import 'package:team/Features/diseases/presentation/widgets/prevention.dart';
 import 'package:team/Features/diseases/presentation/widgets/risk_factors.dart';
 import 'package:team/Features/diseases/presentation/widgets/symptoms.dart';
 import 'package:team/Features/diseases/presentation/widgets/video_presentation.dart';
-import 'package:team/Features/diseases/view_model/breast_cancer_model.dart';
+import 'package:team/Features/diseases/view_model/parkinson_view_model.dart';
 
-class BreastCancerScreenBody extends StatelessWidget {
-  const BreastCancerScreenBody({
+class ParkinsonScreenBody extends StatelessWidget {
+  const ParkinsonScreenBody({
     super.key,
   });
 
@@ -19,42 +19,42 @@ class BreastCancerScreenBody extends StatelessWidget {
     return const Column(
       children: [
         VideoPresentation(
-          videoPath: "assets/images/breastCancer.mp4",
+          videoPath: "assets/images/parkinson.mp4",
         ),
         Divider(),
         OverView(
-          overView1: BreastCancerViewModel.overview1,
-          overView2: BreastCancerViewModel.overview2,
-          overView3: BreastCancerViewModel.overview3,
+          overView1: ParkinsonViewModel.overview1,
+          overView2: ParkinsonViewModel.overview2,
+          overView3: ParkinsonViewModel.overview3,
         ),
         Divider(),
         Symptoms(
-          symptoms1: BreastCancerViewModel.symptoms1,
-          symptoms2: BreastCancerViewModel.symptoms2,
-          symptoms: BreastCancerViewModel.symptoms,
+          symptoms1: ParkinsonViewModel.symptoms1,
+          symptoms2: ParkinsonViewModel.symptoms2,
+          symptoms: ParkinsonViewModel.symptoms,
         ),
         Divider(),
-        Doctor(doctor: BreastCancerViewModel.doctor),
+        Doctor(doctor: ParkinsonViewModel.doctor),
         Divider(),
         Causes(
-          causes1: BreastCancerViewModel.causes1,
-          causes: BreastCancerViewModel.causes,
+          causes1: ParkinsonViewModel.causes1,
+          causes: ParkinsonViewModel.causes,
         ),
         Divider(),
         RiskFactors(
-          riskFactors1: BreastCancerViewModel.riskFactors1,
-          riskFactors2: BreastCancerViewModel.riskFactors2,
-          riskFactors3: BreastCancerViewModel.riskFactors3,
-          riskFactors4: BreastCancerViewModel.riskFactors4,
+          riskFactors1: ParkinsonViewModel.riskFactors1,
+          riskFactors2: ParkinsonViewModel.riskFactors2,
+          riskFactors3: ParkinsonViewModel.riskFactors3,
+          riskFactors4: ParkinsonViewModel.riskFactors4,
         ),
         Divider(),
         Prevention(
-          prevention1: BreastCancerViewModel.prevention1,
-          prevention: BreastCancerViewModel.prevention,
+          prevention1: ParkinsonViewModel.prevention1,
+          prevention: ParkinsonViewModel.prevention,
         ),
         Divider(),
         Complications(
-          complications: BreastCancerViewModel.complications,
+          complications: ParkinsonViewModel.complications,
         )
       ],
     );

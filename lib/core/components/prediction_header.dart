@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 
@@ -17,7 +18,7 @@ class PredictionHeader extends StatelessWidget {
             height: context.height / 8,
             width: context.width,
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: MediColors.primaryColor,
               borderRadius: BorderRadius.circular(10),
             )),
         SizedBox(
@@ -39,7 +40,7 @@ class PredictionHeader extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 14,
                             // fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: MediColors.secondaryColor,
                           ),
                         ),
                       ],
@@ -47,7 +48,7 @@ class PredictionHeader extends StatelessWidget {
                   ),
                 ),
               ),
-              const Gap(10),
+               Gap(context.height * .01),
               Expanded(
                 child: Image.asset(MediImage.predictionDoctors),
               ),

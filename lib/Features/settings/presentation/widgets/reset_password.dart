@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:team/Features/settings/presentation/widgets/reset_password_form.dart';
-import 'package:team/Features/settings/view_model/cubit/user_actions_cubit.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_log_in_cubit.dart';
+import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_log_in_cubit.dart';
 import 'package:team/core/components/custom_material_button.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
+import 'package:team/core/utils/medi_media_query.dart';
+import 'package:team/core/utils/response_font_size.dart';
 
-import '../../../../components/response_font_size.dart';
 
 class ResetPassword extends StatefulWidget {
   const ResetPassword({
@@ -30,7 +32,7 @@ class _ResetPasswordState extends State<ResetPassword> {
           fit: BoxFit.scaleDown,
           child: DefaultText(
             txt: "Reset Password",
-            color: Colors.black,
+            color: MediColors.thirdColor,
           )),
       leading: const FittedBox(child: Icon(Icons.settings)),
       expandedAlignment: Alignment.center,
@@ -42,14 +44,16 @@ class _ResetPasswordState extends State<ResetPassword> {
             "Reset your password for enhanced security.",
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: Colors.black,
-                fontSize: GetResponseFontSize(context: context, fontsize: 22),
+                color: MediColors.thirdColor,
+                fontSize: getResponseFontSize(context: context, fontSize: 22),
                 fontWeight: FontWeight.bold),
           ),
         ),
-        const Gap(15),
-        const ResetPasswordForm(),
-        const Gap(15),
+                      Gap(context.height * .005),
+
+         ResetPasswordForm(),
+                      Gap(context.height * .005),
+
         CustomButton(
             title: "Change Password",
             onPressed: () {

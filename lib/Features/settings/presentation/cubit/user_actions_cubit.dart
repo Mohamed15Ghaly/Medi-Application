@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_log_in_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_log_in_cubit.dart';
 import 'package:team/core/api/api_consumer.dart';
 import 'package:team/core/api/api_key.dart';
 import 'package:team/core/api/api_url.dart';

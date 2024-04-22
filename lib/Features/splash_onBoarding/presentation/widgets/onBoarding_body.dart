@@ -7,13 +7,13 @@ import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:team/core/cache/cache_helper.dart';
 import 'package:team/core/components/custom_material_button.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_share.dart';
 import 'package:team/core/utils/response_font_size.dart';
 import 'package:team/cubits/cubit/on_boarding_action_cubit.dart';
 import 'package:team/Features/user_authentication/presentation/views/login_screen.dart';
 import 'package:team/models/on_Boarding_model.dart';
 import 'package:team/Features/splash_onBoarding/presentation/widgets/onBoarding_item_body.dart';
-
 
 class OnBoardingScreenBody extends StatefulWidget {
   const OnBoardingScreenBody({
@@ -36,18 +36,19 @@ class _OnBoardingScreenBodyState extends State<OnBoardingScreenBody> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: context.width,
-      height:context.height,
+      height: context.height,
       child: Column(children: [
         Align(
           alignment: Alignment.centerRight,
           child: TextButton(
             onPressed: () {
-              CacheHelper().saveData(key: MediShare.appViewOnBoarding, value: true);
+              CacheHelper()
+                  .saveData(key: MediShare.appViewOnBoarding, value: true);
               Get.offAll(() => const LoginScreen());
             },
             child: const DefaultText(
-              txt : "Skip",
-              color: Colors.blue,
+              txt: "Skip",
+              color: MediColors.primaryColor,
             ),
           ),
         ),
@@ -70,11 +71,11 @@ class _OnBoardingScreenBodyState extends State<OnBoardingScreenBody> {
           effect: JumpingDotEffect(
             dotWidth: 12,
             dotHeight: 12,
-            activeDotColor:Colors.blue,
+            activeDotColor: MediColors.primaryColor,
             dotColor: Colors.blue.shade100,
           ),
         ),
-        Gap(context.width*.03),
+        Gap(context.width * .03),
         BlocConsumer<OnBoardingActionCubit, OnBoardingActionState>(
           listener: (context, state) {},
           builder: (context, state) {

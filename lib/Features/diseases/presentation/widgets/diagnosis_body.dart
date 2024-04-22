@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:showcaseview/showcaseview.dart';
-import 'package:team/Features/diseases/view_model/cubit/diseases_cubit.dart';
+import 'package:team/Features/diseases/presentation/cubit/diseases_cubit.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 
 class DiagnosisBody extends StatelessWidget {
   const DiagnosisBody({
@@ -14,7 +15,7 @@ class DiagnosisBody extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: 25,
+          toolbarHeight: context.height * .05,
           bottom: TabBar(
             tabs: [
               Tab(

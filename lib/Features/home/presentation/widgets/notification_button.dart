@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:team/components/response_font_size.dart';
+import 'package:team/core/utils/medi_colors.dart';
+import 'package:team/core/utils/response_font_size.dart';
 import '../../../notification/presentation/views/notification_screen.dart';
 
 class NotificationButton extends StatelessWidget {
@@ -20,17 +21,17 @@ class NotificationButton extends StatelessWidget {
             const Icon(Icons.notifications_active),
             const CircleAvatar(
               radius: 6,
-              backgroundColor: Colors.blue,
+              backgroundColor: MediColors.primaryColor,
             ),
             CircleAvatar(
               radius: 5,
-              backgroundColor: Colors.white,
+              backgroundColor: MediColors.secondaryColor,
               child: Text(
                 '5',
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: MediColors.primaryColor,
                   fontWeight: FontWeight.bold,
-                  fontSize: GetResponseFontSize(context: context, fontsize: 7),
+                  fontSize: getResponseFontSize(context: context, fontSize: 7),
                 ),
               ),
             )

@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
 
 class DiagnosisInputData {
@@ -17,7 +18,7 @@ class DiagnosisInputData {
                 TypewriterAnimatedText(
                   inputData[key]!,
                   speed: const Duration(milliseconds: 150),
-                  textStyle: const TextStyle(color: Colors.white),
+                  textStyle: const TextStyle(color: MediColors.secondaryColor),
                 )
               ],
               isRepeatingAnimation: false,

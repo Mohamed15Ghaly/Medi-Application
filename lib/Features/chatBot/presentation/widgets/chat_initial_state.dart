@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team/core/utils/medi_colors.dart';
 
 class ChatInitialState extends StatelessWidget {
   const ChatInitialState({
@@ -9,10 +10,10 @@ class ChatInitialState extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Expanded(
         child: Center(
-        child: Text(
-          "Start typing...",
-          style: TextStyle(color: Colors.grey),
-        ),
-      ));
+      child: Text(
+        "Start typing...",
+        style: TextStyle(color: MediColors.fourthColor),
+      ),
+    ));
   }
 }

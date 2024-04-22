@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:team/Features/diseases/heart_diseases/widgets/heart_screen_body.dart';
+import 'package:team/Features/diseases/presentation/widgets/heart_screen_body.dart';
 
 class HeartDiseaseScreen extends StatelessWidget {
   const HeartDiseaseScreen({

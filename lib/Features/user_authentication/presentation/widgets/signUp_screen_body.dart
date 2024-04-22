@@ -3,11 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:team/Features/user_authentication/presentation/widgets/signUp_form.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_on_pressed_cubit.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_sign_up_cubit.dart';
-import 'package:team/components/response_font_size.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_on_pressed_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_sign_up_cubit.dart';
 import 'package:team/core/components/custom_material_button.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
+import 'package:team/core/utils/response_font_size.dart';
 
 class SignUpScreenBody extends StatefulWidget {
   const SignUpScreenBody({
@@ -26,28 +27,28 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
         child: Column(
           children: [
             Image.asset(
-              height: MediaQuery.sizeOf(context).height / 2.5,
-              width: MediaQuery.sizeOf(context).width,
+              height: context.height / 2.5,
+              width: context.width,
               fit: BoxFit.cover,
               MediImage.signInImage,
             ),
-            Gap(MediaQuery.sizeOf(context).height * .05),
+            Gap(context.height * .05),
             Text(
               "Create Account",
               style: TextStyle(
-                fontSize: GetResponseFontSize(context: context, fontsize: 30),
+                fontSize: getResponseFontSize(context: context, fontSize: 30),
                 fontWeight: FontWeight.bold,
               ),
             ),
             Text(
               "Let’s Create Account Together",
               style: TextStyle(
-                fontSize: GetResponseFontSize(context: context, fontsize: 16),
+                fontSize: getResponseFontSize(context: context, fontSize: 16),
               ),
             ),
-            Gap(MediaQuery.sizeOf(context).height * .05),
+            Gap(context.height * .05),
             const SignUpForm(),
-            Gap(MediaQuery.sizeOf(context).height * .005),
+            Gap(context.height * .005),
             FittedBox(
               child: Row(
                 children: [
@@ -66,12 +67,12 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
                   const DefaultText(
                     txt:
                         'I agree to the all statement in terms of privacy policy',
-                    color: Colors.black,
+                    color: MediColors.thirdColor,
                   )
                 ],
               ),
             ),
-            Gap(MediaQuery.sizeOf(context).height * .025),
+            Gap(context.height * .025),
             CustomButton(
                 title: "Sign Up",
                 onPressed: () {
@@ -80,13 +81,14 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
                           BlocProvider.of<UserOnPressedCubit>(context)
                               .userAcceptPrivacy);
                 }),
+            Gap(context.height * .01),
             FittedBox(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const DefaultText(
                     txt: "ALREADY HAVE AN ACCOUNT?",
-                    color: Colors.grey,
+                    color: MediColors.fourthColor,
                   ),
                   TextButton(
                       onPressed: () {

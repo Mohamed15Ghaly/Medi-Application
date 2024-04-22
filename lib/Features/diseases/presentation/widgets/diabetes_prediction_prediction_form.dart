@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:showcaseview/showcaseview.dart';
-import 'package:team/Features/diseases/view_model/cubit/diseases_cubit.dart';
+import 'package:team/Features/diseases/presentation/cubit/diseases_cubit.dart';
 import 'package:team/Features/diseases/view_model/diagnosis_input_data.dart';
 import 'package:team/core/api/api_key.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 import 'package:team/models/text_felid_form_model.dart';
 
 class DiabetesPredictionForm extends StatelessWidget {
@@ -29,7 +30,7 @@ class DiabetesPredictionForm extends StatelessWidget {
               targetBorderRadius: BorderRadius.circular(8.0),
               child: DefaultTextFelidForm(
                 textFelidFormModel: TextFelidFormModel(
-                    hintText: "Enter Your ${ApiKey.pregnancies}",
+                    hintText: "Enter the ${ApiKey.pregnancies}",
                     labelText: ApiKey.pregnancies,
                     prefixIcon: Icons.medical_information,
                     controller:
@@ -40,10 +41,10 @@ class DiabetesPredictionForm extends StatelessWidget {
                         key: ApiKey.pregnancies)),
               ),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.glucose}",
+                  hintText: "Enter the ${ApiKey.glucose}",
                   labelText: ApiKey.glucose,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).glucose,
@@ -52,10 +53,10 @@ class DiabetesPredictionForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.glucose)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.bloodPressure}",
+                  hintText: "Enter the ${ApiKey.bloodPressure}",
                   labelText: ApiKey.bloodPressure,
                   prefixIcon: Icons.medical_information,
                   controller:
@@ -65,10 +66,10 @@ class DiabetesPredictionForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.bloodPressure)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.skinThickness}",
+                  hintText: "Enter the ${ApiKey.skinThickness}",
                   labelText: ApiKey.skinThickness,
                   prefixIcon: Icons.medical_information,
                   controller:
@@ -78,10 +79,10 @@ class DiabetesPredictionForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.skinThickness)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.insulin}",
+                  hintText: "Enter the ${ApiKey.insulin}",
                   labelText: ApiKey.insulin,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).insulin,
@@ -90,10 +91,10 @@ class DiabetesPredictionForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.pregnancies)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.bmi}",
+                  hintText: "Enter the ${ApiKey.bmi}",
                   labelText: ApiKey.bmi,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).bmi,
@@ -102,10 +103,10 @@ class DiabetesPredictionForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.bmi)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.diabetesPedigreeFunction}",
+                  hintText: "Enter the ${ApiKey.diabetesPedigreeFunction}",
                   labelText: ApiKey.diabetesPedigreeFunction,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context)
@@ -115,10 +116,10 @@ class DiabetesPredictionForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.diabetesPedigreeFunction)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.age}",
+                  hintText: "Enter the ${ApiKey.age}",
                   labelText: ApiKey.age,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).age,
@@ -127,7 +128,7 @@ class DiabetesPredictionForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.age)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
           ],
         ));
   }

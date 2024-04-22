@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-double? getResponseFontSize({required BuildContext context, required double fontSize}) {
+double? getResponseFontSize(
+    {required BuildContext context, required double fontSize}) {
   double? scaleFactor = getScaleFactor(context);
   double responsiveFontSize = fontSize * scaleFactor!;
   double lowerLimit = fontSize * 1;
   double upperLimit = fontSize * 2.75;
-  print('Size Of Screen${MediaQuery.sizeOf(context).width}');
+  // print('Size Of Screen${MediaQuery.sizeOf(context).width}');
   return responsiveFontSize.clamp(lowerLimit, upperLimit);
-
 }
 
 double? getScaleFactor(BuildContext context) {
@@ -22,7 +22,7 @@ double? getScaleFactor(BuildContext context) {
 }
 
 class DefaultText extends StatelessWidget {
-  const DefaultText({super.key , required this.txt, required this.color});
+  const DefaultText({super.key, required this.txt, required this.color});
   final String txt;
   final Color color;
   @override
@@ -30,10 +30,9 @@ class DefaultText extends StatelessWidget {
     return Text(
       txt,
       style: TextStyle(
-          fontSize: getResponseFontSize(context: context, fontSize: 16),
-        color:color,
+        fontSize: getResponseFontSize(context: context, fontSize: 14),
+        color: color,
       ),
     );
   }
 }
-

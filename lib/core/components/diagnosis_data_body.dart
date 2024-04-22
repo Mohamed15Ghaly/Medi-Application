@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 
 class DiagnosisData extends StatelessWidget {
   const DiagnosisData({
@@ -14,7 +15,7 @@ class DiagnosisData extends StatelessWidget {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) => Text(data[index]),
-        separatorBuilder: (context, index) => const Gap(5),
+        separatorBuilder: (context, index) =>  Gap(context.height * .005),
         itemCount: data.length);
   }
 }

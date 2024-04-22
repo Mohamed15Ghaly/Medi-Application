@@ -2,14 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:team/Features/settings/view_model/cubit/user_actions_cubit.dart';
+import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
 import 'package:team/core/components/custom_material_button.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
+import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
 import 'package:team/core/utils/medi_media_query.dart';
+import 'package:team/core/utils/response_font_size.dart';
 import 'package:team/models/text_felid_form_model.dart';
 
-import '../../../../components/response_font_size.dart';
 
 class RateUs extends StatelessWidget {
   const RateUs({
@@ -23,7 +24,7 @@ class RateUs extends StatelessWidget {
           fit: BoxFit.scaleDown,
           child: DefaultText(
             txt: "Rate Us",
-            color: Colors.black,
+            color: MediColors.thirdColor,
           )),
       collapsedBackgroundColor: Colors.blue.shade100,
       collapsedShape: RoundedRectangleBorder(
@@ -40,10 +41,11 @@ class RateUs extends StatelessWidget {
           "Our improvement start from you",
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: GetResponseFontSize(context: context, fontsize: 14),
+              fontSize: getResponseFontSize(context: context, fontSize: 14),
               fontWeight: FontWeight.bold),
         ),
-        const Gap(15),
+                      Gap(context.height * .005),
+
         DefaultTextFelidForm(
             textFelidFormModel: TextFelidFormModel(
           hintText: "Enter Your Opinion",
@@ -51,8 +53,7 @@ class RateUs extends StatelessWidget {
           prefixIcon: Icons.message,
           controller: BlocProvider.of<UserActionsCubit>(context).rateUs,
           textInputType: TextInputType.text,
-        )),
-        const Gap(15),
+        )),                   Gap(context.height * .005),
         FittedBox(
             child: CustomButton(
                 title: "Send",

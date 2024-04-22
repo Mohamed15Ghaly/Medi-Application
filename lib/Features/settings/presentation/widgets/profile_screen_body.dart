@@ -5,8 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:team/Features/settings/presentation/widgets/user_cahnge_image.dart';
 import 'package:team/Features/settings/presentation/widgets/user_change_name.dart';
-import 'package:team/Features/settings/view_model/cubit/user_actions_cubit.dart';
-import 'package:team/Features/user_authentication/view_model/cubit/user_log_in_cubit.dart';
+import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/cubit/user_log_in_cubit.dart';
+import 'package:team/core/utils/medi_colors.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 
 class ProfileScreenBody extends StatelessWidget {
   const ProfileScreenBody({
@@ -45,25 +47,28 @@ class ProfileScreenBody extends StatelessWidget {
                                       AssetImage("assets/images/male.jpg"),
                                 ),
                         ),
-                        const Gap(20),
+                                      Gap(context.height * .02),
+
                         Text(
                           BlocProvider.of<UserLoginCubit>(context)
                               .userLogIn!
                               .name,
                           style: const TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.blue),
+                              fontWeight: FontWeight.bold,
+                              color: MediColors.primaryColor),
                         ),
                         Text(
                             BlocProvider.of<UserLoginCubit>(context)
                                 .userLogIn!
                                 .email,
-                            style: const TextStyle(color: Colors.blue)),
+                            style: const TextStyle(
+                                color: MediColors.primaryColor)),
                         const Divider(),
                         TabBar(
                             indicatorColor: Colors.transparent,
                             splashBorderRadius: BorderRadius.circular(10),
-                            labelColor: Colors.blue,
-                            unselectedLabelColor: Colors.grey,
+                            labelColor: MediColors.primaryColor,
+                            unselectedLabelColor: MediColors.fourthColor,
                             indicatorSize: TabBarIndicatorSize.tab,
                             labelStyle: const TextStyle(
                               fontSize: 16,

@@ -49,6 +49,7 @@ class UserSignUpCubit extends Cubit<UserSignUpState> {
     signUpEmail.clear();
     signUpPassword.clear();
     signUpConfirmPassword.clear();
+    
   }
 
   signUp() async {

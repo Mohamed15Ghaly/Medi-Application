@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:team/core/utils/medi_colors.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 
 class UserResponse extends StatefulWidget {
   const UserResponse({
-    super.key, required this.question,
+    super.key,
+    required this.question,
   });
   final String question;
   @override
@@ -14,7 +17,7 @@ class _UserState extends State<UserResponse>
     with SingleTickerProviderStateMixin {
   late AnimationController userAnimationController;
   late Animation<Offset> userSlideAnimation;
-  
+
   @override
   void initState() {
     super.initState();
@@ -40,6 +43,7 @@ class _UserState extends State<UserResponse>
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
+                width: context.width,
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.only(
@@ -47,11 +51,11 @@ class _UserState extends State<UserResponse>
                     bottomRight: Radius.circular(10),
                     bottomLeft: Radius.circular(10),
                   ),
-                  color: Colors.grey.withOpacity(.25),
+                  color: MediColors.fourthColor.withOpacity(.25),
                 ),
                 child: Text(widget.question),
               ),
-              const Gap(5),
+              Gap(context.height * .005),
               const CircleAvatar(
                 radius: 20,
                 backgroundImage: AssetImage(

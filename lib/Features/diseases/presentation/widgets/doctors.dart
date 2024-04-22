@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:team/core/utils/medi_image.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 
 class Doctor extends StatelessWidget {
   const Doctor({
@@ -27,12 +28,12 @@ class Doctor extends StatelessWidget {
                     "When to see a doctor :",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                   ),
-                  const Gap(10),
+                   Gap(context.height * .01),
                   Text(
                     doctor,
                     style: const TextStyle(),
                   ),
-                  const Gap(10),
+                   Gap(context.height * .01),
                 ],
               ),
             ),

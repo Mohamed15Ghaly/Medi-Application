@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:showcaseview/showcaseview.dart';
-import 'package:team/Features/diseases/view_model/cubit/diseases_cubit.dart';
+import 'package:team/Features/diseases/presentation/cubit/diseases_cubit.dart';
 import 'package:team/Features/diseases/view_model/diagnosis_input_data.dart';
 import 'package:team/core/api/api_key.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 import 'package:team/models/text_felid_form_model.dart';
 
 class HeartDiseasesPredictionInputForm extends StatelessWidget {
@@ -29,7 +30,7 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
               targetBorderRadius: BorderRadius.circular(8.0),
               child: DefaultTextFelidForm(
                 textFelidFormModel: TextFelidFormModel(
-                    hintText: "Enter Your ${ApiKey.age}",
+                    hintText: "Enter the ${ApiKey.age}",
                     labelText: ApiKey.age,
                     prefixIcon: Icons.medical_information,
                     controller: BlocProvider.of<DiseasesCubit>(context).age,
@@ -39,10 +40,10 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
                         DiagnosisInputData.inputDescription(key: ApiKey.age)),
               ),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.sex}",
+                  hintText: "Enter the ${ApiKey.sex}",
                   labelText: ApiKey.sex,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).sex,
@@ -51,10 +52,10 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.sex)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.cp}",
+                  hintText: "Enter the ${ApiKey.cp}",
                   labelText: ApiKey.cp,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).cp,
@@ -63,10 +64,10 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.cp)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.trestbps}",
+                  hintText: "Enter the ${ApiKey.trestbps}",
                   labelText: ApiKey.trestbps,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).trestbps,
@@ -75,10 +76,10 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.trestbps)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.chol}",
+                  hintText: "Enter the ${ApiKey.chol}",
                   labelText: ApiKey.chol,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).chol,
@@ -87,10 +88,10 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.chol)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.fbs}",
+                  hintText: "Enter the ${ApiKey.fbs}",
                   labelText: ApiKey.fbs,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).fbs,
@@ -99,10 +100,10 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.fbs)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.restecg}",
+                  hintText: "Enter the ${ApiKey.restecg}",
                   labelText: ApiKey.restecg,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).restecg,
@@ -111,10 +112,10 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.restecg)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.thalach}",
+                  hintText: "Enter the ${ApiKey.thalach}",
                   labelText: ApiKey.thalach,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).thalach,
@@ -123,10 +124,10 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.thalach)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.exang}",
+                  hintText: "Enter the ${ApiKey.exang}",
                   labelText: ApiKey.exang,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).exang,
@@ -135,10 +136,10 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.exang)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.oldpeak}",
+                  hintText: "Enter the ${ApiKey.oldpeak}",
                   labelText: ApiKey.oldpeak,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).oldpeak,
@@ -147,10 +148,10 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.oldpeak)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.slope}",
+                  hintText: "Enter the ${ApiKey.slope}",
                   labelText: ApiKey.slope,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).slope,
@@ -159,10 +160,10 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.slope)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.ca}",
+                  hintText: "Enter the ${ApiKey.ca}",
                   labelText: ApiKey.ca,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).ca,
@@ -171,10 +172,10 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.ca)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter Your ${ApiKey.thal}",
+                  hintText: "Enter the ${ApiKey.thal}",
                   labelText: ApiKey.thal,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).thal,
@@ -183,7 +184,7 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.thal)),
             ),
-            const Gap(10),
+            Gap(context.height * .015),
           ],
         ));
   }
