@@ -8,6 +8,7 @@ import 'package:team/Features/user_authentication/presentation/widgets/signUp_sc
 import 'package:team/Features/user_authentication/presentation/auth_cubit/user_sign_up_cubit.dart';
 import 'package:team/core/api/dio_consumer.dart';
 import 'package:team/core/components/default_prediction_result.dart';
+import 'package:team/core/components/verify.dart';
 import 'package:team/core/utils/medi_colors.dart';
 
 class SignUpScreen extends StatelessWidget {

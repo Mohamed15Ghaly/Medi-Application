@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:team/Features/chatBot/presentation/cubit/chat_bot_operation_cubit.dart';
 import 'package:team/core/utils/medi_colors.dart';
+import 'package:team/core/utils/medi_sounds.dart';
 
 class ChatBotButton extends StatefulWidget {
   const ChatBotButton({
@@ -40,7 +41,7 @@ class _ChatBotButtonState extends State<ChatBotButton> {
             onPressed: () async {
               _audioPlayer2.play(
                 AssetSource(
-                  "images/send.mp3",
+                  MediSounds.onPressedSound,
                 ),
               );
               if ((state is ChatBotOperationInitial ||

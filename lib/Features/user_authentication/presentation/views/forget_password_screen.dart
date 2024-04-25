@@ -8,6 +8,7 @@ import 'package:team/Features/user_authentication/presentation/widgets/forget_pa
 import 'package:team/Features/user_authentication/presentation/auth_cubit/user_forget_password_cubit.dart';
 import 'package:team/core/api/dio_consumer.dart';
 import 'package:team/core/components/default_prediction_result.dart';
+import 'package:team/core/components/verify.dart';
 import 'package:team/core/utils/medi_colors.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {

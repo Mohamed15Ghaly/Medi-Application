@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 import 'package:team/Features/chatBot/presentation/cubit/chat_bot_operation_cubit.dart';
+import 'package:team/core/utils/medi_image.dart';
 
 class StartRecording extends StatelessWidget {
   const StartRecording({
@@ -16,34 +17,34 @@ class StartRecording extends StatelessWidget {
         return Row(
           children: [
             LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
+              MediImage.chatBotSoundWave,
             ),
             LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
+              MediImage.chatBotSoundWave,
             ),
             LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
+              MediImage.chatBotSoundWave,
             ),
             LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
+              MediImage.chatBotSoundWave,
             ),
             LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
+              MediImage.chatBotSoundWave,
             ),
             LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
+              MediImage.chatBotSoundWave,
             ),
             LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
+              MediImage.chatBotSoundWave,
             ),
             LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
+              MediImage.chatBotSoundWave,
             ),
             LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
+              MediImage.chatBotSoundWave,
             ),
             LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
+              MediImage.chatBotSoundWave,
             ),
           ],
         );
