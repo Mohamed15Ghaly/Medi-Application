@@ -6,6 +6,4 @@ Future uploadImageToApi(XFile image) async {
       filename: image.path.split('/').last);
 }
 
-Future uploadToApi(String path) async {
-  return MultipartFile.fromFile(path, filename: path.split('/').last);
-}
+

@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:data_connection_checker_tv/data_connection_checker.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -14,7 +15,7 @@ class DiseasesCubit extends Cubit<DiseasesState> {
 
   GlobalKey input = GlobalKey();
   GlobalKey prediction = GlobalKey();
-  
+
   Widget? diseasesPredictionScreen, diseasesScreen;
   String? diseaseName;
 
@@ -29,6 +30,7 @@ class DiseasesCubit extends Cubit<DiseasesState> {
   }
 
   final ApiConsumer apiConsumer;
+  final DataConnectionChecker dataConnectionChecker = DataConnectionChecker();
   final diabetesFormKey = GlobalKey<FormState>();
   TextEditingController pregnancies = TextEditingController();
   TextEditingController glucose = TextEditingController();
@@ -96,8 +98,39 @@ class DiseasesCubit extends Cubit<DiseasesState> {
     }
   }
 
-  heartDiseasePredictionValidation() {
-    if (validInput(input: age.text.trim(), integer: true)) {
+  bool notValid({required String input}) {
+    int counter = 0;
+    for (int i = 0; i < input.length; i++) {
+      if (input[i] == '.') {
+        counter++;
+      }
+      if (counter > 1) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  heartDiseasePredictionValidation() async {
+    if (await dataConnectionChecker.hasConnection == false) {
+      emit(const DiseasesFailure(error: "No Internet Connection"));
+    } else if (notValid(input: age.text.trim()) ||
+        notValid(input: ca.text.trim()) ||
+        notValid(input: thal.text.trim()) ||
+        notValid(input: thalach.text.trim()) ||
+        notValid(input: trestbps.text.trim()) ||
+        notValid(input: chol.text.trim()) ||
+        notValid(input: cp.text.trim()) ||
+        notValid(input: exang.text.trim()) ||
+        notValid(input: fbs.text.trim()) ||
+        notValid(input: oldpeak.text.trim()) ||
+        notValid(input: restecg.text.trim()) ||
+        notValid(input: slope.text.trim()) ||
+        notValid(input: sex.text.trim()) ||
+        notValid(input: thal.text.trim()) ||
+        notValid(input: ca.text.trim())) {
+      emit(const DiseasesFailure(error: "Please Enter Valid Input"));
+    } else if (validInput(input: age.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ClumpThickness Without ',' or '.'"));
     } else if (validInput(input: sex.text.trim(), integer: true)) {
@@ -167,8 +200,20 @@ class DiseasesCubit extends Cubit<DiseasesState> {
     }
   }
 
-  breastCancerPredictionValidation() {
-    if (validInput(input: clumpThickness.text.trim(), integer: true)) {
+  breastCancerPredictionValidation() async {
+    if (await dataConnectionChecker.hasConnection == false) {
+      emit(const DiseasesFailure(error: "No Internet Connection"));
+    } else if (notValid(input: clumpThickness.text.trim()) ||
+        notValid(input: uniformCellSize.text.trim()) ||
+        notValid(input: uniformCellShape.text.trim()) ||
+        notValid(input: marginalAdhesion.text.trim()) ||
+        notValid(input: singleEpithelialSize.text.trim()) ||
+        notValid(input: bareNuclei.text.trim()) ||
+        notValid(input: blandChromatin.text.trim()) ||
+        notValid(input: normalNucleoli.text.trim()) ||
+        notValid(input: mitoses.text.trim())) {
+      emit(const DiseasesFailure(error: "Please Enter Valid Input"));
+    } else if (validInput(input: clumpThickness.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.clumpThickness} Without ',' or '.'"));
     } else if (validInput(input: uniformCellSize.text.trim(), integer: true)) {
@@ -233,8 +278,34 @@ class DiseasesCubit extends Cubit<DiseasesState> {
     }
   }
 
-  parkinsonPredictionValidation() {
-    if (validInput(input: mdvpFoHz.text.trim(), integer: true)) {
+  parkinsonPredictionValidation() async {
+    if (await dataConnectionChecker.hasConnection == false) {
+      emit(const DiseasesFailure(error: "No Internet Connection"));
+    } else if (notValid(input: mdvpFoHz.text.trim()) ||
+        notValid(input: mdvpFhiHz.text.trim()) ||
+        notValid(input: mdvpFloHz.text.trim()) ||
+        notValid(input: mdvpJitterPercentage.text.trim()) ||
+        notValid(input: mdvpJitterAbs.text.trim()) ||
+        notValid(input: mdvpRap.text.trim()) ||
+        notValid(input: mdvpPpq.text.trim()) ||
+        notValid(input: jitterDdf.text.trim()) ||
+        notValid(input: mdvpShimmer.text.trim()) ||
+        notValid(input: mdvpShimmerDb.text.trim()) ||
+        notValid(input: shimmerApq3.text.trim()) ||
+        notValid(input: shimmerApq3.text.trim()) ||
+        notValid(input: shimmerApq5.text.trim()) ||
+        notValid(input: shimmerDda.text.trim()) ||
+        notValid(input: nhr.text.trim()) ||
+        notValid(input: hnr.text.trim()) ||
+        notValid(input: rpde.text.trim()) ||
+        notValid(input: dfa.text.trim()) ||
+        notValid(input: spread1.text.trim()) ||
+        notValid(input: spread2.text.trim()) ||
+        notValid(input: d2.text.trim()) ||
+        notValid(input: ppe.text.trim()) ||
+        notValid(input: sex.text.trim())) {
+      emit(const DiseasesFailure(error: "Please Enter Valid Input"));
+    } else if (validInput(input: mdvpFoHz.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpFoHz} Without ',' or '.'"));
     } else if (validInput(input: mdvpFhiHz.text.trim(), integer: true)) {
@@ -346,8 +417,19 @@ class DiseasesCubit extends Cubit<DiseasesState> {
     }
   }
 
-  diabetesPredictionValidation() {
-    if (validInput(input: pregnancies.text.trim(), integer: true)) {
+  diabetesPredictionValidation() async {
+    if (await dataConnectionChecker.hasConnection == false) {
+      emit(const DiseasesFailure(error: "No Internet Connection"));
+    } else if (notValid(input: pregnancies.text.trim()) ||
+        notValid(input: glucose.text.trim()) ||
+        notValid(input: bloodPressure.text.trim()) ||
+        notValid(input: skinThickness.text.trim()) ||
+        notValid(input: insulin.text.trim()) ||
+        notValid(input: bmi.text.trim()) ||
+        notValid(input: diabetesPedigreeFunction.text.trim()) ||
+        notValid(input: age.text.trim())) {
+      emit(const DiseasesFailure(error: "Please Enter Valid Input"));
+    } else if (validInput(input: pregnancies.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.pregnancies} Without ',' or '.'"));
     } else if (validInput(input: glucose.text.trim(), integer: true)) {

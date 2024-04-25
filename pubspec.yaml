@@ -33,12 +33,15 @@ dependencies:
   auto_size_text: ^3.0.0
   avatar_glow: ^3.0.1
   awesome_dialog: ^3.2.0
+  cached_network_image: ^3.3.1
   card_swiper: ^3.0.1
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
+  data_connection_checker_tv: ^0.3.5-nullsafety
   device_preview: ^1.1.0
   dio: ^5.4.2+1
   equatable: ^2.0.5
+  file_picker: ^5.2.10
   flick_video_player: ^0.7.0
   flutter:
     sdk: flutter
@@ -49,6 +52,7 @@ dependencies:
   flutter_zoom_drawer: ^3.2.0
   gap: ^3.0.1
   get: ^4.6.6
+  get_it: ^7.6.8
   image_picker: ^1.0.7
   lottie: ^3.1.0
   modal_progress_hud_nsn: ^0.5.1

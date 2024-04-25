@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:showcaseview/showcaseview.dart';
 import 'package:team/Features/diseases/presentation/cubit/diseases_cubit.dart';
-import 'package:team/Features/diseases/view_model/diagnosis_input_data.dart';
+import 'package:team/Features/diseases/data/view_model/diagnosis_input_data.dart';
 import 'package:team/core/api/api_key.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
 import 'package:team/core/utils/medi_media_query.dart';
@@ -19,17 +20,26 @@ class BreastCancerPredictionForm extends StatelessWidget {
         key: BlocProvider.of<DiseasesCubit>(context).breastCancerFormKey,
         child: Column(
           children: [
-            DefaultTextFelidForm(
-              textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter the ${ApiKey.clumpThickness}",
-                  labelText: ApiKey.clumpThickness,
-                  prefixIcon: Icons.medical_information,
-                  controller:
-                      BlocProvider.of<DiseasesCubit>(context).clumpThickness,
-                  textInputType: TextInputType.number,
-                  suffixIcon: Icons.info,
-                  suffixOnPressed: () => DiagnosisInputData.inputDescription(
-                      key: ApiKey.clumpThickness)),
+            Showcase(
+              key: BlocProvider.of<DiseasesCubit>(context).input,
+              title: "Input Data",
+              description:
+                  "We will predict if you have Diabetes based on your input data or not "
+                  "so please enter your data correctly and click on predict button to get result",
+              targetPadding: const EdgeInsets.all(8.0),
+              targetBorderRadius: BorderRadius.circular(8.0),
+              child: DefaultTextFelidForm(
+                textFelidFormModel: TextFelidFormModel(
+                    hintText: "Enter the ${ApiKey.clumpThickness}",
+                    labelText: ApiKey.clumpThickness,
+                    prefixIcon: Icons.medical_information,
+                    controller:
+                        BlocProvider.of<DiseasesCubit>(context).clumpThickness,
+                    textInputType: TextInputType.number,
+                    suffixIcon: Icons.info,
+                    suffixOnPressed: () => DiagnosisInputData.inputDescription(
+                        key: ApiKey.clumpThickness)),
+              ),
             ),
             Gap(context.height * .015),
             DefaultTextFelidForm(
@@ -44,7 +54,7 @@ class BreastCancerPredictionForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.uniformCellSize)),
             ),
-             Gap(context.height * .015),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.uniformCellShape}",
@@ -57,7 +67,7 @@ class BreastCancerPredictionForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.uniformCellShape)),
             ),
-             Gap(context.height * .015),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.marginalAdhesion}",
@@ -70,7 +80,7 @@ class BreastCancerPredictionForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.marginalAdhesion)),
             ),
-             Gap(context.height * .015),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.singleEpithelialSize}",
@@ -83,7 +93,7 @@ class BreastCancerPredictionForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.singleEpithelialSize)),
             ),
-             Gap(context.height * .015),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.bareNuclei}",
@@ -96,7 +106,7 @@ class BreastCancerPredictionForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.bareNuclei)),
             ),
-             Gap(context.height * .015),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.blandChromatin}",
@@ -109,7 +119,7 @@ class BreastCancerPredictionForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.blandChromatin)),
             ),
-             Gap(context.height * .015),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.normalNucleoli}",
@@ -122,7 +132,7 @@ class BreastCancerPredictionForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.normalNucleoli)),
             ),
-             Gap(context.height * .015),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.mitoses}",
@@ -134,7 +144,7 @@ class BreastCancerPredictionForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.mitoses)),
             ),
-             Gap(context.height * .015),
+            Gap(context.height * .015),
           ],
         ));
   }

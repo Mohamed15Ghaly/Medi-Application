@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:showcaseview/showcaseview.dart';
 import 'package:team/Features/diseases/presentation/cubit/diseases_cubit.dart';
-import 'package:team/Features/diseases/view_model/diagnosis_input_data.dart';
+import 'package:team/Features/diseases/data/view_model/diagnosis_input_data.dart';
 import 'package:team/core/api/api_key.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
 import 'package:team/core/utils/medi_media_query.dart';
@@ -19,18 +20,28 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
         key: BlocProvider.of<DiseasesCubit>(context).parkinsonFormKey,
         child: Column(
           children: [
-            DefaultTextFelidForm(
-              textFelidFormModel: TextFelidFormModel(
-                  hintText: "Enter the ${ApiKey.mdvpFoHz}",
-                  labelText: ApiKey.mdvpFoHz,
-                  prefixIcon: Icons.medical_information,
-                  controller: BlocProvider.of<DiseasesCubit>(context).mdvpFoHz,
-                  textInputType: TextInputType.number,
-                  suffixIcon: Icons.info,
-                  suffixOnPressed: () => DiagnosisInputData.inputDescription(
-                      key: ApiKey.mdvpFoHz)),
+            Showcase(
+              key: BlocProvider.of<DiseasesCubit>(context).input,
+              title: "Input Data",
+              description:
+                  "We will predict if you have Diabetes based on your input data or not "
+                  "so please enter your data correctly and click on predict button to get result",
+              targetPadding: const EdgeInsets.all(8.0),
+              targetBorderRadius: BorderRadius.circular(8.0),
+              child: DefaultTextFelidForm(
+                textFelidFormModel: TextFelidFormModel(
+                    hintText: "Enter the ${ApiKey.mdvpFoHz}",
+                    labelText: ApiKey.mdvpFoHz,
+                    prefixIcon: Icons.medical_information,
+                    controller:
+                        BlocProvider.of<DiseasesCubit>(context).mdvpFoHz,
+                    textInputType: TextInputType.number,
+                    suffixIcon: Icons.info,
+                    suffixOnPressed: () => DiagnosisInputData.inputDescription(
+                        key: ApiKey.mdvpFoHz)),
+              ),
             ),
-             Gap(context.height * .015),
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.mdvpFhiHz}",
@@ -42,8 +53,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.mdvpFhiHz)),
             ),
-                         Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.mdvpFloHz}",
@@ -55,8 +65,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.mdvpFloHz)),
             ),
-                         Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.mdvpJitterPercentage}",
@@ -69,8 +78,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.mdvpJitterPercentage)),
             ),
-                         Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.mdvpJitterAbs}",
@@ -83,8 +91,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.mdvpJitterAbs)),
             ),
-                         Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.mdvpRap}",
@@ -96,8 +103,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.mdvpRap)),
             ),
-                        Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.mdvpPpq}",
@@ -109,8 +115,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.mdvpPpq)),
             ),
-                         Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.jitterDdf}",
@@ -122,8 +127,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.jitterDdf)),
             ),
-                        Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.mdvpShimmer}",
@@ -136,8 +140,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.mdvpShimmer)),
             ),
-                         Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.mdvpShimmerDb}",
@@ -150,8 +153,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.mdvpShimmerDb)),
             ),
-                         Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.mdvpApq}",
@@ -163,8 +165,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.mdvpApq)),
             ),
-                         Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.shimmerApq3}",
@@ -177,8 +178,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.shimmerApq3)),
             ),
-                        Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.shimmerApq5}",
@@ -191,8 +191,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.shimmerApq5)),
             ),
-                         Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.shimmerDda}",
@@ -205,8 +204,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () => DiagnosisInputData.inputDescription(
                       key: ApiKey.shimmerDda)),
             ),
-                         Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.nhr}",
@@ -218,8 +216,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.nhr)),
             ),
-                         Gap(context.height * .01),
-
+            Gap(context.height * .01),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.hnr}",
@@ -231,8 +228,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.hnr)),
             ),
-                         Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter Your ${ApiKey.rpde}",
@@ -244,8 +240,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.rpde)),
             ),
-                         Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.dfa}",
@@ -257,8 +252,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.mdvpPpq)),
             ),
-                         Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.spread1}",
@@ -270,8 +264,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.spread1)),
             ),
-                         Gap(context.height * .01),
-
+            Gap(context.height * .01),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.spread2}",
@@ -283,8 +276,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.spread2)),
             ),
-                         Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.d2}",
@@ -296,8 +288,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.d2)),
             ),
-                        Gap(context.height * .015),
-
+            Gap(context.height * .015),
             DefaultTextFelidForm(
               textFelidFormModel: TextFelidFormModel(
                   hintText: "Enter the ${ApiKey.ppe}",
@@ -309,8 +300,7 @@ class ParkinsonPredictionInputForm extends StatelessWidget {
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.ppe)),
             ),
-                        Gap(context.height * .015),
-
+            Gap(context.height * .015),
           ],
         ));
   }

@@ -115,7 +115,8 @@ class LoginScreenBody extends StatelessWidget {
           CustomButton(
               title: "Login",
               onPressed: () {
-                BlocProvider.of<UserLoginCubit>(context).loginValidation();
+                     BlocProvider.of<UserLoginCubit>(context).loginValidation();
+                  
               }),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

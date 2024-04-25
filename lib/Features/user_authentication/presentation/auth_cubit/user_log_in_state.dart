@@ -14,5 +14,3 @@ final class UserLoginFailure extends UserLoginState {
   final String error;
   const UserLoginFailure({required this.error});
 }
-final class UserObscureText extends UserLoginState {}
-final class UserNotObscureText extends UserLoginState {}

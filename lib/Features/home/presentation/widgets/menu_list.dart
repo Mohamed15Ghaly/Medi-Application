@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:team/Features/chatBot/presentation/view/chat_screen.dart';
-import 'package:team/Features/home/presentation/cubit/home_cubit.dart';
+import 'package:team/Features/home/presentation/home_cubit/home_cubit.dart';
 import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/response_font_size.dart';
-import 'package:team/Features/settings/presentation/views/help_screen.dart';
-import 'package:team/Features/settings/presentation/views/settings_screen.dart';
+import 'package:team/Features/app_menu/presentation/views/help_screen.dart';
+import 'package:team/Features/app_menu/presentation/views/settings_screen.dart';
 import 'package:team/Features/user_authentication/presentation/views/login_screen.dart';
-import 'package:team/Features/settings/presentation/views/profile_screen.dart';
+import 'package:team/Features/app_menu/presentation/views/profile_screen.dart';
 
 class MenuList extends StatelessWidget {
   const MenuList({

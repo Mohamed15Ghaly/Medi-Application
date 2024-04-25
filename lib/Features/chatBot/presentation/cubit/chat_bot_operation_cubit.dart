@@ -1,26 +1,27 @@
-import 'dart:math';
 import 'package:bloc/bloc.dart';
+import 'package:data_connection_checker_tv/data_connection_checker.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:team/Features/chatBot/data/models/chat_bot_mode.dart';
 import 'package:team/Features/chatBot/data/models/chat_bot_history.dart';
-import 'package:team/core/api/api_consumer.dart';
-import 'package:team/core/api/api_key.dart';
-import 'package:team/core/api/api_url.dart';
+import 'package:team/Features/chatBot/data/repository/chat_bot_repository.dart';
 import 'package:record/record.dart';
-import 'package:team/core/functions/upload_image_to_api.dart';
+import 'package:team/core/functions/generateRandomId.dart';
 part 'chat_bot_operation_state.dart';
 
 class ChatBotOperationCubit extends Cubit<ChatBotOperationState> {
-  ChatBotOperationCubit(this.apiConsumer) : super(ChatBotOperationInitial());
+  ChatBotOperationCubit({
+    required this.chatBotRepository,
+  }) : super(ChatBotOperationInitial());
   TextEditingController chatBotTextController = TextEditingController();
   List<ChatBotHistory> chatBotHistory = [];
   bool isFirstRequest = true;
   Record audioRecorder = Record();
   String audioPath = "";
   final ScrollController scrollController = ScrollController();
-
+  final DataConnectionChecker networkConnectionChecker =
+      DataConnectionChecker();
+  final ChatBotRepository chatBotRepository;
   scrollToBottom() {
     if (scrollController.hasClients) {
       scrollController.animateTo(scrollController.position.maxScrollExtent,
@@ -29,62 +30,40 @@ class ChatBotOperationCubit extends Cubit<ChatBotOperationState> {
     }
   }
 
-  String generateRandomId() {
-    const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    final random = Random();
-    return List.generate(
-      10,
-      (index) => chars[random.nextInt(chars.length)],
-      growable: false,
-    ).join();
-  }
-
   Future<void> startRecording() async {
-    emit(ChatBotOperationStartRecording());
-    if (await audioRecorder.hasPermission()) {
-      try {
-        debugPrint(
-            '=========>>>>>>>>>>> RECORDING!!!!!!!!!!!!!!! <<<<<<===========');
-
+    if (await networkConnectionChecker.hasConnection) {
+      if (await audioRecorder.hasPermission()) {
+        emit(ChatBotOperationStartRecording());
         String filePath = await getApplicationDocumentsDirectory()
             .then((value) => '${value.path}/${generateRandomId()}.wav');
         await audioRecorder.start(
           encoder: AudioEncoder.wav,
           path: filePath,
         );
-      } catch (e) {
-        debugPrint('ERROR WHILE RECORDING: $e');
       }
     }
   }
 
-  Future stopRecording() async {
-    String? path = await audioRecorder.stop();
-    audioPath = path!;
-    emit(ChatBotOperationLoading());
-    try {
-      final response = await apiConsumer.post(
-          "https://web-production-be4b5.up.railway.app/medi_voice",
-          isFormData: true,
-          body: {"file": await uploadToApi(audioPath)});
-      ChatBotModel ans = ChatBotModel.fromJson(response);
-
-      chatBotHistory
-          .add(ChatBotHistory(question: ans.userText, answer: ans.botText));
-      isFirstRequest = false;
-      emit(ChatBotOperationSuccess());
-    } catch (e) {
+  Future sendRecording() async {
+    if (await networkConnectionChecker.hasConnection) {
+      String? path = await audioRecorder.stop();
+      audioPath = path!;
+      emit(ChatBotOperationLoading());
+      final response =
+          await chatBotRepository.sendRecording(audioPath: audioPath);
+      response.fold((l) => emit(ChatBotOperationInitial()), (ans) {
+        chatBotHistory
+            .add(ChatBotHistory(question: ans.userText, answer: ans.botText));
+        scrollToBottom();
+        isFirstRequest = false;
+        emit(ChatBotOperationSuccess());
+      });
+    } else {
+      audioPath = "";
       emit(ChatBotOperationInitial());
     }
   }
 
-  @override
-  Future<void> close() {
-    chatBotTextController.dispose();
-    return super.close();
-  }
-
-  final ApiConsumer apiConsumer;
   void start() {
     if (chatBotTextController.text.isNotEmpty) {
       emit(ChatBotOperationStartTyping());
@@ -93,27 +72,20 @@ class ChatBotOperationCubit extends Cubit<ChatBotOperationState> {
     }
   }
 
-  void sendRecording() {
-    emit(ChatBotOperationStartTyping());
-  }
-
   void send() async {
-    emit(ChatBotOperationLoading());
-    try {
-      final response = await apiConsumer.post(ApiUrl.chatBot, body: {
-        ApiKey.msg: chatBotTextController.text.trim(),
+    if (await networkConnectionChecker.hasConnection) {
+      emit(ChatBotOperationLoading());
+      final response = await chatBotRepository.send(
+        requestText: chatBotTextController.text.trim(),
+      );
+      response.fold((l) => emit(ChatBotOperationInitial()), (ans) {
+        chatBotHistory.add(ChatBotHistory(
+            question: chatBotTextController.text.trim(), answer: ans.botText));
+        chatBotTextController.clear();
+        emit(ChatBotOperationSuccess());
+        scrollToBottom();
+        isFirstRequest = false;
       });
-
-      ChatBotModel ans = ChatBotModel.fromJson(response);
-
-      chatBotHistory.add(ChatBotHistory(
-          question: chatBotTextController.text.trim(), answer: ans.botText));
-      emit(ChatBotOperationSuccess());
-      scrollToBottom();
-      isFirstRequest = false;
-      chatBotTextController.clear();
-    } catch (e) {
-      emit(ChatBotOperationInitial());
     }
   }
 }

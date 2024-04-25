@@ -49,7 +49,7 @@ class _ChatBotButtonState extends State<ChatBotButton> {
                 BlocProvider.of<ChatBotOperationCubit>(context)
                     .startRecording();
               } else if (state is ChatBotOperationStartRecording) {
-                BlocProvider.of<ChatBotOperationCubit>(context).stopRecording();
+                BlocProvider.of<ChatBotOperationCubit>(context).sendRecording();
               } else if (state is ChatBotOperationStartTyping) {
                 BlocProvider.of<ChatBotOperationCubit>(context).send();
               } else {

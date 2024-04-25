@@ -2,16 +2,35 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:team/Features/chatBot/data/models/chat_bot_features.dart';
 import 'package:team/Features/chatBot/presentation/cubit/chat_bot_operation_cubit.dart';
 import 'package:team/Features/chatBot/presentation/widgets/chat_content.dart';
 import 'package:team/Features/chatBot/presentation/widgets/chat_text_feild.dart';
+import 'package:team/core/api/api_key.dart';
+import 'package:team/core/cache/cache_helper.dart';
 import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 
-class ChatScreenBody extends StatelessWidget {
+class ChatScreenBody extends StatefulWidget {
   const ChatScreenBody({
     super.key,
   });
+
+  @override
+  State<ChatScreenBody> createState() => _ChatScreenBodyState();
+}
+
+class _ChatScreenBodyState extends State<ChatScreenBody> {
+  @override
+  void initState() {
+    super.initState();
+    // ignore: prefer_interpolation_to_compose_strings
+    ChatBotFeatures().listening(
+        text:
+            // ignore: prefer_interpolation_to_compose_strings
+            "${"Welcome" + CacheHelper().getData(key: ApiKey.name)} to Medi Chat ");
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ChatBotOperationCubit, ChatBotOperationState>(

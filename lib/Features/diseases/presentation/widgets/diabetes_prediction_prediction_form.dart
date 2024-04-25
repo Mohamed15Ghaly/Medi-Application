@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:showcaseview/showcaseview.dart';
 import 'package:team/Features/diseases/presentation/cubit/diseases_cubit.dart';
-import 'package:team/Features/diseases/view_model/diagnosis_input_data.dart';
+import 'package:team/Features/diseases/data/view_model/diagnosis_input_data.dart';
 import 'package:team/core/api/api_key.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
 import 'package:team/core/utils/medi_media_query.dart';

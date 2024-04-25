@@ -1,9 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
-import 'package:team/Features/user_authentication/presentation/auth_cubit/user_log_in_cubit.dart';
+import 'package:team/Features/app_menu/presentation/user_actions_cubit/user_actions_cubit.dart';
+import 'package:team/core/api/api_key.dart';
+import 'package:team/core/cache/cache_helper.dart';
 import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 import 'package:team/core/utils/response_font_size.dart';
@@ -37,7 +39,7 @@ class UserAccountsHeader extends StatelessWidget {
               Gap(context.height * .005),
               Flexible(
                 child: AutoSizeText(
-                  BlocProvider.of<UserLoginCubit>(context).userLogIn!.name,
+                  CacheHelper().getData(key: ApiKey.name),
                   style: TextStyle(
                       color: MediColors.secondaryColor,
                       fontSize:
@@ -60,7 +62,7 @@ class UserAccountsHeader extends StatelessWidget {
               const Gap(5),
               Flexible(
                 child: AutoSizeText(
-                  BlocProvider.of<UserLoginCubit>(context).userLogIn!.email,
+                  CacheHelper().getData(key: ApiKey.email),
                   style: TextStyle(
                     color: MediColors.secondaryColor,
                     fontSize: getResponseFontSize(
@@ -72,11 +74,15 @@ class UserAccountsHeader extends StatelessWidget {
               ),
             ],
           ),
-          currentAccountPicture:  Hero(
+          currentAccountPicture: Hero(
             tag: 'userPhoto',
             child: FittedBox(
               child: CircleAvatar(
-                backgroundImage: NetworkImage(BlocProvider.of<UserLoginCubit>(context).userLogIn!.profilePhoto),
+                radius: 100,
+                backgroundImage: CachedNetworkImageProvider(
+                  CacheHelper().getData(key: ApiKey.profilePhoto),
+                  
+                ),
               ),
             ),
           ),
