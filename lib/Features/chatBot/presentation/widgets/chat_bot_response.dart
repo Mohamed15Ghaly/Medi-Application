@@ -63,22 +63,19 @@ class ChatBotResponse extends StatelessWidget {
                   ),
                   color: MediColors.primaryColor,
                 ),
-                child: FittedBox(
-                  fit: BoxFit.cover,
-                  child: AnimatedTextKit(
-                    animatedTexts: [
-                      TypewriterAnimatedText(
-                        answer,
-                        speed: const Duration(milliseconds: 150),
-                        textStyle:
-                        TextStyle(color: MediColors.secondaryColor,fontSize: getResponseFontSize(context: context, fontSize: 14)),
-                      )
-                    ],
-                    isRepeatingAnimation: false,
-                    displayFullTextOnTap: true,
-                    stopPauseOnTap: false,
-                    repeatForever: false,
-                  ),
+                child: AnimatedTextKit(
+                  animatedTexts: [
+                    TypewriterAnimatedText(
+                      answer,
+                      speed: const Duration(milliseconds: 150),
+                      textStyle:
+                      TextStyle(color: MediColors.secondaryColor,fontSize: getResponseFontSize(context: context, fontSize: 14)),
+                    )
+                  ],
+                  isRepeatingAnimation: false,
+                  displayFullTextOnTap: true,
+                  stopPauseOnTap: false,
+                  repeatForever: false,
                 ),),
           ),
         ),
