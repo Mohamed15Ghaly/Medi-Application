@@ -13,39 +13,43 @@ class StartRecording extends StatelessWidget {
     return BlocConsumer<ChatBotOperationCubit, ChatBotOperationState>(
       listener: (context, state) {},
       builder: (context, state) {
-        return Row(
-          children: [
-            LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
+        return Flexible(
+          child: FittedBox(
+            child: Row(
+              children: [
+                LottieBuilder.asset(
+                  "assets/images/yP1ojBaeGN.json",
+                ),
+                LottieBuilder.asset(
+                  "assets/images/yP1ojBaeGN.json",
+                ),
+                LottieBuilder.asset(
+                  "assets/images/yP1ojBaeGN.json",
+                ),
+                LottieBuilder.asset(
+                  "assets/images/yP1ojBaeGN.json",
+                ),
+                LottieBuilder.asset(
+                  "assets/images/yP1ojBaeGN.json",
+                ),
+                LottieBuilder.asset(
+                  "assets/images/yP1ojBaeGN.json",
+                ),
+                LottieBuilder.asset(
+                  "assets/images/yP1ojBaeGN.json",
+                ),
+                LottieBuilder.asset(
+                  "assets/images/yP1ojBaeGN.json",
+                ),
+                LottieBuilder.asset(
+                  "assets/images/yP1ojBaeGN.json",
+                ),
+                LottieBuilder.asset(
+                  "assets/images/yP1ojBaeGN.json",
+                ),
+              ],
             ),
-            LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
-            ),
-            LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
-            ),
-            LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
-            ),
-            LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
-            ),
-            LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
-            ),
-            LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
-            ),
-            LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
-            ),
-            LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
-            ),
-            LottieBuilder.asset(
-              "assets/images/yP1ojBaeGN.json",
-            ),
-          ],
+          ),
         );
       },
     );

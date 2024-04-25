@@ -1,7 +1,9 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:team/Features/chatBot/data/models/chat_bot_features.dart';
 import 'package:team/core/api/api_key.dart';
@@ -48,39 +50,46 @@ class _UserState extends State<UserResponse>
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              CupertinoContextMenu(
-                actions: [
-                  CupertinoContextMenuAction(
-                      onPressed: () {
-                        Clipboard.setData(ClipboardData(text: widget.question));
-                      },
-                      trailingIcon: CupertinoIcons.doc,
-                      child: const Text("Copy")),
-                  CupertinoContextMenuAction(
-                      onPressed: () {
-                        ChatBotFeatures().listening(text: widget.question);
-                      },
-                      trailingIcon: CupertinoIcons.speaker_1,
-                      child: const Text("Listen")),
-                ],
-                child: Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      bottomRight: Radius.circular(10),
-                      bottomLeft: Radius.circular(10),
+              Flexible(
+                flex: 3,
+                child: CupertinoContextMenu(
+                  actions: [
+                    CupertinoContextMenuAction(
+                        onPressed: () {
+                          Clipboard.setData(ClipboardData(text: widget.question));
+                        },
+                        trailingIcon: CupertinoIcons.doc,
+                        child: const Text("Copy")),
+                    CupertinoContextMenuAction(
+                        onPressed: () {
+                          ChatBotFeatures().listening(text: widget.question);
+                        },
+                        trailingIcon: CupertinoIcons.speaker_1,
+                        child: const Text("Listen")),
+                  ],
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
+                        bottomLeft: Radius.circular(10),
+                      ),
+                      color: MediColors.fourthColor.withOpacity(.25),
                     ),
-                    color: MediColors.fourthColor.withOpacity(.25),
+                    child: AutoSizeText(widget.question),
                   ),
-                  child: Text(widget.question),
                 ),
               ),
               Gap(context.height * .005),
-              CircleAvatar(
-                radius: 20,
-                backgroundImage: CachedNetworkImageProvider(
-                  CacheHelper().getData(key: ApiKey.profilePhoto),
+              Flexible(
+                child: FittedBox(
+                  child: CircleAvatar(
+                    radius: 20,
+                    backgroundImage: CachedNetworkImageProvider(
+                      CacheHelper().getData(key: ApiKey.profilePhoto),
+                    ),
+                  ),
                 ),
               ),
             ]),
