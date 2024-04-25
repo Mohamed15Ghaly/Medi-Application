@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:qr_flutter/qr_flutter.dart';
@@ -15,8 +16,8 @@ class FollowUs extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Image.asset(MediImage.followUs),
-          Text("Scan Our QR Code!", style: TextStyle(fontSize: getResponseFontSize(context: context, fontSize: 30))),
+          Image.asset(height: context.height/2.4,MediImage.followUs),
+          FittedBox(child: Text("Scan Our QR Code!", style: TextStyle(fontSize: getResponseFontSize(context: context, fontSize: 30)))),
           const Text("Follow us on Website", style: TextStyle(fontSize: 16)),
                         Gap(context.height * .005),
 
