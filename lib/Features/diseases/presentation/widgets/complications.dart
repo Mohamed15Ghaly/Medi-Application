@@ -25,11 +25,12 @@ class Complications extends StatelessWidget {
         Row(
           children: [
             Expanded(
-              child: Image.asset(MediImage.diseasesComplications1),
+              child: Image.asset(
+                  height: MediaQuery.of(context).size.height * 0.3,MediImage.diseasesComplications1),
             ),
              Gap(context.height * .01),
             Expanded(
-              child: Image.asset(MediImage.diseasesComplications2),
+              child: Image.asset(height: MediaQuery.of(context).size.height * 0.3,MediImage.diseasesComplications2),
             ),
           ],
         ),

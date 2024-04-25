@@ -40,6 +40,7 @@ class Symptoms extends StatelessWidget {
 
                 Expanded(
                     child: Image.asset(
+                        height: MediaQuery.of(context).size.height * 0.3,
                         MediImage.diseasesSymptoms)),
               ],
             ),

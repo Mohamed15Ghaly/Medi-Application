@@ -33,7 +33,7 @@ class Causes extends StatelessWidget {
                   ],
                 )),
             Expanded(
-              child: Image.asset(MediImage.diseasesCauses),
+              child: Image.asset(height: MediaQuery.of(context).size.height * 0.3,MediImage.diseasesCauses),
             )
           ],
         ),

@@ -19,7 +19,7 @@ class RiskFactors extends StatelessWidget {
         Row(
           children: [
             Expanded(
-              child: Image.asset(MediImage.diseasesRiskFactors),
+              child: Image.asset(height: MediaQuery.of(context).size.height * 0.8,MediImage.diseasesRiskFactors),
             ),
             Expanded(
               child: Column(

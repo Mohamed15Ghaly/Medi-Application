@@ -1,6 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:card_swiper/card_swiper.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
@@ -118,18 +120,23 @@ class HomeAppHeader extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Expanded(
+              Flexible(
+                flex:3,
                 child: Image.asset(
                   MediImage.homeAppBody,
                 ),
               ),
-              Text(
-                "Let's take a look about the symptoms and causes of each disease ",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: getResponseFontSize(context: context, fontSize: 16),
-                  fontWeight: FontWeight.bold,
-                  color: MediColors.primaryColor,
+              Flexible(
+                child: SizedBox(
+                  child: AutoSizeText(
+                    "Let's take a look about the symptoms and causes of each disease ",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: getResponseFontSize(context: context, fontSize: 16),
+                      fontWeight: FontWeight.bold,
+                      color: MediColors.primaryColor,
+                    ),
+                  ),
                 ),
               ),
               const Divider(),
