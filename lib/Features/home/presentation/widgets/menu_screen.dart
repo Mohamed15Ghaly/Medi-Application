@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:team/Features/home/presentation/cubit/home_cubit.dart';
+import 'package:team/Features/home/presentation/home_cubit/home_cubit.dart';
 import 'package:team/core/utils/response_font_size.dart';
 import 'package:team/Features/home/presentation/widgets/menu_app.dart';
 import 'package:team/Features/home/presentation/widgets/user_account_header.dart';

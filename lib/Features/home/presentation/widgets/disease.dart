@@ -5,7 +5,7 @@ import 'package:team/Features/diseases/presentation/views/breast_cancer_predicti
 import 'package:team/Features/diseases/presentation/views/breast_cancer_screen.dart';
 import 'package:team/Features/diseases/presentation/views/diabetes_prediction.dart';
 import 'package:team/Features/diseases/presentation/views/diabetes_screen.dart';
-import 'package:team/Features/diseases/presentation/views/diagnosis_screen.dart';
+import 'package:team/Features/diseases/presentation/views/diseases_screen.dart';
 import 'package:team/Features/diseases/presentation/views/heart_disease_prediction.dart';
 import 'package:team/Features/diseases/presentation/views/heart_disease_screen.dart';
 import 'package:team/Features/diseases/presentation/views/parkinson_prediction.dart';
@@ -39,7 +39,7 @@ class Disease extends StatelessWidget {
                 diseasesScreen: const ParkinsonScreen(),
                 diseasesPredictionScreen: const ParkinsonPredictionScreen(),
                 diseaseName: 'Parkinson');
-            Get.to(() => const DiagnosisScreen());
+            Get.to(() => const DiseasesScreen());
           },
           title: const Text('Parkinson',
               style: TextStyle(color: MediColors.primaryColor)),
@@ -56,7 +56,7 @@ class Disease extends StatelessWidget {
                 diseasesScreen: const BreastCancerScreen(),
                 diseasesPredictionScreen: const BreastCancerPredictionScreen(),
                 diseaseName: 'Breast Cancer');
-            Get.to(() => const DiagnosisScreen());
+            Get.to(() => const DiseasesScreen());
           },
           title: const Text('Breast Cancer',
               style: TextStyle(
@@ -75,7 +75,7 @@ class Disease extends StatelessWidget {
                 diseasesScreen: const HeartDiseaseScreen(),
                 diseasesPredictionScreen: const HeartDiseasePredictionScreen(),
                 diseaseName: 'Heart Disease');
-            Get.to(() => const DiagnosisScreen());
+            Get.to(() => const DiseasesScreen());
           },
           title: const Text('Heart Disease',
               style: TextStyle(color: MediColors.primaryColor
@@ -94,7 +94,7 @@ class Disease extends StatelessWidget {
                 diseasesScreen: const DiabetesScreen(),
                 diseasesPredictionScreen: const DiabetesPredictionScreen(),
                 diseaseName: 'Diagnosis');
-            Get.to(() => const DiagnosisScreen());
+            Get.to(() => const DiseasesScreen());
           },
           title: const Text('Diagnosis',
               style: TextStyle(color: MediColors.primaryColor)),

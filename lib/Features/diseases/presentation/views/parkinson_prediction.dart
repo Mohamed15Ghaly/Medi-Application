@@ -1,11 +1,9 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:team/Features/diseases/presentation/cubit/diseases_cubit.dart';
 import 'package:team/Features/diseases/presentation/widgets/parkinson_prediction_body.dart';
 import 'package:team/core/components/default_prediction_result.dart';
-import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_strings.dart';
 
 class ParkinsonPredictionScreen extends StatelessWidget {
@@ -37,16 +35,12 @@ class ParkinsonPredictionScreen extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        return ModalProgressHUD(
-          inAsyncCall: state is DiseasesLoading,
-          color: MediColors.thirdColor,
-          child: const Scaffold(
-              body: SafeArea(
-                  child: Padding(
-            padding: EdgeInsets.all(16.0),
-            child: ParkinsonPredictionBody(),
-          ))),
-        );
+        return const Scaffold(
+            body: SafeArea(
+                child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: ParkinsonPredictionBody(),
+        )));
       },
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:team/Features/home/presentation/cubit/home_cubit.dart';
+import 'package:team/Features/home/presentation/home_cubit/home_cubit.dart';
 import 'package:team/core/components/chat_bot_material_button.dart';
 import 'package:team/core/utils/medi_image.dart';
 import '../widgets/home_screen_body.dart';
@@ -39,5 +39,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-

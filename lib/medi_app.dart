@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:team/Features/diseases/presentation/cubit/diseases_cubit.dart';
-import 'package:team/Features/home/presentation/cubit/home_cubit.dart';
-import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
+import 'package:team/Features/home/presentation/home_cubit/home_cubit.dart';
+import 'package:team/Features/app_menu/data/repository/user_actions_repository.dart';
+import 'package:team/Features/app_menu/presentation/user_actions_cubit/user_actions_cubit.dart';
 import 'package:team/Features/splash_onBoarding/presentation/views/splash_screen.dart';
+import 'package:team/Features/user_authentication/data/repository/user_repository.dart';
 import 'package:team/Features/user_authentication/presentation/auth_cubit/user_log_in_cubit.dart';
 import 'package:team/Features/user_authentication/presentation/auth_cubit/user_on_pressed_cubit.dart';
 import 'package:team/core/api/dio_consumer.dart';
@@ -23,8 +25,14 @@ class MediApplication extends StatelessWidget {
           ),
           BlocProvider(create: (context) => UserOnPressedCubit()),
           BlocProvider(create: (context) => HomeCubit()),
-          BlocProvider(create: (context) => UserActionsCubit(DioConsumer(dio: Dio()))),
-          BlocProvider(create: (context) => UserLoginCubit(DioConsumer(dio: Dio()))),
+          BlocProvider(
+              create: (context) => UserActionsCubit(
+                  userActionsRepository: UserActionsRepository(
+                      apiConsumer: DioConsumer(dio: Dio())))),
+          BlocProvider(
+              create: (context) => UserLoginCubit(
+                  userRepository:
+                      UserRepository(apiConsumer: DioConsumer(dio: Dio())))),
         ],
         child: GetMaterialApp(
           debugShowCheckedModeBanner: false,

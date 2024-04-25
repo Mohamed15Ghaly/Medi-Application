@@ -7,7 +7,6 @@ import 'package:team/core/cache/cache_helper.dart';
 import 'package:team/core/errors/exceptions.dart';
 
 class UserRepository {
-  
   final ApiConsumer apiConsumer;
 
   UserRepository({required this.apiConsumer});
@@ -22,13 +21,17 @@ class UserRepository {
       });
       final userLogIn = LogInModel.fromJson(response);
       CacheHelper().saveData(key: ApiKey.token, value: userLogIn.token);
-
+      CacheHelper()
+          .saveData(key: ApiKey.profilePhoto, value: userLogIn.profilePhoto);
       CacheHelper().saveData(key: ApiKey.id, value: userLogIn.id);
+      CacheHelper().saveData(key: ApiKey.name, value: userLogIn.name);
+      CacheHelper().saveData(key: ApiKey.email, value: userLogIn.email);
       return Right(userLogIn);
     } on ServiceExceptions catch (e) {
       return Left(e.errorMessageModel.errorMessage);
     }
   }
+
   Future<Either<String, void>> signUp(
       {required String signUpEmail,
       required String signUpPassword,
@@ -57,7 +60,4 @@ class UserRepository {
       return Left(e.errorMessageModel.errorMessage);
     }
   }
-
-
-
 }

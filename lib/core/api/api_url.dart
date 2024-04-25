@@ -21,6 +21,8 @@ class ApiUrl {
       "https://web-production-b81f.up.railway.app/Breast_cancer_prediction";
   static const String parkinsonPrediction =
       "https://web-production-fc13.up.railway.app/parkinson_prediction";
-  static const String chatBot =
+  static const String chatBotText =
       "https://web-production-be4b5.up.railway.app/medi_text";
+  static const String chatBotVoice =
+      "https://web-production-be4b5.up.railway.app/medi_voice";
 }

@@ -7,7 +7,7 @@ import 'package:team/Features/diseases/presentation/widgets/prevention.dart';
 import 'package:team/Features/diseases/presentation/widgets/risk_factors.dart';
 import 'package:team/Features/diseases/presentation/widgets/symptoms.dart';
 import 'package:team/Features/diseases/presentation/widgets/video_presentation.dart';
-import 'package:team/Features/diseases/view_model/breast_cancer_model.dart';
+import 'package:team/Features/diseases/data/view_model/breast_cancer_model.dart';
 
 class BreastCancerScreenBody extends StatelessWidget {
   const BreastCancerScreenBody({
