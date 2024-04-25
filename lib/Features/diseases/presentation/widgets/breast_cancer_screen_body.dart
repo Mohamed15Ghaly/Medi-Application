@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:team/Features/diseases/presentation/widgets/causes.dart';
 import 'package:team/Features/diseases/presentation/widgets/complications.dart';
@@ -18,8 +19,10 @@ class BreastCancerScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        VideoPresentation(
-          videoPath: "assets/images/breastCancer.mp4",
+        FittedBox(
+          child: VideoPresentation(
+            videoPath: "assets/images/breastCancer.mp4",
+          ),
         ),
         Divider(),
         OverView(

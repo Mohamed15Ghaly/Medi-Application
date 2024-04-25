@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:team/Features/diseases/presentation/widgets/causes.dart';
 import 'package:team/Features/diseases/presentation/widgets/complications.dart';
 import 'package:team/Features/diseases/presentation/widgets/doctors.dart';
@@ -19,8 +21,10 @@ class DiabetesScreenBody extends StatelessWidget {
     // ignore: prefer_const_constructors
     return Column(
       children: const [
-        VideoPresentation(
-          videoPath: "assets/images/Diabetes.mp4",
+        FittedBox(
+          child: VideoPresentation(
+            videoPath: "assets/images/Diabetes.mp4",
+          ),
         ),
         Divider(),
         OverView(

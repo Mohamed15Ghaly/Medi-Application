@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
@@ -20,12 +21,14 @@ class BreastCancerPredictionBody extends StatelessWidget {
           const PredictionHeader(),
           Gap(context.height * .025),
           const BreastCancerPredictionForm(),
-          CustomButton(
-              title: "Predict",
-              onPressed: () {
-                BlocProvider.of<DiseasesCubit>(context)
-                    .breastCancerPredictionValidation();
-              }),
+          FittedBox(
+            child: CustomButton(
+                title: "Predict",
+                onPressed: () {
+                  BlocProvider.of<DiseasesCubit>(context)
+                      .breastCancerPredictionValidation();
+                }),
+          ),
           Gap(context.height * .01),
         ],
       ),
