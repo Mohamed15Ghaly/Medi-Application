@@ -1,14 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:team/Features/user_authentication/presentation/widgets/signUp_form.dart';
-import 'package:team/Features/user_authentication/presentation/auth_cubit/user_on_pressed_cubit.dart';
-import 'package:team/Features/user_authentication/presentation/auth_cubit/user_sign_up_cubit.dart';
 import 'package:team/core/components/custom_material_button.dart';
-import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
 import 'package:team/core/utils/response_font_size.dart';
+import '../auth_cubit/user_on_pressed_cubit.dart';
+import '../auth_cubit/user_sign_up_cubit.dart';
 
 class SignUpScreenBody extends StatefulWidget {
   const SignUpScreenBody({
@@ -27,28 +28,36 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
         child: Column(
           children: [
             Image.asset(
-              height: context.height / 2.5,
-              width: context.width,
+              height: MediaQuery.sizeOf(context).height / 2.5,
+              width: MediaQuery.sizeOf(context).width,
               fit: BoxFit.cover,
               MediImage.signInImage,
             ),
-            Gap(context.height * .05),
-            Text(
-              "Create Account",
-              style: TextStyle(
-                fontSize: getResponseFontSize(context: context, fontSize: 30),
-                fontWeight: FontWeight.bold,
+            Gap(MediaQuery.sizeOf(context).height * .05),
+            FittedBox(
+              child: SizedBox(
+                child: Text(
+                  "Create Account",
+                  style: TextStyle(
+                    fontSize: getResponseFontSize(context: context, fontSize: 30),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
-            Text(
-              "Let’s Create Account Together",
-              style: TextStyle(
-                fontSize: getResponseFontSize(context: context, fontSize: 16),
+            FittedBox(
+              child: SizedBox(
+                child: Text(
+                  "Let’s Create Account Together",
+                  style: TextStyle(
+                    fontSize: getResponseFontSize(context: context, fontSize: 16),
+                  ),
+                ),
               ),
             ),
-            Gap(context.height * .05),
+            Gap(MediaQuery.sizeOf(context).height * .05),
             const SignUpForm(),
-            Gap(context.height * .005),
+            Gap(MediaQuery.sizeOf(context).height * .005),
             FittedBox(
               child: Row(
                 children: [
@@ -64,15 +73,11 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
                           });
                     },
                   ),
-                  const DefaultText(
-                    txt:
-                        'I agree to the all statement in terms of privacy policy',
-                    color: MediColors.thirdColor,
-                  )
+                  const DefaultText(txt: 'I agree to the all statement in terms of privacy policy', color: Colors.black),
                 ],
               ),
             ),
-            Gap(context.height * .025),
+            Gap(MediaQuery.sizeOf(context).height * .025),
             CustomButton(
                 title: "Sign Up",
                 onPressed: () {
@@ -81,14 +86,13 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
                           BlocProvider.of<UserOnPressedCubit>(context)
                               .userAcceptPrivacy);
                 }),
-            Gap(context.height * .01),
             FittedBox(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const DefaultText(
                     txt: "ALREADY HAVE AN ACCOUNT?",
-                    color: MediColors.fourthColor,
+                    color: Colors.grey,
                   ),
                   TextButton(
                       onPressed: () {

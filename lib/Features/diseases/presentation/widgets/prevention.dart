@@ -32,6 +32,7 @@ final List<String> prevention;
 
             Expanded(
               child: Image.asset(
+                  height: MediaQuery.of(context).size.height * 0.3,
                   MediImage.diseasesPrevention),
             ),
           ],

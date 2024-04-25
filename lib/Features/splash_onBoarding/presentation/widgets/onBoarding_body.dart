@@ -75,20 +75,22 @@ class _OnBoardingActionScreenBodyState extends State<OnBoardingScreenBody> {
                   .pageController,
               count: 6,
               effect: JumpingDotEffect(
-                dotWidth: 12,
-                dotHeight: 12,
+                dotWidth: context.width * 0.02,
+                dotHeight: context.width * 0.02,
                 activeDotColor: MediColors.primaryColor,
                 dotColor: Colors.blue.shade100,
               ),
             ),
             Gap(context.width * .03),
-            CustomButton(
-                title: state is OnBoardingActionLast ? "Get Started" : "Next",
-                onPressed: () {
-                  context
-                      .read<OnBoardingActionCubit>()
-                      .onBoardingActionIncrease();
-                })
+            FittedBox(
+              child: CustomButton(
+                  title: state is OnBoardingActionLast ? "Get Started" : "Next",
+                  onPressed: () {
+                    context
+                        .read<OnBoardingActionCubit>()
+                        .onBoardingActionIncrease();
+                  }),
+            )
           ]),
         );
       },

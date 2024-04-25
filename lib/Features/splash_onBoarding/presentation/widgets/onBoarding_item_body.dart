@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -28,24 +29,30 @@ class OnBoardingItemBody extends StatelessWidget {
         Flexible(
           child: FittedBox(
             fit: BoxFit.scaleDown,
-            child: Text(onBoardingModel.title,
-                style: TextStyle(
-                    fontSize:
-                        getResponseFontSize(context: context, fontSize: 30),
-                    fontWeight: FontWeight.bold,
-                    color: MediColors.primaryColor)),
-          ),
-        ),
-        Text(
-          onBoardingModel.description,
-          style: TextStyle(
-            color: MediColors.primaryColor,
-            fontSize: getResponseFontSize(
-              context: context,
-              fontSize: 16,
+            child: SizedBox(
+              child: Text(onBoardingModel.title,
+                  style: TextStyle(
+                      fontSize:
+                          getResponseFontSize(context: context, fontSize: 30),
+                      fontWeight: FontWeight.bold,
+                      color: MediColors.primaryColor)),
             ),
           ),
-          textAlign: TextAlign.center,
+        ),
+        Flexible(
+          child: SizedBox(
+            child: AutoSizeText(
+              onBoardingModel.description,
+              style: TextStyle(
+                color: MediColors.primaryColor,
+                fontSize: getResponseFontSize(
+                  context: context,
+                  fontSize: 16,
+                ),
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
         ),
       ],
     );
