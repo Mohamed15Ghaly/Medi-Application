@@ -13,10 +13,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset(
-          MediImage.appLogo,
-          width: context.width * .075,
-          height: context.width * .075,
+        title: FittedBox(
+          child: Image.asset(
+            MediImage.appLogo,
+            width: context.width * .075,
+            height: context.height * .075,
+          ),
         ),
         centerTitle: true,
         leading: IconButton(

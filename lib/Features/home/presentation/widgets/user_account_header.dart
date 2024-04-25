@@ -38,12 +38,14 @@ class UserAccountsHeader extends StatelessWidget {
               ),
               Gap(context.height * .005),
               Flexible(
-                child: AutoSizeText(
-                  CacheHelper().getData(key: ApiKey.name),
-                  style: TextStyle(
-                      color: MediColors.secondaryColor,
-                      fontSize:
-                          getResponseFontSize(context: context, fontSize: 10)),
+                child: FittedBox(
+                  child: AutoSizeText(
+                    CacheHelper().getData(key: ApiKey.name),
+                    style: TextStyle(
+                        color: MediColors.secondaryColor,
+                        fontSize:
+                            getResponseFontSize(context: context, fontSize: 10)),
+                  ),
                 ),
               ),
             ],
@@ -61,13 +63,15 @@ class UserAccountsHeader extends StatelessWidget {
               ),
               const Gap(5),
               Flexible(
-                child: AutoSizeText(
-                  CacheHelper().getData(key: ApiKey.email),
-                  style: TextStyle(
-                    color: MediColors.secondaryColor,
-                    fontSize: getResponseFontSize(
-                      context: context,
-                      fontSize: 10,
+                child: FittedBox(
+                  child: AutoSizeText(
+                    CacheHelper().getData(key: ApiKey.email),
+                    style: TextStyle(
+                      color: MediColors.secondaryColor,
+                      fontSize: getResponseFontSize(
+                        context: context,
+                        fontSize: 10,
+                      ),
                     ),
                   ),
                 ),
