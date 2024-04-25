@@ -6,7 +6,7 @@ import 'package:gap/gap.dart';
 import 'package:team/Features/settings/presentation/widgets/user_cahnge_image.dart';
 import 'package:team/Features/settings/presentation/widgets/user_change_name.dart';
 import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
-import 'package:team/Features/user_authentication/presentation/cubit/user_log_in_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/auth_cubit/user_log_in_cubit.dart';
 import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 
@@ -41,18 +41,20 @@ class ProfileScreenBody extends StatelessWidget {
                                           .profilePhoto!
                                           .path)),
                                 )
-                              : const CircleAvatar(
+                              : CircleAvatar(
                                   radius: 100,
-                                  backgroundImage:
-                                      AssetImage("assets/images/male.jpg"),
+                                  backgroundImage: NetworkImage(
+                                      BlocProvider.of<UserLoginCubit>(context)
+                                          .userLogIn!
+                                          .profilePhoto),
                                 ),
                         ),
-                                      Gap(context.height * .02),
-
+                        Gap(context.height * .02),
                         Text(
                           BlocProvider.of<UserLoginCubit>(context)
                               .userLogIn!
                               .name,
+                          textAlign: TextAlign.center,
                           style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               color: MediColors.primaryColor),
@@ -61,6 +63,7 @@ class ProfileScreenBody extends StatelessWidget {
                             BlocProvider.of<UserLoginCubit>(context)
                                 .userLogIn!
                                 .email,
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 color: MediColors.primaryColor)),
                         const Divider(),

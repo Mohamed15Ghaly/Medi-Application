@@ -7,6 +7,8 @@ class ApiKey {
   static const String name = "Name";
   static const String email = "email";
   static const String token = "token";
+  static const String profilePhoto = "profilePhoto";
+  static const String image = "image";
 
   static const String password = "password";
   static const String confirmPassword = "confirmPassword";

@@ -3,15 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:team/Features/diseases/presentation/cubit/diseases_cubit.dart';
+import 'package:team/Features/home/presentation/cubit/home_cubit.dart';
 import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
 import 'package:team/Features/splash_onBoarding/presentation/views/splash_screen.dart';
-import 'package:team/Features/user_authentication/presentation/cubit/user_log_in_cubit.dart';
-import 'package:team/Features/user_authentication/presentation/cubit/user_on_pressed_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/auth_cubit/user_log_in_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/auth_cubit/user_on_pressed_cubit.dart';
 import 'package:team/core/api/dio_consumer.dart';
 import 'package:team/core/utils/medi_strings.dart';
-import 'package:team/cubits/cubit/cubit/drawer_controller_cubit.dart';
-import 'package:team/cubits/cubit/cubit/recorder_cubit.dart';
-import 'package:team/cubits/cubit/index_screen_cubit.dart';
 
 class MediApplication extends StatelessWidget {
   const MediApplication({super.key});
@@ -24,9 +22,7 @@ class MediApplication extends StatelessWidget {
             create: (context) => DiseasesCubit(DioConsumer(dio: Dio())),
           ),
           BlocProvider(create: (context) => UserOnPressedCubit()),
-          BlocProvider(create: (context) => IndexScreenCubit()),
-          BlocProvider(create: (context) => RecorderCubit()),
-          BlocProvider(create: (context) => DrawerControllerCubit()),
+          BlocProvider(create: (context) => HomeCubit()),
           BlocProvider(create: (context) => UserActionsCubit(DioConsumer(dio: Dio()))),
           BlocProvider(create: (context) => UserLoginCubit(DioConsumer(dio: Dio()))),
         ],

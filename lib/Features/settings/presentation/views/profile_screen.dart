@@ -1,6 +1,7 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:team/Features/settings/presentation/widgets/profile_screen_body.dart';
 import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
@@ -49,6 +50,13 @@ class ProfileScreen extends StatelessWidget {
           child: Scaffold(
             appBar: AppBar(
               title: const Text("Profile"),
+              leading: IconButton(
+                onPressed: () {
+                  BlocProvider.of<UserActionsCubit>(context).setInitialState();
+                  Get.back();
+                },
+                icon: const Icon(Icons.arrow_back),
+              ),
               centerTitle: true,
             ),
             body: const SafeArea(

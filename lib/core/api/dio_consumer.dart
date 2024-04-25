@@ -34,11 +34,11 @@ class DioConsumer extends ApiConsumer {
   }
 
   @override
-  Future post(String url, {required Map<String, dynamic> body}) async {
+  Future post(String url,
+      {bool isFormData = false, required Map<String, dynamic> body}) async {
     try {
-      final response = await dio.post(
-        
-        url, data: body);
+      final response =
+          await dio.post(url, data: isFormData ? FormData.fromMap(body) : body);
       return response.data;
     } on DioException catch (e) {
       handelDioException(e);

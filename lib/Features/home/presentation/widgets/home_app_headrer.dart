@@ -39,12 +39,10 @@ class HomeAppHeader extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                                  Gap(context.height * .01),
-
+                    Gap(context.height * .01),
                     Flexible(
                       child: FittedBox(
                         child: SizedBox(
-                          width: width / 2.2,
                           child: AutoSizeText(
                             'Welcome to Medi',
                             style: TextStyle(
@@ -57,7 +55,7 @@ class HomeAppHeader extends StatelessWidget {
                         ),
                       ),
                     ),
-                                  Gap(context.height * .01),
+                    Gap(context.height * .01),
                     Flexible(
                       flex: 4,
                       child: FittedBox(
@@ -92,8 +90,7 @@ class HomeAppHeader extends StatelessWidget {
             ],
           ),
         ),
-                      Gap(context.height * .02),
-
+        Gap(context.height * .02),
         SizedBox(
           height: 50,
           width: width,
@@ -112,13 +109,12 @@ class HomeAppHeader extends StatelessWidget {
             itemCount: ArticleData.article.length,
           ),
         ),
-                      Gap(context.height * .01),
+        Gap(context.height * .01),
         const Divider(),
-                      Gap(context.height * .01),
-
+        Gap(context.height * .01),
         SizedBox(
           width: width,
-          height: height / 3,
+          height: height / 3.5,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -131,7 +127,7 @@ class HomeAppHeader extends StatelessWidget {
                 "Let's take a look about the symptoms and causes of each disease ",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: getResponseFontSize(context: context, fontSize: 20),
+                  fontSize: getResponseFontSize(context: context, fontSize: 16),
                   fontWeight: FontWeight.bold,
                   color: MediColors.primaryColor,
                 ),

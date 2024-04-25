@@ -44,7 +44,6 @@ class ChatBotResponse extends StatelessWidget {
                 child: const Text("Share")),
           ],
           child: Container(
-              width: context.width,
               padding: const EdgeInsets.all(10),
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -54,19 +53,22 @@ class ChatBotResponse extends StatelessWidget {
                 ),
                 color: MediColors.primaryColor,
               ),
-              child: AnimatedTextKit(
-                animatedTexts: [
-                  TypewriterAnimatedText(
-                    answer,
-                    speed: const Duration(milliseconds: 150),
-                    textStyle:
-                        const TextStyle(color: MediColors.secondaryColor),
-                  )
-                ],
-                isRepeatingAnimation: false,
-                displayFullTextOnTap: true,
-                stopPauseOnTap: false,
-                repeatForever: false,
+              child: FittedBox(
+                fit: BoxFit.cover,
+                child: AnimatedTextKit(
+                  animatedTexts: [
+                    TypewriterAnimatedText(
+                      answer,
+                      speed: const Duration(milliseconds: 150),
+                      textStyle:
+                          const TextStyle(color: MediColors.secondaryColor),
+                    )
+                  ],
+                  isRepeatingAnimation: false,
+                  displayFullTextOnTap: true,
+                  stopPauseOnTap: false,
+                  repeatForever: false,
+                ),
               )),
         ),
       ],

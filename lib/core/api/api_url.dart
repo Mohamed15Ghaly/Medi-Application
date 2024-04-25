@@ -7,6 +7,8 @@ class ApiUrl {
       "https://clinic-server-1.onrender.com/api/users/forgotpassword";
   static const String userUpdate =
       "https://clinic-server-1.onrender.com/api/users/";
+  static const String userUpdatePhoto =
+      "https://clinic-server-1.onrender.com/api/users/uplodePhoto/";
   static const String resetPassword =
       "https://clinic-server-1.onrender.com/api/users/resetpassword/";
   static const String deleteAccount =
@@ -20,5 +22,5 @@ class ApiUrl {
   static const String parkinsonPrediction =
       "https://web-production-fc13.up.railway.app/parkinson_prediction";
   static const String chatBot =
-      "https://web-production-be4b5.up.railway.app/medi_message";
+      "https://web-production-be4b5.up.railway.app/medi_text";
 }

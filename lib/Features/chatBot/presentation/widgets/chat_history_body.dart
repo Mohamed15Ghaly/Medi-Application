@@ -6,10 +6,17 @@ import 'package:team/Features/chatBot/presentation/widgets/chat_response.dart';
 import 'package:team/Features/chatBot/presentation/cubit/chat_bot_operation_cubit.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 
-class ChatHistoryBody extends StatelessWidget {
+class ChatHistoryBody extends StatefulWidget {
   const ChatHistoryBody({
     super.key,
   });
+
+  @override
+  State<ChatHistoryBody> createState() => _ChatHistoryBodyState();
+}
+
+class _ChatHistoryBodyState extends State<ChatHistoryBody> {
+  
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +25,7 @@ class ChatHistoryBody extends StatelessWidget {
       builder: (context, state) {
         return Expanded(
           child: ListView.separated(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
+            controller: BlocProvider.of<ChatBotOperationCubit>(context).scrollController,
             itemBuilder: (context, index) => ChatResponse(
                 question: BlocProvider.of<ChatBotOperationCubit>(context)
                     .chatBotHistory[index]
@@ -27,7 +33,7 @@ class ChatHistoryBody extends StatelessWidget {
                 answer: BlocProvider.of<ChatBotOperationCubit>(context)
                     .chatBotHistory[index]
                     .answer),
-            separatorBuilder: (context, index) =>  Gap(context.height * .01),
+            separatorBuilder: (context, index) => Gap(context.height * .01),
             itemCount: BlocProvider.of<ChatBotOperationCubit>(context)
                 .chatBotHistory
                 .length,

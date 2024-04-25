@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
-import 'package:team/Features/user_authentication/presentation/cubit/user_log_in_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/auth_cubit/user_log_in_cubit.dart';
 import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 import 'package:team/core/utils/response_font_size.dart';
@@ -34,11 +34,10 @@ class UserAccountsHeader extends StatelessWidget {
                   ),
                 ),
               ),
-                            Gap(context.height * .005),
-
+              Gap(context.height * .005),
               Flexible(
                 child: AutoSizeText(
-                  "                  BlocProvider.of<UserLoginCubit>(context).userLogIn!.name,",
+                  BlocProvider.of<UserLoginCubit>(context).userLogIn!.name,
                   style: TextStyle(
                       color: MediColors.secondaryColor,
                       fontSize:
@@ -61,7 +60,7 @@ class UserAccountsHeader extends StatelessWidget {
               const Gap(5),
               Flexible(
                 child: AutoSizeText(
-                  "BlocProvider.of<UserLoginCubit>(context).userLogIn!.email",
+                  BlocProvider.of<UserLoginCubit>(context).userLogIn!.email,
                   style: TextStyle(
                     color: MediColors.secondaryColor,
                     fontSize: getResponseFontSize(
@@ -73,11 +72,11 @@ class UserAccountsHeader extends StatelessWidget {
               ),
             ],
           ),
-          currentAccountPicture: const Hero(
+          currentAccountPicture:  Hero(
             tag: 'userPhoto',
             child: FittedBox(
               child: CircleAvatar(
-                backgroundImage: AssetImage("assets/images/male.jpg"),
+                backgroundImage: NetworkImage(BlocProvider.of<UserLoginCubit>(context).userLogIn!.profilePhoto),
               ),
             ),
           ),

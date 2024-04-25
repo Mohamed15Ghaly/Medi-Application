@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:team/Features/home/presentation/cubit/home_cubit.dart';
 import 'package:team/core/utils/response_font_size.dart';
-import 'package:team/cubits/cubit/index_screen_cubit.dart';
 import 'package:team/Features/home/presentation/widgets/menu_app.dart';
 import 'package:team/Features/home/presentation/widgets/user_account_header.dart';
 
@@ -19,7 +19,7 @@ class MenuScreen extends StatelessWidget {
           title: const DefaultText(txt : "Menu", color: Colors.white,),
           centerTitle: true,
           leading: IconButton(
-            onPressed: () => BlocProvider.of<IndexScreenCubit>(context)
+            onPressed: () => BlocProvider.of<HomeCubit>(context)
                 .drawerController
                 .close!(),
             icon: const Icon(Icons.close),

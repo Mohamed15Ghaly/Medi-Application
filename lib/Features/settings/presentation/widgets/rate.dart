@@ -9,7 +9,7 @@ import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_image.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 import 'package:team/core/utils/response_font_size.dart';
-import 'package:team/models/text_felid_form_model.dart';
+import 'package:team/Features/user_authentication/data/models/text_felid_form_model.dart';
 
 
 class RateUs extends StatelessWidget {

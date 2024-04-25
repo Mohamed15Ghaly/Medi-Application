@@ -43,7 +43,6 @@ class _UserState extends State<UserResponse>
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                width: context.width,
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.only(

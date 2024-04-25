@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:team/Features/user_authentication/presentation/cubit/user_forget_password_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/auth_cubit/user_forget_password_cubit.dart';
 import 'package:team/core/components/custom_material_button.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
 import 'package:team/core/utils/medi_image.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 import 'package:team/core/utils/response_font_size.dart';
-import 'package:team/models/text_felid_form_model.dart';
+import 'package:team/Features/user_authentication/data/models/text_felid_form_model.dart';
 
 class ForgetPasswordScreenBody extends StatefulWidget {
   const ForgetPasswordScreenBody({

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:team/Features/user_authentication/presentation/cubit/user_on_pressed_cubit.dart';
-import 'package:team/Features/user_authentication/presentation/cubit/user_sign_up_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/auth_cubit/user_on_pressed_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/auth_cubit/user_sign_up_cubit.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
 import 'package:team/core/utils/medi_media_query.dart';
-import 'package:team/models/text_felid_form_model.dart';
+import 'package:team/Features/user_authentication/data/models/text_felid_form_model.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({

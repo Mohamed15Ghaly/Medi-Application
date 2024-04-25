@@ -17,21 +17,21 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: FutureBuilder(
-            future: Future.delayed(const Duration(seconds: 0)),
-            builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) =>
-                snapshot.connectionState == ConnectionState.waiting
-                    ? Center(
+    return FutureBuilder(
+        future: Future.delayed(const Duration(seconds: 3)),
+        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) =>
+            snapshot.connectionState == ConnectionState.waiting
+                ? Scaffold(
+                    body: SafeArea(
+                      child: Center(
                         child: Lottie.asset(MediImage.chatBotSplash),
-                      )
-                    : BlocProvider(
-                        create: (context) =>
-                            ChatBotOperationCubit(DioConsumer(dio: Dio())),
-                        child: const ChatScreenBody(),
-                      )),
-      ),
-    );
+                      ),
+                    ),
+                  )
+                : BlocProvider(
+                    create: (context) =>
+                        ChatBotOperationCubit(DioConsumer(dio: Dio())),
+                    child: const ChatScreenBody(),
+                  ));
   }
 }

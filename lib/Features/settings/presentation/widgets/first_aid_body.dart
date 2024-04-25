@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:team/Features/settings/presentation/widgets/question_data.dart';
+import 'package:team/Features/settings/data/view_model/question_data.dart';
 import 'package:team/Features/settings/presentation/widgets/questions_body.dart';
 import 'package:team/core/utils/medi_image.dart';
 

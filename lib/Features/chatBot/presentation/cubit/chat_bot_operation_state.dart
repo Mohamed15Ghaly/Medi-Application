@@ -8,17 +8,18 @@ sealed class ChatBotOperationState extends Equatable {
 }
 
 final class ChatBotOperationInitial extends ChatBotOperationState {}
+
 final class ChatBotOperationStartTyping extends ChatBotOperationState {}
+
 final class ChatBotOperationStartRecording extends ChatBotOperationState {}
-final class ChatBotOperationEndRecording extends ChatBotOperationState {}
-final class ChatBotOperationPauseRecording extends ChatBotOperationState {}
-final class ChatBotOperationStartListening extends ChatBotOperationState {}
-final class ChatBotOperationTypingSuccess extends ChatBotOperationState {
-}
-final class ChatBotOperationChatBotLoading  extends ChatBotOperationState {}
+
+final class ChatBotOperationStopRecording extends ChatBotOperationState {}
+
+final class ChatBotOperationSuccess extends ChatBotOperationState {}
+
+final class ChatBotOperationLoading extends ChatBotOperationState {}
 
 final class ChatBotOperationFailure extends ChatBotOperationState {
   final String error;
   const ChatBotOperationFailure({required this.error});
 }
-

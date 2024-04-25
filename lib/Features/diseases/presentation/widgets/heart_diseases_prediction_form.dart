@@ -7,7 +7,7 @@ import 'package:team/Features/diseases/view_model/diagnosis_input_data.dart';
 import 'package:team/core/api/api_key.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
 import 'package:team/core/utils/medi_media_query.dart';
-import 'package:team/models/text_felid_form_model.dart';
+import 'package:team/Features/user_authentication/data/models/text_felid_form_model.dart';
 
 class HeartDiseasesPredictionInputForm extends StatelessWidget {
   const HeartDiseasesPredictionInputForm({

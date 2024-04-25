@@ -5,7 +5,7 @@ import 'package:team/Features/chatBot/presentation/widgets/chat_bot_response.dar
 import 'package:team/Features/chatBot/presentation/widgets/user_response.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 
-class ChatResponse extends StatefulWidget {
+class ChatResponse extends StatelessWidget {
   const ChatResponse({
     super.key,
     required this.question,
@@ -15,20 +15,15 @@ class ChatResponse extends StatefulWidget {
   final String answer;
 
   @override
-  State<ChatResponse> createState() => _ChatResponseState();
-}
-
-class _ChatResponseState extends State<ChatResponse> {
-  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         UserResponse(
-          question: widget.question,
+          question: question,
         ),
         Gap(context.height * .01),
         ChatBotResponse(
-          answer: widget.answer,
+          answer: answer,
         ),
       ],
     );

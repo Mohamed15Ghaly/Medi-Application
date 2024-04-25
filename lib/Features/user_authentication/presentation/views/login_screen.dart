@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:team/Features/home/presentation/views/main_screen.dart';
 import 'package:team/Features/user_authentication/presentation/widgets/login_screen_body.dart';
-import 'package:team/Features/user_authentication/presentation/cubit/user_log_in_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/auth_cubit/user_log_in_cubit.dart';
 import 'package:team/core/utils/medi_colors.dart';
 
 class LoginScreen extends StatelessWidget {

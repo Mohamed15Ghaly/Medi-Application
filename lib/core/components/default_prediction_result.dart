@@ -47,7 +47,7 @@ class Diagnosed extends StatelessWidget {
         Text(response,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              fontSize: 18,
+              fontSize: 16,
               fontWeight: FontWeight.bold,
             )),
         const Divider(),
@@ -60,7 +60,7 @@ class Diagnosed extends StatelessWidget {
             const Text(
               "You should visit your doctor and take care of yourself.",
               textAlign: TextAlign.center,
-              style: TextStyle(color: MediColors.fourthColor, fontSize: 10),
+              style: TextStyle(color: MediColors.fourthColor, fontSize: 8),
             ),
           ],
         ),
@@ -77,18 +77,18 @@ class Diagnosed extends StatelessWidget {
 
 class NotDiagnosed extends StatelessWidget {
   const NotDiagnosed({
-    super.key,
+    super.key, required this.response,
   });
-
+final String response;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Image.asset("assets/images/diseases/Doctor-rafiki.png"),
-        const Text(
-            "Congratulations , You have been not diagnosed with diabetes.",
+         Text(
+            response,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
             )),
@@ -96,12 +96,12 @@ class NotDiagnosed extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.check, color: MediColors.fourthColor, size: 15),
+            const Icon(Icons.check, color: MediColors.fourthColor, size: 16),
             Gap(context.height * .005),
             const Text(
               "Your health is fine now , I'm glad to tell you that .",
               textAlign: TextAlign.center,
-              style: TextStyle(color: MediColors.fourthColor, fontSize: 10),
+              style: TextStyle(color: MediColors.fourthColor, fontSize: 8),
             ),
           ],
         ),
@@ -138,13 +138,13 @@ class Verified extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.email, color: MediColors.fourthColor, size: 15),
+            const Icon(Icons.email, color: MediColors.fourthColor, size: 16),
             Gap(context.height * .005),
             Text(
               title2,
               textAlign: TextAlign.center,
               style:
-                  const TextStyle(color: MediColors.fourthColor, fontSize: 10),
+                  const TextStyle(color: MediColors.fourthColor, fontSize: 8),
             ),
           ],
         ),

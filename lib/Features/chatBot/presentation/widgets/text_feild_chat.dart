@@ -13,6 +13,14 @@ class TextFelidChat extends StatelessWidget {
     return Expanded(
       flex: 1,
       child: TextField(
+        onSubmitted: (value) {
+          if (BlocProvider.of<ChatBotOperationCubit>(context)
+              .chatBotTextController
+              .text
+              .isNotEmpty) {
+            BlocProvider.of<ChatBotOperationCubit>(context).send();
+          }
+        },
         onChanged: (value) {
           BlocProvider.of<ChatBotOperationCubit>(context).start();
         },

@@ -5,7 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 import 'package:team/core/utils/response_font_size.dart';
-import '../../../../models/on_Boarding_model.dart';
+import '../../data/models/on_Boarding_model.dart';
 
 class OnBoardingItemBody extends StatelessWidget {
   const OnBoardingItemBody({

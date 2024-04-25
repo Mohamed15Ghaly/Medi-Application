@@ -3,8 +3,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:team/Features/user_authentication/data/repository/user_repository.dart';
 import 'package:team/Features/user_authentication/presentation/widgets/forget_password_screen_body.dart';
-import 'package:team/Features/user_authentication/presentation/cubit/user_forget_password_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/auth_cubit/user_forget_password_cubit.dart';
 import 'package:team/core/api/dio_consumer.dart';
 import 'package:team/core/components/default_prediction_result.dart';
 import 'package:team/core/utils/medi_colors.dart';
@@ -15,7 +16,8 @@ class ForgetPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => UserForgetPasswordCubit(DioConsumer(dio: Dio())),
+      create: (context) => UserForgetPasswordCubit(
+          UserRepository(apiConsumer: DioConsumer(dio: Dio()))),
       child: BlocConsumer<UserForgetPasswordCubit, UserForgetPasswordState>(
         listener: (context, state) {
           if (state is UserForgetPasswordSuccess) {

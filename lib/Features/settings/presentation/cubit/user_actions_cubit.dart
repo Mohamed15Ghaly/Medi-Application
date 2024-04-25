@@ -1,36 +1,51 @@
+import 'dart:io';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:team/Features/user_authentication/presentation/cubit/user_log_in_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/auth_cubit/user_log_in_cubit.dart';
 import 'package:team/core/api/api_consumer.dart';
 import 'package:team/core/api/api_key.dart';
 import 'package:team/core/api/api_url.dart';
 import 'package:team/core/errors/exceptions.dart';
-
+import 'package:team/core/functions/upload_image_to_api.dart';
 part 'user_actions_state.dart';
-
 class UserActionsCubit extends Cubit<UserActionsState> {
   UserActionsCubit(this.apiConsumer) : super(UserActionsInitial());
   final ApiConsumer apiConsumer;
-XFile? profilePhoto  , userProfilePhoto;
-  uploadProfilePhoto(XFile newImage){
-    profilePhoto = newImage;
-    emit(UserActionsLoadingSave());
+
+  XFile? profilePhoto;
+  File? pickedFile;
+
+  uploadProfilePic() async {
+    ImagePicker().pickImage(source: ImageSource.gallery).then((value) {
+      if (value != null) {
+        profilePhoto = XFile(pickedFile!.path);
+        emit(UserActionsLoadingSave());
+      }
+    });
   }
-  saveProfilePhoto(){
-    userProfilePhoto = profilePhoto;
-    emit(const UserActionsSuccess(
-      message: "Profile Photo Changed Successfully",
-    ));
+
+  saveProfilePhoto(BuildContext context) async {
+    emit(UserActionsLoading());
+    try {
+      await apiConsumer.post(
+        ApiUrl.userUpdatePhoto +
+            BlocProvider.of<UserLoginCubit>(context).userLogIn!.id,
+        isFormData: true,
+        body: {
+          ApiKey.image: await uploadImageToApi(profilePhoto!),
+        },
+      );
+      emit(const UserActionsSuccess(
+        message: "Profile Photo Changed Successfully",
+      ));
+    } on ServiceExceptions catch (e) {
+      emit(UserActionsFailure(
+        error: e.errorMessageModel.errorMessage,
+      ));
+    }
   }
-
-
-
-
-
-
-
 
   TextEditingController newUserName = TextEditingController();
   changeUserNameValidation(

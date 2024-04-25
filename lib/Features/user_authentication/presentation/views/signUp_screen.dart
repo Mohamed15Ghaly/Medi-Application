@@ -3,8 +3,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:team/Features/user_authentication/data/repository/user_repository.dart';
 import 'package:team/Features/user_authentication/presentation/widgets/signUp_screen_body.dart';
-import 'package:team/Features/user_authentication/presentation/cubit/user_sign_up_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/auth_cubit/user_sign_up_cubit.dart';
 import 'package:team/core/api/dio_consumer.dart';
 import 'package:team/core/components/default_prediction_result.dart';
 import 'package:team/core/utils/medi_colors.dart';
@@ -15,7 +16,8 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => UserSignUpCubit(DioConsumer(dio: Dio())),
+      create: (context) =>
+          UserSignUpCubit(UserRepository(apiConsumer: DioConsumer(dio: Dio()))),
       child: BlocConsumer<UserSignUpCubit, UserSignUpState>(
         listener: (context, state) {
           if (state is UserSignUpSuccess) {

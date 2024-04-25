@@ -5,13 +5,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:team/Features/chatBot/presentation/cubit/chat_bot_operation_cubit.dart';
 import 'package:team/core/utils/medi_colors.dart';
 
-class ChatBotButton extends StatelessWidget {
+class ChatBotButton extends StatefulWidget {
   const ChatBotButton({
     super.key,
-    required AudioPlayer audioPlayer2,
-  }) : _audioPlayer2 = audioPlayer2;
+  });
 
-  final AudioPlayer _audioPlayer2;
+  @override
+  State<ChatBotButton> createState() => _ChatBotButtonState();
+}
+
+class _ChatBotButtonState extends State<ChatBotButton> {
+  late AudioPlayer _audioPlayer2;
+
+  @override
+  void initState() {
+    _audioPlayer2 = AudioPlayer();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,25 +38,29 @@ class ChatBotButton extends StatelessWidget {
             color: MediColors.primaryColor,
             shape: const CircleBorder(),
             onPressed: () async {
-              if (state is ChatBotOperationStartRecording) {
+              _audioPlayer2.play(
+                AssetSource(
+                  "images/send.mp3",
+                ),
+              );
+              if ((state is ChatBotOperationInitial ||
+                      state is ChatBotOperationSuccess) &&
+                  state is! ChatBotOperationStartTyping) {
+                BlocProvider.of<ChatBotOperationCubit>(context)
+                    .startRecording();
+              } else if (state is ChatBotOperationStartRecording) {
                 BlocProvider.of<ChatBotOperationCubit>(context).stopRecording();
               } else if (state is ChatBotOperationStartTyping) {
-                BlocProvider.of<ChatBotOperationCubit>(context).startTyping();
-                _audioPlayer2.play(
-                  AssetSource(
-                    "images/send.mp3",
-                  ),
-                );
-              } else if (state is ChatBotOperationStartTyping) {
+                BlocProvider.of<ChatBotOperationCubit>(context).send();
               } else {
                 BlocProvider.of<ChatBotOperationCubit>(context).sendRecording();
-                ;
               }
             },
             child: Icon(
                 state is ChatBotOperationStartRecording
                     ? Icons.stop
-                    : state is ChatBotOperationStartTyping
+                    : state is ChatBotOperationStartTyping ||
+                            state is ChatBotOperationStopRecording
                         ? Icons.send
                         : Icons.mic,
                 color: MediColors.secondaryColor),

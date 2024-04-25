@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
 import 'package:team/core/components/custom_material_button.dart';
 import 'package:team/core/utils/medi_colors.dart';
@@ -16,29 +16,29 @@ class UserChangePhoto extends StatelessWidget {
     return BlocConsumer<UserActionsCubit, UserActionsState>(
       listener: (context, state) {},
       builder: (context, state) {
-        return SingleChildScrollView(
-          child: Column(
-            children: [
-              Image.asset(MediImage.changePhoto),
-              const Text(" Upload new photo to change it ",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: MediColors.primaryColor,
-                  )),
-              const Divider(),
-              CustomButton(
-                  title: state is UserActionsLoadingSave ? "Save" : "Uploading",
-                  onPressed: () {
-                    state is UserActionsLoadingSave
-                        ? BlocProvider.of<UserActionsCubit>(context)
-                            .saveProfilePhoto()
-                        : ImagePicker()
-                            .pickImage(source: ImageSource.gallery)
-                            .then((value) =>
-                                BlocProvider.of<UserActionsCubit>(context)
-                                    .uploadProfilePhoto(value!));
-                  }),
-            ],
+        return ModalProgressHUD(
+          inAsyncCall: state is UserActionsLoading,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Image.asset(MediImage.changePhoto),
+                const Text(" Upload new photo to change it ",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: MediColors.primaryColor,
+                    )),
+                const Divider(),
+                CustomButton(
+                    title: state is UserActionsInitial ? "Uploading" : "Save",
+                    onPressed: () {
+                      state is UserActionsInitial
+                          ? BlocProvider.of<UserActionsCubit>(context)
+                              .uploadProfilePic()
+                          : BlocProvider.of<UserActionsCubit>(context)
+                              .saveProfilePhoto(context);
+                    }),
+              ],
+            ),
           ),
         );
       },

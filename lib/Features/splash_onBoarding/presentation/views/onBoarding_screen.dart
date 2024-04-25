@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:team/cubits/cubit/on_boarding_action_cubit.dart';
+import 'package:team/Features/splash_onBoarding/presentation/cubit/on_boarding_action_cubit.dart';
 import 'package:team/Features/splash_onBoarding/presentation/widgets/onBoarding_body.dart';
 
 class OnBoardingScreen extends StatelessWidget {

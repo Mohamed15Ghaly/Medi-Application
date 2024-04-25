@@ -1,5 +1,4 @@
-class MediShare{
-
-  static String appViewOnBoarding = "View OnBoarding";
-  static String appShowCase = "View OnBoarding";
+class MediShare {
+  static String appViewOnBoarding = "View OnBoardingAction";
+  static String appShowCase = "View OnBoardingAction";
 }

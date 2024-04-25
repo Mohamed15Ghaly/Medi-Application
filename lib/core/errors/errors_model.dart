@@ -6,6 +6,7 @@ class ErrorModel {
 
   factory ErrorModel.fromJson(Map<String, dynamic> json) {
     return ErrorModel(
+      // errorMessage: json[ApiKey.errorMessage],
       errorMessage: json[ApiKey.errorMessage],
     );
   }

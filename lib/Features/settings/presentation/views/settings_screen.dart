@@ -6,7 +6,7 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:team/Features/settings/presentation/widgets/settings_screen_body.dart';
 import 'package:team/Features/settings/presentation/cubit/user_actions_cubit.dart';
 import 'package:team/Features/user_authentication/presentation/views/login_screen.dart';
-import 'package:team/Features/user_authentication/presentation/cubit/user_log_in_cubit.dart';
+import 'package:team/Features/user_authentication/presentation/auth_cubit/user_log_in_cubit.dart';
 import 'package:team/core/utils/medi_colors.dart';
 
 class SettingsScreen extends StatelessWidget {
