@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:team/Features/diseases/presentation/widgets/causes.dart';
 import 'package:team/Features/diseases/presentation/widgets/complications.dart';
@@ -9,6 +8,7 @@ import 'package:team/Features/diseases/presentation/widgets/risk_factors.dart';
 import 'package:team/Features/diseases/presentation/widgets/symptoms.dart';
 import 'package:team/Features/diseases/presentation/widgets/video_presentation.dart';
 import 'package:team/Features/diseases/data/view_model/breast_cancer_model.dart';
+import 'package:team/core/utils/medi_videos.dart';
 
 class BreastCancerScreenBody extends StatelessWidget {
   const BreastCancerScreenBody({
@@ -17,46 +17,44 @@ class BreastCancerScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return  Column(
       children: [
-        FittedBox(
-          child: VideoPresentation(
-            videoPath: "assets/images/breastCancer.mp4",
-          ),
+        VideoPresentation(
+          videoPath: MediVideos.breastCancer,
         ),
-        Divider(),
-        OverView(
+        const Divider(),
+        const OverView(
           overView1: BreastCancerViewModel.overview1,
           overView2: BreastCancerViewModel.overview2,
           overView3: BreastCancerViewModel.overview3,
         ),
-        Divider(),
-        Symptoms(
+        const Divider(),
+        const Symptoms(
           symptoms1: BreastCancerViewModel.symptoms1,
           symptoms2: BreastCancerViewModel.symptoms2,
           symptoms: BreastCancerViewModel.symptoms,
         ),
-        Divider(),
-        Doctor(doctor: BreastCancerViewModel.doctor),
-        Divider(),
-        Causes(
+        const Divider(),
+        const Doctor(doctor: BreastCancerViewModel.doctor),
+        const Divider(),
+        const Causes(
           causes1: BreastCancerViewModel.causes1,
           causes: BreastCancerViewModel.causes,
         ),
-        Divider(),
-        RiskFactors(
+        const Divider(),
+        const RiskFactors(
           riskFactors1: BreastCancerViewModel.riskFactors1,
           riskFactors2: BreastCancerViewModel.riskFactors2,
           riskFactors3: BreastCancerViewModel.riskFactors3,
           riskFactors4: BreastCancerViewModel.riskFactors4,
         ),
-        Divider(),
-        Prevention(
+        const Divider(),
+        const Prevention(
           prevention1: BreastCancerViewModel.prevention1,
           prevention: BreastCancerViewModel.prevention,
         ),
-        Divider(),
-        Complications(
+        const Divider(),
+        const Complications(
           complications: BreastCancerViewModel.complications,
         )
       ],

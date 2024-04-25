@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:team/Features/diseases/presentation/cubit/diseases_cubit.dart';
 import 'package:team/Features/diseases/presentation/widgets/parkinson_prediction_body.dart';
 import 'package:team/core/components/default_prediction_result.dart';
+import 'package:team/core/components/diagnosed.dart';
+import 'package:team/core/components/not_diagnosed.dart';
 import 'package:team/core/utils/medi_strings.dart';
 
 class ParkinsonPredictionScreen extends StatelessWidget {

@@ -39,6 +39,9 @@ class MediImage {
   static const String diabetesSplash = "$appMenuFolder/zwhxMyUERa.json";
   static const String diseasesOverview =
       "$diseasesFolder/Property 1=doctor_22_copy.png";
+  static const String notDiagnosed = "$diseasesFolder/Doctor-rafiki.png";
+  static const String diagnosed =
+      "$diseasesFolder/Health professional team-amico.png";
   static const String diseasesSymptoms =
       "$diseasesFolder/d6855842-7cea-4d4f-84fd-581495b91bef.png";
   static const String diseasesDoctor =
@@ -65,6 +68,8 @@ class MediImage {
       "$appMenuFolder/Push notifications-amico.png";
   static const String chatBotSplash =
       "$appMenuFolder/Animation - 1709462694215.json";
+  static const String chatBotSoundWave =
+      "$appMenuFolder/yP1ojBaeGN.json";
   static const String chatBotPhoto = "$appMenuFolder/icons8-bot-100.png";
   static const String voiceAssistant =
       "$appMenuFolder/Voice assistant-pana.png";
