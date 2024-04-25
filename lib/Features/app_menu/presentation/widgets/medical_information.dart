@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:team/Features/app_menu/data/view_model/question_data.dart';
 import 'package:team/Features/app_menu/presentation/widgets/questions_body.dart';
 import 'package:team/core/utils/medi_image.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 
 class MedicalInformation extends StatelessWidget {
   const MedicalInformation({
@@ -13,7 +15,7 @@ class MedicalInformation extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Image.asset(MediImage.medicalInformation),
+          Image.asset(height: context.height/2,MediImage.medicalInformation),
           const QuestionsBody(
             questions: QuestionsHelpDataViewModel.medicalInformationData,
           ),

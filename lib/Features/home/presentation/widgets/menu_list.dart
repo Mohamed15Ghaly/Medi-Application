@@ -23,9 +23,12 @@ class MenuList extends StatelessWidget {
         ListTile(
           onTap: () =>
               BlocProvider.of<HomeCubit>(context).drawerController.close!(),
-          title: const DefaultText(
-            txt: 'Home',
-            color: MediColors.primaryColor,
+          title: const FittedBox(
+            fit: BoxFit.scaleDown,
+            child: DefaultText(
+              txt: 'Home',
+              color: MediColors.primaryColor,
+            ),
           ),
           leading: const Icon(Icons.home, color: MediColors.primaryColor),
           trailing:
@@ -33,9 +36,12 @@ class MenuList extends StatelessWidget {
         ),
         ListTile(
           onTap: () => Get.to(() => const ProfileScreen()),
-          title: const DefaultText(
-            txt: 'Profile',
-            color: MediColors.primaryColor,
+          title: const FittedBox(
+            fit: BoxFit.scaleDown,
+            child: DefaultText(
+              txt: 'Profile',
+              color: MediColors.primaryColor,
+            ),
           ),
           leading: const Icon(Icons.person_2, color: MediColors.primaryColor
               // color: Colors.green,
@@ -45,9 +51,12 @@ class MenuList extends StatelessWidget {
         ),
         ListTile(
           onTap: () => Get.to(() => const ChatScreen()),
-          title: const DefaultText(
-            txt: 'Medi Chat',
-            color: MediColors.primaryColor,
+          title: const FittedBox(
+            fit: BoxFit.scaleDown,
+            child: DefaultText(
+              txt: 'Medi Chat',
+              color: MediColors.primaryColor,
+            ),
           ),
           leading: const Icon(Icons.chat, color: MediColors.primaryColor
               // color: Colors.tealAccent
@@ -57,9 +66,12 @@ class MenuList extends StatelessWidget {
         ),
         ListTile(
           onTap: () => Get.to(() => const SettingsScreen()),
-          title: const DefaultText(
-            txt: 'Settings',
-            color: MediColors.primaryColor,
+          title: const FittedBox(
+            fit: BoxFit.scaleDown,
+            child: DefaultText(
+              txt: 'Settings',
+              color: MediColors.primaryColor,
+            ),
           ),
           leading: const Icon(Icons.settings, color: MediColors.primaryColor),
           trailing:
@@ -67,9 +79,12 @@ class MenuList extends StatelessWidget {
         ),
         ListTile(
           onTap: () => Get.to(() => const HelpScreen()),
-          title: const DefaultText(
-            txt: 'Help',
-            color: MediColors.primaryColor,
+          title: const FittedBox(
+            fit: BoxFit.scaleDown,
+            child: DefaultText(
+              txt: 'Help',
+              color: MediColors.primaryColor,
+            ),
           ),
           leading: const Icon(Icons.help_outline, color: MediColors.primaryColor
               // color: Colors.yellow,
@@ -91,9 +106,12 @@ class MenuList extends StatelessWidget {
             btnOkColor: MediColors.primaryColor,
             btnCancelColor: MediColors.primaryColor,
           ).show(),
-          title: const DefaultText(
-            txt: 'Logout',
-            color: Colors.red,
+          title: const FittedBox(
+            fit: BoxFit.scaleDown,
+            child: DefaultText(
+              txt: 'Logout',
+              color: Colors.red,
+            ),
           ),
           leading: const Icon(
             Icons.logout,

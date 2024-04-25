@@ -52,12 +52,11 @@ class RateUs extends StatelessWidget {
           textInputType: TextInputType.text,
         )),
         Gap(context.height * .015),
-        FittedBox(
-            child: CustomButton(
-                title: "Send",
-                onPressed: () {
-                  BlocProvider.of<UserActionsCubit>(context).rateUsValidation();
-                })),
+        CustomButton(
+            title: "Send",
+            onPressed: () {
+              BlocProvider.of<UserActionsCubit>(context).rateUsValidation();
+            }),
       ],
     );
   }

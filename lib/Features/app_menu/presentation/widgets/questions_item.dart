@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:team/core/utils/medi_colors.dart';
 
+import '../../../../core/utils/response_font_size.dart';
+
 class QuestionsItem extends StatelessWidget {
   const QuestionsItem({
     super.key,
@@ -12,12 +14,12 @@ class QuestionsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-        title: Text(question),
+        title:DefaultText(txt:question,color: Colors.black,),
         childrenPadding: const EdgeInsets.all(8),
         children: [
-          Text(
-            answer,
-            style: const TextStyle(color: MediColors.fourthColor),
+          DefaultText(
+            txt : answer,
+        color: MediColors.fourthColor,
           ),
         ]);
   }

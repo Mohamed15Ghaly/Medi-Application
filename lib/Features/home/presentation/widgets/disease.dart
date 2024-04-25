@@ -24,9 +24,12 @@ class Disease extends StatelessWidget {
   Widget build(BuildContext context) {
     return ExpansionTile(
       collapsedIconColor: MediColors.primaryColor,
-      title: const DefaultText(
-        txt: 'Disease',
-        color: MediColors.primaryColor,
+      title: const FittedBox(
+        fit: BoxFit.scaleDown,
+        child: DefaultText(
+          txt: 'Disease',
+          color: MediColors.primaryColor,
+        ),
       ),
       leading: const Icon(
         Icons.medical_services,
