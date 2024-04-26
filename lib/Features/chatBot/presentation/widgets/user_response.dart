@@ -10,6 +10,7 @@ import 'package:team/core/api/api_key.dart';
 import 'package:team/core/cache/cache_helper.dart';
 import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_media_query.dart';
+import 'package:team/core/utils/response_font_size.dart';
 
 class UserResponse extends StatefulWidget {
   const UserResponse({
@@ -56,7 +57,8 @@ class _UserState extends State<UserResponse>
                   actions: [
                     CupertinoContextMenuAction(
                         onPressed: () {
-                          Clipboard.setData(ClipboardData(text: widget.question));
+                          Clipboard.setData(
+                              ClipboardData(text: widget.question));
                         },
                         trailingIcon: CupertinoIcons.doc,
                         child: const Text("Copy")),
@@ -68,6 +70,7 @@ class _UserState extends State<UserResponse>
                         child: const Text("Listen")),
                   ],
                   child: Container(
+                    constraints: BoxConstraints(maxWidth: context.width),
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.only(
@@ -77,7 +80,17 @@ class _UserState extends State<UserResponse>
                       ),
                       color: MediColors.fourthColor.withOpacity(.25),
                     ),
-                    child: AutoSizeText(widget.question),
+                    child: Text(
+                      widget.question,
+                      style: TextStyle(
+                        color: MediColors.thirdColor,
+                        decoration: TextDecoration.none,
+                        fontSize: getResponseFontSize(
+                          context: context,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),

@@ -2,7 +2,6 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:team/Features/chatBot/data/models/chat_bot_features.dart';
 import 'package:team/core/utils/medi_colors.dart';
@@ -38,7 +37,6 @@ class ChatBotResponse extends StatelessWidget {
         Flexible(
           flex: 3,
           child: CupertinoContextMenu(
-            enableHapticFeedback: false,
             actions: [
               CupertinoContextMenuAction(
                   onPressed: () {
@@ -54,7 +52,10 @@ class ChatBotResponse extends StatelessWidget {
                   child: const Text("Listen")),
             ],
             child: Container(
+              constraints: BoxConstraints(maxWidth: context.width),
               padding: const EdgeInsets.all(10),
+              // margin: 
+              
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(10),
@@ -70,6 +71,7 @@ class ChatBotResponse extends StatelessWidget {
                     speed: const Duration(milliseconds: 150),
                     textStyle: TextStyle(
                         color: MediColors.secondaryColor,
+                        decoration: TextDecoration.none,
                         fontSize: getResponseFontSize(
                             context: context, fontSize: 14)),
                   )
