@@ -374,6 +374,9 @@ class DiseasesCubit extends Cubit<DiseasesState> {
   diabetesPredictionValidation() async {
     if (await dataConnectionChecker.hasConnection == false) {
       emit(const DiseasesFailure(error: "No Internet Connection"));
+    } else if (notValid(input: bmi.text.trim()) ||
+        notValid(input: bmi.text.trim())) {
+      emit(const DiseasesFailure(error: "Please Enter Valid Input "));
     } else if (validInput(input: pregnancies.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.pregnancies} Without ',' or '.'"));
@@ -392,17 +395,11 @@ class DiseasesCubit extends Cubit<DiseasesState> {
     } else if (validInput(input: bmi.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.bmi} without ','"));
-    } else if (notValid(input: bmi.text.trim())) {
-      emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.bmi} A Valid Number"));
     } else if (validInput(
         input: diabetesPedigreeFunction.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error:
               "Please Enter ${ApiKey.diabetesPedigreeFunction} without ',' "));
-    } else if (notValid(input: bmi.text.trim())) {
-      emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.bmi} A Valid Number"));
     } else if (validInput(input: age.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.age} without ',' or '.'"));

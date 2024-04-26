@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:team/core/components/custom_material_button.dart';
 import 'package:team/core/utils/medi_colors.dart';

@@ -1,7 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:team/core/components/custom_material_button.dart';
 import 'package:team/core/utils/medi_colors.dart';
