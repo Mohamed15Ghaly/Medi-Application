@@ -28,13 +28,14 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
             Image.asset(
               MediImage.signInImage,
             ),
-            Gap(MediaQuery.sizeOf(context).height * .05),
+            Gap(context.height * .05),
             FittedBox(
               child: SizedBox(
                 child: Text(
                   "Create Account",
                   style: TextStyle(
-                    fontSize: getResponseFontSize(context: context, fontSize: 30),
+                    fontSize:
+                        getResponseFontSize(context: context, fontSize: 30),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -45,14 +46,15 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
                 child: Text(
                   "Let’s Create Account Together",
                   style: TextStyle(
-                    fontSize: getResponseFontSize(context: context, fontSize: 16),
+                    fontSize:
+                        getResponseFontSize(context: context, fontSize: 16),
                   ),
                 ),
               ),
             ),
-            Gap(MediaQuery.sizeOf(context).height * .05),
+            Gap(context.height * .05),
             const SignUpForm(),
-            Gap(MediaQuery.sizeOf(context).height * .005),
+            Gap(context.height * .005),
             FittedBox(
               child: Row(
                 children: [
@@ -68,11 +70,14 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
                           });
                     },
                   ),
-                  const DefaultText(txt: 'I agree to the all statement in terms of privacy policy', color: Colors.black),
+                  const DefaultText(
+                      txt:
+                          'I agree to the all statement in terms of privacy policy',
+                      color: Colors.black),
                 ],
               ),
             ),
-            Gap(MediaQuery.sizeOf(context).height * .025),
+            Gap(context.height * .025),
             CustomButton(
                 title: "Sign Up",
                 onPressed: () {

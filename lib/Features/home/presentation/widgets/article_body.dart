@@ -14,8 +14,6 @@ class ArticleBody extends StatelessWidget {
   final String articleText;
   @override
   Widget build(BuildContext context) {
-    double height = context.height;
-    double width = context.width;
     return Container(
       decoration: BoxDecoration(
         color: MediColors.primaryColor,
@@ -34,16 +32,16 @@ class ArticleBody extends StatelessWidget {
         onTap: () {
           Get.bottomSheet(
             SizedBox(
-              height: height / 4,
-              width: MediaQuery.sizeOf(context).width,
+              height: context.height / 4,
+              width: context.width,
               child: Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
                   Container(
                     padding: const EdgeInsets.all(16),
-                    height: height / 8,
+                    height: context.height / 8,
                     color: MediColors.primaryColor,
-                    width: MediaQuery.sizeOf(context).width,
+                    width: context.width,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,7 +90,7 @@ class ArticleBody extends StatelessWidget {
                         Flexible(
                           child: FittedBox(
                             child: SizedBox(
-                              width: width / 1.5,
+                              width: context.width / 1.5,
                               child: AutoSizeText(
                                 articleText,
                                 maxLines: 7,

@@ -24,7 +24,7 @@ class FollowUs extends StatelessWidget {
           QrImageView(
               data: 'https://grad-project-fc8cd.web.app/',
               version: QrVersions.auto,
-              size: MediaQuery.sizeOf(context).width * .5),
+              size: context.width * .5),
         ],
       ),
     );

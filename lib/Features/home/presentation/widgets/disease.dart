@@ -14,7 +14,6 @@ import 'package:team/Features/diseases/presentation/cubit/diseases_cubit.dart';
 import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/response_font_size.dart';
 
-
 class Disease extends StatelessWidget {
   const Disease({
     super.key,
@@ -44,8 +43,11 @@ class Disease extends StatelessWidget {
                 diseaseName: 'Parkinson');
             Get.to(() => const DiseasesScreen());
           },
-          title: const Text('Parkinson',
-              style: TextStyle(color: MediColors.primaryColor)),
+          title: Text('Parkinson',
+              style: TextStyle(
+                  color: MediColors.primaryColor,
+                  fontSize:
+                      getResponseFontSize(context: context, fontSize: 14))),
           leading: const Icon(
             Icons.medical_services,
             color: MediColors.primaryColor,
@@ -61,10 +63,11 @@ class Disease extends StatelessWidget {
                 diseaseName: 'Breast Cancer');
             Get.to(() => const DiseasesScreen());
           },
-          title: const Text('Breast Cancer',
+          title: Text('Breast Cancer',
               style: TextStyle(
-                color: MediColors.primaryColor,
-              )),
+                  color: MediColors.primaryColor,
+                  fontSize:
+                      getResponseFontSize(context: context, fontSize: 14))),
           leading: const Icon(
             Icons.medical_services,
             color: MediColors.primaryColor,
@@ -80,10 +83,11 @@ class Disease extends StatelessWidget {
                 diseaseName: 'Heart Disease');
             Get.to(() => const DiseasesScreen());
           },
-          title: const Text('Heart Disease',
-              style: TextStyle(color: MediColors.primaryColor
-                  // fontWeight: FontWeight.bold,
-                  )),
+          title: Text('Heart Disease',
+              style: TextStyle(
+                  color: MediColors.primaryColor,
+                  fontSize:
+                      getResponseFontSize(context: context, fontSize: 14))),
           leading: const Icon(
             Icons.medical_services,
             color: MediColors.primaryColor,
@@ -99,8 +103,11 @@ class Disease extends StatelessWidget {
                 diseaseName: 'Diagnosis');
             Get.to(() => const DiseasesScreen());
           },
-          title: const Text('Diagnosis',
-              style: TextStyle(color: MediColors.primaryColor)),
+          title: Text('Diagnosis',
+              style: TextStyle(
+                  color: MediColors.primaryColor,
+                  fontSize:
+                      getResponseFontSize(context: context, fontSize: 14))),
           leading: const Icon(
             Icons.medical_services,
             color: MediColors.primaryColor,

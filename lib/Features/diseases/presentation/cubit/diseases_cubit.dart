@@ -341,28 +341,28 @@ class DiseasesCubit extends Cubit<DiseasesState> {
   parkinsonPrediction() async {
     emit(DiseasesLoading());
     final response = await diseasesRepository.parkinsonPrediction(
-        mdvpFoHz: double.tryParse(mdvpFoHz.text.trim())!,
-        mdvpFhiHz: double.tryParse(mdvpFhiHz.text.trim())!,
-        mdvpFloHz: double.tryParse(mdvpFloHz.text.trim())!,
-        mdvpJitterPercentage: double.tryParse(mdvpJitterPercentage.text.trim())!,
-        mdvpJitterAbs: double.tryParse(mdvpJitterAbs.text.trim())!,
-        mdvpRap: double.tryParse(mdvpRap.text.trim())!,
-        mdvpPpq: double.tryParse(mdvpPpq.text.trim())!,
-        jitterDdf: double.tryParse(jitterDdf.text.trim())!,
-        mdvpShimmer: double.tryParse(mdvpShimmer.text.trim())!,
-        mdvpShimmerDb: double.tryParse(mdvpShimmerDb.text.trim())!,
-        shimmerApq3: double.tryParse(shimmerApq3.text.trim())!,
-        shimmerApq5: double.tryParse(shimmerApq5.text.trim())!,
-        mdvpApq: double.tryParse(mdvpApq.text.trim())!,
-        shimmerDda: double.tryParse(shimmerDda.text.trim())!,
-        nhr: double.tryParse(nhr.text.trim())!,
-        hnr: double.tryParse(hnr.text.trim())!,
-        rpde: double.tryParse(rpde.text.trim())!,
-        dfa: double.tryParse(dfa.text.trim())!,
-        spread1: double.tryParse(spread1.text.trim())!,
-        spread2: double.tryParse(spread2.text.trim())!,
-        d2: double.tryParse(d2.text.trim())!,
-        ppe: double.tryParse(ppe.text.trim())!,
+      mdvpFoHz: double.tryParse(mdvpFoHz.text.trim())!,
+      mdvpFhiHz: double.tryParse(mdvpFhiHz.text.trim())!,
+      mdvpFloHz: double.tryParse(mdvpFloHz.text.trim())!,
+      mdvpJitterPercentage: double.tryParse(mdvpJitterPercentage.text.trim())!,
+      mdvpJitterAbs: double.tryParse(mdvpJitterAbs.text.trim())!,
+      mdvpRap: double.tryParse(mdvpRap.text.trim())!,
+      mdvpPpq: double.tryParse(mdvpPpq.text.trim())!,
+      jitterDdf: double.tryParse(jitterDdf.text.trim())!,
+      mdvpShimmer: double.tryParse(mdvpShimmer.text.trim())!,
+      mdvpShimmerDb: double.tryParse(mdvpShimmerDb.text.trim())!,
+      shimmerApq3: double.tryParse(shimmerApq3.text.trim())!,
+      shimmerApq5: double.tryParse(shimmerApq5.text.trim())!,
+      mdvpApq: double.tryParse(mdvpApq.text.trim())!,
+      shimmerDda: double.tryParse(shimmerDda.text.trim())!,
+      nhr: double.tryParse(nhr.text.trim())!,
+      hnr: double.tryParse(hnr.text.trim())!,
+      rpde: double.tryParse(rpde.text.trim())!,
+      dfa: double.tryParse(dfa.text.trim())!,
+      spread1: double.tryParse(spread1.text.trim())!,
+      spread2: double.tryParse(spread2.text.trim())!,
+      d2: double.tryParse(d2.text.trim())!,
+      ppe: double.tryParse(ppe.text.trim())!,
     );
 
     response.fold(
@@ -430,6 +430,7 @@ class DiseasesCubit extends Cubit<DiseasesState> {
           double.tryParse(diabetesPedigreeFunction.text.trim())!,
       age: int.tryParse(age.text.trim())!,
     );
+    // response.
     response.fold(
       (l) => emit(DiseasesFailure(error: l)),
       (r) => emit(DiseasesSuccess(predict: r)),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team/core/utils/medi_media_query.dart';
 
 double? getResponseFontSize(
     {required BuildContext context, required double fontSize}) {
@@ -10,7 +11,7 @@ double? getResponseFontSize(
 }
 
 double? getScaleFactor(BuildContext context) {
-  double getScaleWidth = MediaQuery.sizeOf(context).width;
+  double getScaleWidth = context.width;
   if (getScaleWidth < 801) {
     return getScaleWidth / 650;
   } else if (getScaleWidth < 1300) {

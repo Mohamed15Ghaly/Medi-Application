@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -16,29 +17,21 @@ class NotDiagnosed extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        FittedBox(child: Image.asset(height: context.height/3.2,MediImage.notDiagnosed)),
-        FittedBox(
-          child: Text(response,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: getResponseFontSize(context: context, fontSize: 18),
-                fontWeight: FontWeight.bold,
-              )),
-        ),
+        Image.asset(MediImage.notDiagnosed),
+        Text(response,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: getResponseFontSize(context: context, fontSize: 18),
+              fontWeight: FontWeight.bold,
+            )),
         const Divider(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Flexible(child: FittedBox(child: Icon(Icons.check, color: MediColors.fourthColor, size: 16))),
-            Gap(context.height * .005),
-            const Flexible(
-              child: Text(
-                "Your health is fine now , I'm glad to tell you that .",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: MediColors.fourthColor, fontSize: 8),
-              ),
-            ),
-          ],
+        const Align(
+          alignment: Alignment.center,
+          child: Text(
+            "Your health is fine now , I'm glad to tell you that .",
+            textAlign: TextAlign.center,
+            style: TextStyle(color: MediColors.fourthColor, fontSize: 8),
+          ),
         ),
         const Divider(),
         FittedBox(
