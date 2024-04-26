@@ -16,7 +16,7 @@ class SplashScreen extends StatelessWidget {
         backgroundColor: MediColors.primaryColor,
         body: FutureBuilder(
             future: Future.delayed(
-              MediDuration.defaultDuration,
+              MediDuration.splashDuration,
             ),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {

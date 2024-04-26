@@ -6,7 +6,6 @@ double? getResponseFontSize(
   double responsiveFontSize = fontSize * scaleFactor!;
   double lowerLimit = fontSize * 1;
   double upperLimit = fontSize * 2.75;
-  // print('Size Of Screen${MediaQuery.sizeOf(context).width}');
   return responsiveFontSize.clamp(lowerLimit, upperLimit);
 }
 

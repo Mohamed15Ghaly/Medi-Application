@@ -6,9 +6,6 @@ import 'package:team/core/errors/exceptions.dart';
 class DioConsumer extends ApiConsumer {
   final Dio dio;
   DioConsumer({required this.dio}) {
-    // dio.options = BaseOptions(
-    //   baseUrl: EndPoint.baseUrl,
-    // );
     dio.interceptors.add(ApiInterceptors());
     dio.interceptors.add(
         LogInterceptor(requestBody: true, responseBody: true, error: true));
