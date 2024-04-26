@@ -33,38 +33,40 @@ class _ChatBotButtonState extends State<ChatBotButton> {
           animate: state is ChatBotOperationStartRecording ? true : false,
           glowRadiusFactor: .2,
           glowColor: MediColors.primaryColor,
-          child: MaterialButton(
-            padding: const EdgeInsets.all(10),
-            height: 60,
-            color: MediColors.primaryColor,
-            shape: const CircleBorder(),
-            onPressed: () async {
-              _audioPlayer2.play(
-                AssetSource(
-                  MediSounds.onPressedSound,
-                ),
-              );
-              if ((state is ChatBotOperationInitial ||
-                      state is ChatBotOperationSuccess) &&
-                  state is! ChatBotOperationStartTyping) {
-                BlocProvider.of<ChatBotOperationCubit>(context)
-                    .startRecording();
-              } else if (state is ChatBotOperationStartRecording) {
-                BlocProvider.of<ChatBotOperationCubit>(context).sendRecording();
-              } else if (state is ChatBotOperationStartTyping) {
-                BlocProvider.of<ChatBotOperationCubit>(context).send();
-              } else {
-                BlocProvider.of<ChatBotOperationCubit>(context).sendRecording();
-              }
-            },
-            child: Icon(
-                state is ChatBotOperationStartRecording
-                    ? Icons.stop
-                    : state is ChatBotOperationStartTyping ||
-                            state is ChatBotOperationStopRecording
-                        ? Icons.send
-                        : Icons.mic,
-                color: MediColors.secondaryColor),
+          child: Expanded(
+            child: MaterialButton(
+              padding: const EdgeInsets.all(10),
+              height: 60,
+              color: MediColors.primaryColor,
+              shape: const CircleBorder(),
+              onPressed: () async {
+                _audioPlayer2.play(
+                  AssetSource(
+                    MediSounds.onPressedSound,
+                  ),
+                );
+                if ((state is ChatBotOperationInitial ||
+                        state is ChatBotOperationSuccess) &&
+                    state is! ChatBotOperationStartTyping) {
+                  BlocProvider.of<ChatBotOperationCubit>(context)
+                      .startRecording();
+                } else if (state is ChatBotOperationStartRecording) {
+                  BlocProvider.of<ChatBotOperationCubit>(context).sendRecording();
+                } else if (state is ChatBotOperationStartTyping) {
+                  BlocProvider.of<ChatBotOperationCubit>(context).send();
+                } else {
+                  BlocProvider.of<ChatBotOperationCubit>(context).sendRecording();
+                }
+              },
+              child: Icon(
+                  state is ChatBotOperationStartRecording
+                      ? Icons.stop
+                      : state is ChatBotOperationStartTyping ||
+                              state is ChatBotOperationStopRecording
+                          ? Icons.send
+                          : Icons.mic,
+                  color: MediColors.secondaryColor),
+            ),
           ),
         );
       },
