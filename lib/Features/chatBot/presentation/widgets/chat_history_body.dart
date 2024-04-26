@@ -16,8 +16,6 @@ class ChatHistoryBody extends StatefulWidget {
 }
 
 class _ChatHistoryBodyState extends State<ChatHistoryBody> {
-  
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ChatBotOperationCubit, ChatBotOperationState>(
@@ -25,7 +23,8 @@ class _ChatHistoryBodyState extends State<ChatHistoryBody> {
       builder: (context, state) {
         return Expanded(
           child: ListView.separated(
-            controller: BlocProvider.of<ChatBotOperationCubit>(context).scrollController,
+            controller: BlocProvider.of<ChatBotOperationCubit>(context)
+                .scrollController,
             itemBuilder: (context, index) => ChatResponse(
                 question: BlocProvider.of<ChatBotOperationCubit>(context)
                     .chatBotHistory[index]

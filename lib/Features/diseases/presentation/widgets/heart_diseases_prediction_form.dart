@@ -47,7 +47,7 @@ class HeartDiseasesPredictionInputForm extends StatelessWidget {
                   labelText: ApiKey.sex,
                   prefixIcon: Icons.medical_information,
                   controller: BlocProvider.of<DiseasesCubit>(context).sex,
-                  textInputType: TextInputType.number,
+                  textInputType: TextInputType.text,
                   suffixIcon: Icons.info,
                   suffixOnPressed: () =>
                       DiagnosisInputData.inputDescription(key: ApiKey.sex)),
