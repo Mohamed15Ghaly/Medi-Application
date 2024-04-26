@@ -1,7 +1,5 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:team/Features/app_menu/presentation/widgets/first_aid_body.dart';
 import 'package:team/Features/app_menu/presentation/widgets/medical_information.dart';
 import 'package:team/Features/app_menu/presentation/widgets/privacy_policy_condition.dart';

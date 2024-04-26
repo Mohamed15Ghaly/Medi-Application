@@ -54,8 +54,6 @@ class ChatBotResponse extends StatelessWidget {
             child: Container(
               constraints: BoxConstraints(maxWidth: context.width),
               padding: const EdgeInsets.all(10),
-              // margin: 
-              
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(10),
