@@ -1,5 +1,5 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
@@ -20,72 +20,73 @@ class UserAccountsHeader extends StatelessWidget {
     return BlocConsumer<UserActionsCubit, UserActionsState>(
       listener: (context, state) {},
       builder: (context, state) {
-        return UserAccountsDrawerHeader(
-          decoration: const BoxDecoration(
-            color: MediColors.primaryColor,
-          ),
-          accountName: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Flexible(
-                child: FittedBox(
-                  child: Icon(
-                    Icons.person,
-                    color: MediColors.secondaryColor,
-                    size: 15,
+        return SizedBox(
+          width: context.width,
+          child: UserAccountsDrawerHeader(
+            decoration: const BoxDecoration(
+              color: MediColors.primaryColor,
+            ),
+            accountName: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Flexible(
+                  child: FittedBox(
+                    child: Icon(
+                      Icons.person,
+                      color: MediColors.secondaryColor,
+                      size: 15,
+                    ),
                   ),
                 ),
-              ),
-              Gap(context.height * .005),
-              Flexible(
-                child: FittedBox(
-                  child: AutoSizeText(
+                Gap(context.height * .005),
+                Flexible(
+                  flex: 5,
+                  child: Text(
                     CacheHelper().getData(key: ApiKey.name),
                     style: TextStyle(
                         color: MediColors.secondaryColor,
                         fontSize:
-                            getResponseFontSize(context: context, fontSize: 10)),
+                            getResponseFontSize(context: context, fontSize: 12)),
                   ),
                 ),
-              ),
-            ],
-          ),
-          accountEmail: Row(
-            children: [
-              const Flexible(
-                child: FittedBox(
-                  child: Icon(
-                    Icons.email,
-                    color: MediColors.secondaryColor,
-                    size: 15,
+              ],
+            ),
+            accountEmail: Row(
+              children: [
+                const Flexible(
+                  child: FittedBox(
+                    child: Icon(
+                      Icons.email,
+                      color: MediColors.secondaryColor,
+                      size: 15,
+                    ),
                   ),
                 ),
-              ),
-              const Gap(5),
-              Flexible(
-                child: FittedBox(
-                  child: AutoSizeText(
+                Gap(context.height * .005),
+                Flexible(
+                  flex: 5,
+                  child: Text(
                     CacheHelper().getData(key: ApiKey.email),
                     style: TextStyle(
                       color: MediColors.secondaryColor,
                       fontSize: getResponseFontSize(
                         context: context,
-                        fontSize: 10,
+                        fontSize: 12,
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          currentAccountPicture: Hero(
-            tag: 'userPhoto',
-            child: FittedBox(
-              child: CircleAvatar(
-                radius: 100,
-                backgroundImage: CachedNetworkImageProvider(
-                  CacheHelper().getData(key: ApiKey.profilePhoto),
-                  
+              ],
+            ),
+            currentAccountPicture: Hero(
+              tag: 'userPhoto',
+              child: FittedBox(
+                child: CircleAvatar(
+                  radius: 100,
+                  backgroundImage: CachedNetworkImageProvider(
+                    CacheHelper().getData(key: ApiKey.profilePhoto),
+
+                  ),
                 ),
               ),
             ),
