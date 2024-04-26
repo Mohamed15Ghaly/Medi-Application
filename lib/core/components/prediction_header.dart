@@ -19,7 +19,7 @@ class PredictionHeader extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       children: [
         Container(
-            height: context.height / 7,
+            height: context.height / 8,
             width: context.width,
             decoration: BoxDecoration(
               color: MediColors.primaryColor,
@@ -41,10 +41,11 @@ class PredictionHeader extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Flexible(
-                            child:AutoSizeText(
+                            child: AutoSizeText(
                               "Add the corresponding details and click Predict to find out whether you are at risk of contracting this disease",
                               style: TextStyle(
-                                fontSize: getResponseFontSize(context: context, fontSize: 16),
+                                fontSize: getResponseFontSize(
+                                    context: context, fontSize: 15),
                                 // fontWeight: FontWeight.bold,
                                 color: MediColors.secondaryColor,
                               ),
@@ -55,7 +56,7 @@ class PredictionHeader extends StatelessWidget {
                     ),
                   ),
                 ),
-                 Gap(context.height * .01),
+                Gap(context.height * .01),
                 Flexible(
                   child: Image.asset(MediImage.predictionDoctors),
                 ),

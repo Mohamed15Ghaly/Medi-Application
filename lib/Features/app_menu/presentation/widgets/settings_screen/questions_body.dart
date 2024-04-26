@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:team/Features/app_menu/presentation/widgets/questions_item.dart';
+import 'package:team/Features/app_menu/presentation/widgets/settings_screen/questions_item.dart';
 
 class QuestionsBody extends StatelessWidget {
   const QuestionsBody({

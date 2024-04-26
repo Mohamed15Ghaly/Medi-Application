@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:team/Features/app_menu/presentation/widgets/first_aid_body.dart';
-import 'package:team/Features/app_menu/presentation/widgets/medical_information.dart';
-import 'package:team/Features/app_menu/presentation/widgets/privacy_policy_condition.dart';
+import 'package:team/Features/app_menu/presentation/widgets/help_screen/first_aid_body.dart';
+import 'package:team/Features/app_menu/presentation/widgets/help_screen/medical_information.dart';
+import 'package:team/Features/app_menu/presentation/widgets/help_screen/privacy_policy_condition.dart';
 
 class Questions extends StatelessWidget {
   const Questions({

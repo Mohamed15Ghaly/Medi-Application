@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:team/Features/app_menu/presentation/widgets/reset_password_form.dart';
+import 'package:team/Features/app_menu/presentation/widgets/settings_screen/reset_password_form.dart';
 import 'package:team/Features/app_menu/presentation/user_actions_cubit/user_actions_cubit.dart';
 import 'package:team/core/components/custom_material_button.dart';
 import 'package:team/core/utils/medi_colors.dart';

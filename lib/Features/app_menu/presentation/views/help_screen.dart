@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:team/Features/app_menu/presentation/widgets/question.dart';
-import 'package:team/Features/app_menu/presentation/widgets/follow_us.dart';
+import 'package:team/Features/app_menu/presentation/widgets/help_screen/question.dart';
+import 'package:team/Features/app_menu/presentation/widgets/help_screen/follow_us.dart';
 
 class HelpScreen extends StatelessWidget {
   const HelpScreen({super.key});

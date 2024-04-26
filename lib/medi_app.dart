@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -24,9 +23,7 @@ class MediApplication extends StatelessWidget {
         providers: [
           BlocProvider(
             create: (context) => DiseasesCubit(
-              DiseasesRepository(
-                apiConsumer: getIt.get<DioConsumer>(),
-              ),
+              DiseasesRepositoryImpl(apiConsumer: getIt.get<DioConsumer>()),
             ),
           ),
           BlocProvider(create: (context) => UserOnPressedCubit()),

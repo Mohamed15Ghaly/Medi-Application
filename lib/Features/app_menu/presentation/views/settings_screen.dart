@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:team/Features/app_menu/presentation/widgets/settings_screen_body.dart';
+import 'package:team/Features/app_menu/presentation/widgets/settings_screen/settings_screen_body.dart';
 import 'package:team/Features/app_menu/presentation/user_actions_cubit/user_actions_cubit.dart';
 import 'package:team/Features/user_authentication/presentation/views/login_screen.dart';
 import 'package:team/core/utils/medi_colors.dart';

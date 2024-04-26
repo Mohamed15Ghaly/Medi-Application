@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:team/core/utils/medi_colors.dart';
 
-import '../../../../core/utils/response_font_size.dart';
+import '../../../../../core/utils/response_font_size.dart';
 
 class QuestionsItem extends StatelessWidget {
   const QuestionsItem({

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:team/core/utils/medi_image.dart';
-import 'package:team/Features/app_menu/presentation/widgets/attention.dart';
-import 'package:team/Features/app_menu/presentation/widgets/reset_password.dart';
-import 'package:team/Features/app_menu/presentation/widgets/delete_account.dart';
-import 'package:team/Features/app_menu/presentation/widgets/rate.dart';
+import 'package:team/Features/app_menu/presentation/widgets/settings_screen/attention.dart';
+import 'package:team/Features/app_menu/presentation/widgets/settings_screen/reset_password.dart';
+import 'package:team/Features/app_menu/presentation/widgets/settings_screen/delete_account.dart';
+import 'package:team/Features/app_menu/presentation/widgets/settings_screen/rate.dart';
 
 class SettingsScreenBody extends StatelessWidget {
   const SettingsScreenBody({

@@ -6,10 +6,28 @@ import 'package:team/core/api/api_url.dart';
 import 'package:team/core/cache/cache_helper.dart';
 import 'package:team/core/errors/exceptions.dart';
 
-class UserRepository {
+abstract class BaseUserRepository {
+  Future<Either<String, LogInModel>> logIn({
+    required String loginEmail,
+    required String loginPassword,
+  });
+  Future<Either<String, void>> signUp({
+    required String signUpEmail,
+    required String signUpUserName,
+    required String signUpPassword,
+    required String signUpConfirmPassword,
+  });
+
+  Future<Either<String, void>> forgetPassword({
+    required String forgetPasswordEmail,
+  });
+}
+
+class UserRepository extends BaseUserRepository {
   final ApiConsumer apiConsumer;
 
   UserRepository({required this.apiConsumer});
+  @override
   Future<Either<String, LogInModel>> logIn({
     required String loginEmail,
     required String loginPassword,
@@ -32,11 +50,13 @@ class UserRepository {
     }
   }
 
-  Future<Either<String, void>> signUp(
-      {required String signUpEmail,
-      required String signUpPassword,
-      required String signUpConfirmPassword,
-      required String signUpUserName}) async {
+  @override
+  Future<Either<String, void>> signUp({
+    required String signUpUserName,
+    required String signUpEmail,
+    required String signUpPassword,
+    required String signUpConfirmPassword,
+  }) async {
     try {
       await apiConsumer.post(ApiUrl.userSignUp, body: {
         ApiKey.name: signUpUserName,
@@ -50,6 +70,7 @@ class UserRepository {
     }
   }
 
+  @override
   Future<Either<String, void>> forgetPassword(
       {required String forgetPasswordEmail}) async {
     try {

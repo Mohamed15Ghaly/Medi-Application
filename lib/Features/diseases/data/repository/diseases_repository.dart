@@ -1,36 +1,48 @@
 import 'package:dartz/dartz.dart';
+import 'package:team/Features/diseases/data/models/breast_cancer_input_model.dart';
+import 'package:team/Features/diseases/data/models/diabetes_input_model.dart';
+import 'package:team/Features/diseases/data/models/heart_disease_prediction.dart';
+import 'package:team/Features/diseases/data/models/parkinson_input_model.dart';
 import 'package:team/core/api/api_consumer.dart';
 import 'package:team/core/api/api_key.dart';
 import 'package:team/core/api/api_url.dart';
 import 'package:team/core/errors/exceptions.dart';
 
-class DiseasesRepository {
-  final ApiConsumer apiConsumer;
-  DiseasesRepository({required this.apiConsumer});
+abstract class BaseDiseasesRepository {
+  Future<Either<String, String>> breastCancerPrediction({
+    required BreastCancerInputModel breastCancerInputModel,
+  });
+  Future<Either<String, String>> diabetesPrediction({
+    required DiabetesInputModel diabetesInputModel,
+  });
 
+  
+}
+
+
+class DiseasesRepositoryImpl extends BaseDiseasesRepository {
+
+  final ApiConsumer apiConsumer;
+  DiseasesRepositoryImpl({required this.apiConsumer});
+
+  @override
   Future<Either<String, String>> breastCancerPrediction(
-      {required int clumpThickness,
-      required double uniformCellSize,
-      required double uniformCellShape,
-      required double marginalAdhesion,
-      required double singleEpithelialSize,
-      required double bareNuclei,
-      required double blandChromatin,
-      required double normalNucleoli,
-      required double mitoses}) async {
+      {
+        required BreastCancerInputModel breastCancerInputModel
+      }) async {
     try {
       String response = await apiConsumer.post(
         ApiUrl.breastCancerPrediction,
         body: {
-          ApiKey.clumpThickness: clumpThickness,
-          ApiKey.uniformCellSize: uniformCellSize,
-          ApiKey.uniformCellShape: uniformCellShape,
-          ApiKey.marginalAdhesion: marginalAdhesion,
-          ApiKey.singleEpithelialSize: singleEpithelialSize,
-          ApiKey.bareNuclei: bareNuclei,
-          ApiKey.blandChromatin: blandChromatin,
-          ApiKey.normalNucleoli: normalNucleoli,
-          ApiKey.mitoses: mitoses,
+          ApiKey.clumpThickness: breastCancerInputModel.clumpThickness,
+          ApiKey.uniformCellSize: breastCancerInputModel.uniformCellSize,
+          ApiKey.uniformCellShape: breastCancerInputModel.uniformCellShape,
+          ApiKey.marginalAdhesion: breastCancerInputModel.marginalAdhesion,
+          ApiKey.singleEpithelialSize: breastCancerInputModel.singleEpithelialSize,
+          ApiKey.bareNuclei: breastCancerInputModel.bareNuclei,
+          ApiKey.blandChromatin: breastCancerInputModel.blandChromatin,
+          ApiKey.normalNucleoli: breastCancerInputModel.normalNucleoli,
+          ApiKey.mitoses: breastCancerInputModel.mitoses,
         },
       );
       return Right(response);
@@ -40,37 +52,25 @@ class DiseasesRepository {
   }
 
   Future<Either<String, String>> heartDiseasePrediction({
-    required int age,
-    required int sex,
-    required int cp,
-    required int trestbps,
-    required int chol,
-    required int fbs,
-    required int restecg,
-    required int thalach,
-    required int exang,
-    required int oldpeak,
-    required int slope,
-    required int ca,
-    required int thal,
+    required HeartDiseasePrediction heartDiseasePrediction,
   }) async {
     try {
       String response = await apiConsumer.post(
         ApiUrl.heartDiseasePrediction,
         body: {
-          ApiKey.age: age,
-          ApiKey.sex: sex,
-          ApiKey.cp: cp,
-          ApiKey.trestbps: trestbps,
-          ApiKey.chol: chol,
-          ApiKey.fbs: fbs,
-          ApiKey.restecg: restecg,
-          ApiKey.thalach: thalach,
-          ApiKey.exang: exang,
-          ApiKey.oldpeak: oldpeak,
-          ApiKey.slope: slope,
-          ApiKey.ca: ca,
-          ApiKey.thal: thal,
+          ApiKey.age: heartDiseasePrediction.age,
+          ApiKey.sex: heartDiseasePrediction.sex,
+          ApiKey.cp: heartDiseasePrediction.cp,
+          ApiKey.trestbps: heartDiseasePrediction.trestbps,
+          ApiKey.chol: heartDiseasePrediction.chol,
+          ApiKey.fbs: heartDiseasePrediction.fbs,
+          ApiKey.restecg: heartDiseasePrediction.restecg,
+          ApiKey.thalach: heartDiseasePrediction.thalach,
+          ApiKey.exang: heartDiseasePrediction.exang,
+          ApiKey.oldpeak: heartDiseasePrediction.oldpeak,
+          ApiKey.slope: heartDiseasePrediction.slope,
+          ApiKey.ca: heartDiseasePrediction.ca,
+          ApiKey.thal: heartDiseasePrediction.thal,
         },
       );
       return Right(response);
@@ -79,29 +79,22 @@ class DiseasesRepository {
     }
   }
 
-
+  @override
   Future<Either<String, String>> diabetesPrediction({
-    required int pregnancies,
-    required int glucose,
-    required int bloodPressure,
-    required int skinThickness,
-    required int insulin,
-    required double bmi,
-    required double diabetesPedigreeFunction,
-    required int age,
+    required DiabetesInputModel diabetesInputModel,
   }) async {
     try {
       String response = await apiConsumer.post(
         ApiUrl.diabetesPrediction,
         body: {
-          ApiKey.pregnancies: pregnancies,
-          ApiKey.glucose: glucose,
-          ApiKey.bloodPressure: bloodPressure,  
-          ApiKey.skinThickness: skinThickness,
-          ApiKey.insulin: insulin,
-          ApiKey.bmi: bmi,
-          ApiKey.diabetesPedigreeFunction: diabetesPedigreeFunction,
-          ApiKey.age: age,
+          ApiKey.pregnancies: diabetesInputModel.pregnancies,
+          ApiKey.glucose: diabetesInputModel.glucose,
+          ApiKey.bloodPressure: diabetesInputModel.bloodPressure,
+          ApiKey.skinThickness: diabetesInputModel.skinThickness,
+          ApiKey.insulin: diabetesInputModel.insulin,
+          ApiKey.bmi: diabetesInputModel.bmi,
+          ApiKey.diabetesPedigreeFunction: diabetesInputModel.diabetesPedigreeFunction,
+          ApiKey.age: diabetesInputModel.age,
         },
       );
       return Right(response);
@@ -110,58 +103,36 @@ class DiseasesRepository {
     }
   }
 
-
- Future<Either<String, String>> parkinsonPrediction(
-    {required double mdvpFoHz,
-    required double mdvpFhiHz,
-    required double mdvpFloHz,
-    required double mdvpJitterPercentage,
-    required double mdvpJitterAbs,
-    required double mdvpRap,
-    required double mdvpPpq,
-    required double jitterDdf,
-    required double mdvpShimmer,
-    required double mdvpShimmerDb,
-    required double shimmerApq3,
-    required double shimmerApq5,
-    required double mdvpApq,
-    required double shimmerDda,
-    required double nhr,
-    required double hnr,
-    required double rpde,
-    required double dfa,
-    required double spread1,
-    required double spread2,
-    required double d2,
-    required double ppe
- }) async {
+  Future<Either<String, String>> parkinsonPrediction(
+      {
+        required ParkinsonInputModel parkinsonInputModel
+      }) async {
     try {
       String response = await apiConsumer.post(
         ApiUrl.parkinsonPrediction,
         body: {
-          ApiKey.mdvpFoHz: mdvpFoHz,
-          ApiKey.mdvpFhiHz: mdvpFhiHz,
-          ApiKey.mdvpFloHz: mdvpFloHz,
-          ApiKey.mdvpJitterPercentage:
-              mdvpJitterPercentage,
-          ApiKey.mdvpJitterAbs: mdvpJitterAbs,
-          ApiKey.mdvpRap: mdvpRap,
-          ApiKey.mdvpPpq: mdvpPpq,
-          ApiKey.jitterDdf: jitterDdf,
-          ApiKey.mdvpShimmer: mdvpShimmer,
-          ApiKey.mdvpShimmerDb: mdvpShimmerDb,
-          ApiKey.shimmerApq3: shimmerApq3,
-          ApiKey.shimmerApq5: shimmerApq5,
-          ApiKey.mdvpApq: mdvpApq,
-          ApiKey.shimmerDda: mdvpApq,
-          ApiKey.nhr: mdvpApq,
-          ApiKey.hnr: hnr,
-          ApiKey.rpde: rpde,
-          ApiKey.dfa: dfa,
-          ApiKey.spread1: spread1,
-          ApiKey.spread2: spread2,
-          ApiKey.d2: d2,
-          ApiKey.ppe: ppe,
+          ApiKey.mdvpFoHz: parkinsonInputModel.mdvpFoHz,
+          ApiKey.mdvpFhiHz: parkinsonInputModel.mdvpFhiHz,
+          ApiKey.mdvpFloHz: parkinsonInputModel.mdvpFloHz,
+          ApiKey.mdvpJitterPercentage: parkinsonInputModel.mdvpJitterPercentage,
+          ApiKey.mdvpJitterAbs: parkinsonInputModel.mdvpJitterAbs,
+          ApiKey.mdvpRap: parkinsonInputModel.mdvpRap,
+          ApiKey.mdvpPpq: parkinsonInputModel.mdvpPpq,
+          ApiKey.jitterDdf: parkinsonInputModel.jitterDdf,
+          ApiKey.mdvpShimmer: parkinsonInputModel.mdvpShimmer,
+          ApiKey.mdvpShimmerDb: parkinsonInputModel.mdvpShimmerDb,
+          ApiKey.shimmerApq3: parkinsonInputModel.shimmerApq3,
+          ApiKey.shimmerApq5: parkinsonInputModel.shimmerApq5,
+          ApiKey.mdvpApq: parkinsonInputModel.mdvpApq,
+          ApiKey.shimmerDda: parkinsonInputModel.mdvpApq,
+          ApiKey.nhr: parkinsonInputModel.mdvpApq,
+          ApiKey.hnr: parkinsonInputModel.hnr,
+          ApiKey.rpde: parkinsonInputModel.rpde,
+          ApiKey.dfa: parkinsonInputModel.dfa,
+          ApiKey.spread1: parkinsonInputModel.spread1,
+          ApiKey.spread2: parkinsonInputModel.spread2,
+          ApiKey.d2: parkinsonInputModel.d2,
+          ApiKey.ppe: parkinsonInputModel.ppe,
         },
       );
       return Right(response);

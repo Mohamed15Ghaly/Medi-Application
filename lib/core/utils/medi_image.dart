@@ -2,9 +2,6 @@
 
 class MediImage {
   static const String imagePath = "assets/images";
-  static const String videoPath = "assets/videos";
-  static const String fontPath = "assets/videos";
-  static const String soundPath = "assets/videos";
   static const String logoAndSplashFolder = "$imagePath/logo_splash";
   static const String appSplash = "$logoAndSplashFolder/aQxoeWIik3.json";
   static const String appIcon = "$logoAndSplashFolder/stethoscope_7719128.png";
@@ -68,8 +65,7 @@ class MediImage {
       "$appMenuFolder/Push notifications-amico.png";
   static const String chatBotSplash =
       "$appMenuFolder/Animation - 1709462694215.json";
-  static const String chatBotSoundWave =
-      "$appMenuFolder/yP1ojBaeGN.json";
+  static const String chatBotSoundWave = "$appMenuFolder/yP1ojBaeGN.json";
   static const String chatBotPhoto = "$appMenuFolder/icons8-bot-100.png";
   static const String voiceAssistant =
       "$appMenuFolder/Voice assistant-pana.png";
