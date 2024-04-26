@@ -82,6 +82,10 @@ class DiseasesCubit extends Cubit<DiseasesState> {
   TextEditingController ca = TextEditingController();
   TextEditingController thal = TextEditingController();
 
+  setInitialState() {
+    emit(DiseasesInitial());
+  }
+  
   setDiseaseScreen(
       {required Widget diseasesScreen,
       required Widget diseasesPredictionScreen,
@@ -444,10 +448,6 @@ class DiseasesCubit extends Cubit<DiseasesState> {
     } else {
       emit(const DiseasesFailure(error: "Please Enter All Fields"));
     }
-  }
-
-  setInitialState() {
-    emit(DiseasesInitial());
   }
 
   diabetesPrediction() async {
