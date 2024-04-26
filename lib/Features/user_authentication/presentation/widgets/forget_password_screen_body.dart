@@ -4,7 +4,6 @@ import 'package:gap/gap.dart';
 import 'package:team/core/components/custom_material_button.dart';
 import 'package:team/core/components/default_text_felid_form.dart';
 import 'package:team/core/utils/medi_image.dart';
-import 'package:team/core/utils/medi_media_query.dart';
 import '../../../../core/utils/response_font_size.dart';
 import '../../data/models/text_felid_form_model.dart';
 import '../auth_cubit/user_forget_password_cubit.dart';
@@ -27,9 +26,6 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
         child: Column(
           children: [
             Image.asset(
-              height: context.height / 2.5,
-              width: context.width,
-              fit: BoxFit.cover,
               MediImage.forgetPasswordImage,
             ),
             const Gap(25),

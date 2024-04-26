@@ -24,10 +24,7 @@ class LoginScreenBody extends StatelessWidget {
       child: Column(
         children: [
           Image.asset(
-            height: MediaQuery.sizeOf(context).height / 2.5,
-            width: MediaQuery.sizeOf(context).width,
             MediImage.loginImage,
-            fit: BoxFit.cover,
           ),
           const Gap(25),
           FittedBox(

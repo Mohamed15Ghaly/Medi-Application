@@ -26,9 +26,6 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
         child: Column(
           children: [
             Image.asset(
-              height: MediaQuery.sizeOf(context).height / 2.5,
-              width: MediaQuery.sizeOf(context).width,
-              fit: BoxFit.cover,
               MediImage.signInImage,
             ),
             Gap(MediaQuery.sizeOf(context).height * .05),
