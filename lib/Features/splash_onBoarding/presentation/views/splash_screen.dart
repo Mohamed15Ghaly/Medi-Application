@@ -22,8 +22,7 @@ class SplashScreen extends StatelessWidget {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const SplashScreenBody();
               } else {
-                CacheHelper cacheHelper = CacheHelper();
-                var ans = cacheHelper.getData(key: MediShare.appViewOnBoarding);
+                var ans = CacheHelper().getData(key: MediShare.appViewOnBoarding);
                 if (ans == true) {
                   return const LoginScreen();
                 } else {

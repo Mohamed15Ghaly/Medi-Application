@@ -38,6 +38,7 @@ class ChatBotResponse extends StatelessWidget {
         Flexible(
           flex: 3,
           child: CupertinoContextMenu(
+            enableHapticFeedback: false,
             actions: [
               CupertinoContextMenuAction(
                   onPressed: () {
@@ -52,31 +53,33 @@ class ChatBotResponse extends StatelessWidget {
                   trailingIcon: CupertinoIcons.speaker_1,
                   child: const Text("Listen")),
             ],
-            child:
-            Container(
-                padding: const EdgeInsets.all(10),
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(10),
-                    bottomRight: Radius.circular(10),
-                    bottomLeft: Radius.circular(10),
-                  ),
-                  color: MediColors.primaryColor,
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(10),
+                  bottomRight: Radius.circular(10),
+                  bottomLeft: Radius.circular(10),
                 ),
-                child: AnimatedTextKit(
-                  animatedTexts: [
-                    TypewriterAnimatedText(
-                      answer,
-                      speed: const Duration(milliseconds: 150),
-                      textStyle:
-                      TextStyle(color: MediColors.secondaryColor,fontSize: getResponseFontSize(context: context, fontSize: 14)),
-                    )
-                  ],
-                  isRepeatingAnimation: false,
-                  displayFullTextOnTap: true,
-                  stopPauseOnTap: false,
-                  repeatForever: false,
-                ),),
+                color: MediColors.primaryColor,
+              ),
+              child: AnimatedTextKit(
+                animatedTexts: [
+                  TypewriterAnimatedText(
+                    answer,
+                    speed: const Duration(milliseconds: 150),
+                    textStyle: TextStyle(
+                        color: MediColors.secondaryColor,
+                        fontSize: getResponseFontSize(
+                            context: context, fontSize: 14)),
+                  )
+                ],
+                isRepeatingAnimation: false,
+                displayFullTextOnTap: true,
+                stopPauseOnTap: false,
+                repeatForever: false,
+              ),
+            ),
           ),
         ),
       ],
