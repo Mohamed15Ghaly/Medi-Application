@@ -1,4 +1,4 @@
-  import 'dart:math';
+import 'dart:math';
 
 String generateRandomId() {
     const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
