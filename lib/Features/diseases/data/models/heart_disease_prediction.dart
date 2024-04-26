@@ -1,4 +1,4 @@
-class HeartDiseasePrediction{
+class HeartDiseaseInputModel{
   
     final int age;
     final int sex;
@@ -14,7 +14,7 @@ class HeartDiseasePrediction{
     final int ca;
     final int thal;
 
-  HeartDiseasePrediction({
+  HeartDiseaseInputModel({
     required this.age,
     required this.sex,
     required this.cp,

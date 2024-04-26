@@ -153,7 +153,7 @@ class DiseasesCubit extends Cubit<DiseasesState> {
   heartDiseasePrediction() async {
     emit(DiseasesLoading());
     final response = await diseasesRepositoryImpl.heartDiseasePrediction(
-        heartDiseasePrediction: HeartDiseasePrediction(
+        heartDiseaseInputModel: HeartDiseaseInputModel(
       age: int.parse(age.text.trim()),
       sex: sex.text.trim().toUpperCase() == "MALE" ? 1 : 0,
       cp: int.parse(cp.text.trim()),

@@ -15,6 +15,12 @@ abstract class BaseDiseasesRepository {
   Future<Either<String, String>> diabetesPrediction({
     required DiabetesInputModel diabetesInputModel,
   });
+  Future<Either<String, String>> heartDiseasePrediction({
+    required HeartDiseaseInputModel heartDiseaseInputModel,
+  });
+  Future<Either<String, String>> parkinsonPrediction({
+    required ParkinsonInputModel parkinsonInputModel,
+  });
 
   
 }
@@ -51,33 +57,35 @@ class DiseasesRepositoryImpl extends BaseDiseasesRepository {
     }
   }
 
-  Future<Either<String, String>> heartDiseasePrediction({
-    required HeartDiseasePrediction heartDiseasePrediction,
-  }) async {
-    try {
-      String response = await apiConsumer.post(
-        ApiUrl.heartDiseasePrediction,
-        body: {
-          ApiKey.age: heartDiseasePrediction.age,
-          ApiKey.sex: heartDiseasePrediction.sex,
-          ApiKey.cp: heartDiseasePrediction.cp,
-          ApiKey.trestbps: heartDiseasePrediction.trestbps,
-          ApiKey.chol: heartDiseasePrediction.chol,
-          ApiKey.fbs: heartDiseasePrediction.fbs,
-          ApiKey.restecg: heartDiseasePrediction.restecg,
-          ApiKey.thalach: heartDiseasePrediction.thalach,
-          ApiKey.exang: heartDiseasePrediction.exang,
-          ApiKey.oldpeak: heartDiseasePrediction.oldpeak,
-          ApiKey.slope: heartDiseasePrediction.slope,
-          ApiKey.ca: heartDiseasePrediction.ca,
-          ApiKey.thal: heartDiseasePrediction.thal,
-        },
-      );
-      return Right(response);
-    } on ServiceExceptions catch (e) {
-      return Left(e.errorMessageModel.errorMessage);
-    }
+
+  @override
+Future<Either<String, String>> heartDiseasePrediction({
+  required HeartDiseaseInputModel heartDiseaseInputModel,
+}) async {
+  try {
+    String response = await apiConsumer.post(
+      ApiUrl.heartDiseasePrediction,
+      body: {
+        ApiKey.age: heartDiseaseInputModel.age,
+        ApiKey.sex: heartDiseaseInputModel.sex,
+        ApiKey.cp: heartDiseaseInputModel.cp,
+        ApiKey.trestbps: heartDiseaseInputModel.trestbps,
+        ApiKey.chol: heartDiseaseInputModel.chol,
+        ApiKey.fbs: heartDiseaseInputModel.fbs,
+        ApiKey.restecg: heartDiseaseInputModel.restecg,
+        ApiKey.thalach: heartDiseaseInputModel.thalach,
+        ApiKey.exang: heartDiseaseInputModel.exang,
+        ApiKey.oldpeak: heartDiseaseInputModel.oldpeak,
+        ApiKey.slope: heartDiseaseInputModel.slope,
+        ApiKey.ca: heartDiseaseInputModel.ca,
+        ApiKey.thal: heartDiseaseInputModel.thal,
+      },
+    );
+    return Right(response);
+  } on ServiceExceptions catch (e) {
+    return Left(e.errorMessageModel.errorMessage);
   }
+}
 
   @override
   Future<Either<String, String>> diabetesPrediction({
@@ -102,8 +110,7 @@ class DiseasesRepositoryImpl extends BaseDiseasesRepository {
       return Left(e.errorMessageModel.errorMessage);
     }
   }
-
-  Future<Either<String, String>> parkinsonPrediction(
+Future<Either<String, String>> parkinsonPrediction(
       {
         required ParkinsonInputModel parkinsonInputModel
       }) async {
