@@ -126,8 +126,7 @@ class UserActionsCubit extends Cubit<UserActionsState> {
   resetPassword() async {
     emit(UserActionsLoading());
     final response = await userActionsRepository.resetPassword(
-        newPassword: newPassword.text.trim(),
-        confirmNewPassword: confirmNewPassword.text.trim());
+        newPassword: newPassword.text.trim());
     response.fold((l) => emit(UserActionsFailure(error: l)), (r) {
       emit(const UserActionsSuccess(
         message: "Password Changed Successfully",

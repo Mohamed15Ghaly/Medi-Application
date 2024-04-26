@@ -53,7 +53,7 @@ class UserActionsRepository {
   }
 
   Future<Either<String, void>> resetPassword(
-      {required String newPassword, required String confirmNewPassword}) async {
+      {required String newPassword}) async {
     try {
       await apiConsumer.post(
           ApiUrl.resetPassword +
@@ -61,7 +61,7 @@ class UserActionsRepository {
               CacheHelper().getData(key: ApiKey.token),
           body: {
             ApiKey.password: newPassword,
-            ApiKey.confirmPassword: confirmNewPassword,
+            
           });
 
       return const Right(null);
