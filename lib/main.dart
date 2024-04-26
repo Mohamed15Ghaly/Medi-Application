@@ -12,11 +12,11 @@ main() {
   OneSignal.initialize("ec41f94c-6ea2-44e8-8be5-5cb8a9469eda");
   OneSignal.Notifications.requestPermission(true);
   runApp(
-    DevicePreview(
-    enabled: true,
-    builder: (context) =>
+    // DevicePreview(
+    // enabled: true,
+    // builder: (context) =>
     const MediApplication(),
-    ),
+    // ),
   );
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: MediColors.primaryColor,
