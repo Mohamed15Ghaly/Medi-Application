@@ -14,39 +14,43 @@ class StartRecording extends StatelessWidget {
     return BlocConsumer<ChatBotOperationCubit, ChatBotOperationState>(
       listener: (context, state) {},
       builder: (context, state) {
-        return Row(
-          children: [
-            LottieBuilder.asset(
-              MediImage.chatBotSoundWave,
+        return Flexible(
+          child: FittedBox(
+            child: Row(
+              children: [
+                LottieBuilder.asset(
+                  MediImage.chatBotSoundWave,
+                ),
+                LottieBuilder.asset(
+                  MediImage.chatBotSoundWave,
+                ),
+                LottieBuilder.asset(
+                  MediImage.chatBotSoundWave,
+                ),
+                LottieBuilder.asset(
+                  MediImage.chatBotSoundWave,
+                ),
+                LottieBuilder.asset(
+                  MediImage.chatBotSoundWave,
+                ),
+                LottieBuilder.asset(
+                  MediImage.chatBotSoundWave,
+                ),
+                LottieBuilder.asset(
+                  MediImage.chatBotSoundWave,
+                ),
+                LottieBuilder.asset(
+                  MediImage.chatBotSoundWave,
+                ),
+                LottieBuilder.asset(
+                  MediImage.chatBotSoundWave,
+                ),
+                LottieBuilder.asset(
+                  MediImage.chatBotSoundWave,
+                ),
+              ],
             ),
-            LottieBuilder.asset(
-              MediImage.chatBotSoundWave,
-            ),
-            LottieBuilder.asset(
-              MediImage.chatBotSoundWave,
-            ),
-            LottieBuilder.asset(
-              MediImage.chatBotSoundWave,
-            ),
-            LottieBuilder.asset(
-              MediImage.chatBotSoundWave,
-            ),
-            LottieBuilder.asset(
-              MediImage.chatBotSoundWave,
-            ),
-            LottieBuilder.asset(
-              MediImage.chatBotSoundWave,
-            ),
-            LottieBuilder.asset(
-              MediImage.chatBotSoundWave,
-            ),
-            LottieBuilder.asset(
-              MediImage.chatBotSoundWave,
-            ),
-            LottieBuilder.asset(
-              MediImage.chatBotSoundWave,
-            ),
-          ],
+          ),
         );
       },
     );
