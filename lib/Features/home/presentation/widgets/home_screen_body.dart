@@ -5,7 +5,7 @@ import 'package:team/Features/diseases/presentation/views/parkinson_screen.dart'
 import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/response_font_size.dart';
 import '../../../diseases/presentation/views/diabetes_screen.dart';
-import 'home_app_headrer.dart';
+import 'home_app_header.dart';
 
 class HomeScreenBody extends StatefulWidget {
   const HomeScreenBody({
@@ -20,6 +20,7 @@ class _HomeScreenBodyState extends State<HomeScreenBody>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
+  @override
   void initState() {
     _tabController = TabController(length: 4, vsync: this);
     super.initState();
@@ -47,7 +48,6 @@ class _HomeScreenBodyState extends State<HomeScreenBody>
               elevation: 2,
               toolbarHeight: 50,
               flexibleSpace: TabBar(
-                  // indicator: const BoxDecoration(),
                   controller: _tabController,
                   labelColor: MediColors.primaryColor,
                   unselectedLabelColor: MediColors.fourthColor,
@@ -66,9 +66,9 @@ class _HomeScreenBodyState extends State<HomeScreenBody>
                   isScrollable: true,
                   tabs: const [
                     Tab(text: "Diabetes"),
+                    Tab(text: "Heart Disease"),
                     Tab(text: "Parkinson"),
                     Tab(text: "Breast Cancer"),
-                    Tab(text: "Heart Disease"),
                   ]),
             ),
           ];
@@ -78,9 +78,9 @@ class _HomeScreenBodyState extends State<HomeScreenBody>
             physics: const NeverScrollableScrollPhysics(),
             children: const [
               DiabetesScreen(),
+              HeartDiseaseScreen(),
               ParkinsonScreen(),
               BreastCancerScreen(),
-              HeartDiseaseScreen()
             ]));
   }
 }
