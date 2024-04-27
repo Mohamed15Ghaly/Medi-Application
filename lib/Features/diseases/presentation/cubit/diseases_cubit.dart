@@ -99,7 +99,7 @@ class DiseasesCubit extends Cubit<DiseasesState> {
   heartDiseasePredictionValidation() async {
     if (await dataConnectionChecker.hasConnection == false) {
       emit(const DiseasesFailure(error: "No Internet Connection"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: age.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.age} A Valid Input"));
@@ -107,43 +107,43 @@ class DiseasesCubit extends Cubit<DiseasesState> {
         sex.text.trim().toUpperCase() != "FEMALE") {
       emit(const DiseasesFailure(
           error: "Please Enter Your ${ApiKey.sex} As Male Or Female"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: trestbps.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.trestbps} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: chol.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.chol} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: fbs.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.fbs} As Valid Input'"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: restecg.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.restecg} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: thalach.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.thalach} As Valid Input "));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: exang.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.exang} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: oldpeak.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.oldpeak} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: slope.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.slope} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: ca.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.ca} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: thal.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.thal} As Valid Input"));
@@ -182,43 +182,43 @@ class DiseasesCubit extends Cubit<DiseasesState> {
   breastCancerPredictionValidation() async {
     if (await dataConnectionChecker.hasConnection == false) {
       emit(const DiseasesFailure(error: "No Internet Connection"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: clumpThickness.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.clumpThickness} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: uniformCellSize.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.uniformCellSize} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: uniformCellShape.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.uniformCellShape} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: uniformCellShape.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.marginalAdhesion} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: marginalAdhesion.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.singleEpithelialSize} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: singleEpithelialSize.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.singleEpithelialSize} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: bareNuclei.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.bareNuclei} As Valid Input "));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: blandChromatin.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.blandChromatin} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: normalNucleoli.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.normalNucleoli} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: mitoses.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mitoses} As Valid Input"));
@@ -250,91 +250,91 @@ class DiseasesCubit extends Cubit<DiseasesState> {
   parkinsonPredictionValidation() async {
     if (await dataConnectionChecker.hasConnection == false) {
       emit(const DiseasesFailure(error: "No Internet Connection"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: mdvpFoHz.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpFoHz} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: mdvpFhiHz.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter  ${ApiKey.mdvpFhiHz} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: mdvpFloHz.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpFloHz} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: mdvpJitterPercentage.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpJitterPercentage} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: mdvpJitterAbs.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpJitterAbs} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: mdvpRap.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpRap} As Valid Input "));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: mdvpPpq.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpPpq} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: jitterDdf.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.jitterDdf} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: mdvpShimmer.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpShimmer} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: mdvpShimmerDb.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpShimmerDb} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: shimmerApq3.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.shimmerApq3} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: shimmerApq5.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.shimmerApq5} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: mdvpApq.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.mdvpPpq} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: shimmerDda.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.shimmerDda} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: nhr.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.nhr} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: hnr.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.hnr} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: rpde.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.hnr} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: dfa.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.dfa} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: spread1.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.spread1} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: spread2.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.spread2} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: d2.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.d2} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: ppe.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.ppe} As Valid Input"));
@@ -382,36 +382,36 @@ class DiseasesCubit extends Cubit<DiseasesState> {
   diabetesPredictionValidation() async {
     if (await dataConnectionChecker.hasConnection == false) {
       emit(const DiseasesFailure(error: "No Internet Connection"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: pregnancies.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.pregnancies} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: glucose.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.glucose} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: bloodPressure.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.bloodPressure} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: skinThickness.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.skinThickness} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: insulin.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.insulin} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: bmi.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.bmi} As Valid Input"));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: diabetesPedigreeFunction.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error:
               "Please Enter ${ApiKey.diabetesPedigreeFunction} As Valid Input "));
-    } else if (DataValidation.validInput(
+    } else if (DataValidation.notValidInput(
         input: age.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
           error: "Please Enter ${ApiKey.age} As Valid Input"));
