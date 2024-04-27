@@ -2,6 +2,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:team/Features/chatBot/presentation/cubit/chat_bot_operation_cubit.dart';
 import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_sounds.dart';
@@ -34,8 +35,8 @@ class _ChatBotButtonState extends State<ChatBotButton> {
           glowRadiusFactor: .2,
           glowColor: MediColors.primaryColor,
           child: MaterialButton(
+            height: context.height * .075,
             padding: const EdgeInsets.all(10),
-            height: 60,
             color: MediColors.primaryColor,
             shape: const CircleBorder(),
             onPressed: () async {

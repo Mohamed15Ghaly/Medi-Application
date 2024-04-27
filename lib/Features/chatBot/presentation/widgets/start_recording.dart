@@ -43,12 +43,7 @@ class StartRecording extends StatelessWidget {
               LottieBuilder.asset(
                 MediImage.chatBotSoundWave,
               ),
-              LottieBuilder.asset(
-                MediImage.chatBotSoundWave,
-              ),
-              LottieBuilder.asset(
-                MediImage.chatBotSoundWave,
-              ),
+              
             ],
           ),
         );
