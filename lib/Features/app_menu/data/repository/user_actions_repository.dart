@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:team/Features/app_menu/data/models/save_photo_model.dart';
 import 'package:team/core/api/api_consumer.dart';
 import 'package:team/core/api/api_key.dart';
 import 'package:team/core/api/api_url.dart';
@@ -14,7 +15,7 @@ class UserActionsRepository {
   Future<Either<String, void>> saveProfilePhoto(
       {required XFile profilePhoto}) async {
     try {
-      await apiConsumer.post(
+      final response = await apiConsumer.post(
         ApiUrl.userUpdatePhoto +
             CacheHelper().getData(key: ApiKey.id).toString(),
         isFormData: true,
@@ -22,7 +23,9 @@ class UserActionsRepository {
           ApiKey.image: await uploadImageToApi(profilePhoto),
         },
       );
-      CacheHelper().saveData(key: ApiKey.profilePhoto, value: profilePhoto);
+      SaveProfileModel saveProfileModel = SaveProfileModel.fromJson(response);
+      CacheHelper().saveData(
+          key: ApiKey.profilePhoto, value: saveProfileModel.profilePhoto);
       return const Right(null);
     } on ServiceExceptions catch (e) {
       return Left(e.errorMessageModel.errorMessage);
@@ -61,7 +64,6 @@ class UserActionsRepository {
               CacheHelper().getData(key: ApiKey.token),
           body: {
             ApiKey.password: newPassword,
-            
           });
 
       return const Right(null);

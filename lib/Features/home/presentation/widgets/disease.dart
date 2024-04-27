@@ -38,12 +38,12 @@ class Disease extends StatelessWidget {
         ListTile(
           onTap: () {
             BlocProvider.of<DiseasesCubit>(context).setDiseaseScreen(
-                diseasesScreen: const ParkinsonScreen(),
-                diseasesPredictionScreen: const ParkinsonPredictionScreen(),
-                diseaseName: 'Parkinson');
+                diseasesScreen: const BreastCancerScreen(),
+                diseasesPredictionScreen: const BreastCancerPredictionScreen(),
+                diseaseName: 'Breast Cancer');
             Get.to(() => const DiseasesScreen());
           },
-          title: Text('Parkinson',
+          title: Text('Breast Cancer',
               style: TextStyle(
                   color: MediColors.primaryColor,
                   fontSize:
@@ -58,12 +58,12 @@ class Disease extends StatelessWidget {
         ListTile(
           onTap: () {
             BlocProvider.of<DiseasesCubit>(context).setDiseaseScreen(
-                diseasesScreen: const BreastCancerScreen(),
-                diseasesPredictionScreen: const BreastCancerPredictionScreen(),
-                diseaseName: 'Breast Cancer');
+                diseasesScreen: const ParkinsonScreen(),
+                diseasesPredictionScreen: const ParkinsonPredictionScreen(),
+                diseaseName: 'Parkinson');
             Get.to(() => const DiseasesScreen());
           },
-          title: Text('Breast Cancer',
+          title: Text('Parkinson',
               style: TextStyle(
                   color: MediColors.primaryColor,
                   fontSize:

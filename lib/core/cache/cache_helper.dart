@@ -1,3 +1,4 @@
+import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {
@@ -22,7 +23,9 @@ class CacheHelper {
     if (value is String) {
       return await sharedPreferences.setString(key, value);
     }
-
+    if (value is XFile) {
+      return await sharedPreferences.setString(key, value.path);
+    }
     if (value is int) {
       return await sharedPreferences.setInt(key, value);
     } else {

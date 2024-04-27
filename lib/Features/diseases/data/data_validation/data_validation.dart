@@ -1,23 +1,19 @@
-class DataValidation{
-   static bool notValid({required String input}) {
+class DataValidation {
+  static bool notValidInput({required String input, required bool integer}) {
     int counter = 0;
     for (int i = 0; i < input.length; i++) {
-      if (input[i] == '.') {
-        counter++;
-      }
-      if (counter > 1) {
+      if (input[i] == '.') counter++;
+      if ((integer && counter >= 1) ||
+          counter > 1 ||
+          input[i] == '.' ||
+          input[i] == '-' ||
+          input[i] == '+' ||
+          input[i] == '*' ||
+          input[i] == '/' ||
+          input[i] == ',') {
         return true;
       }
     }
     return false;
-  }
-
-
-   static bool validInput({required String input, required bool integer}) {
-    if (integer) {
-      return input.contains(",") || input.contains(".");
-    } else {
-      return input.contains(",");
-    }
   }
 }

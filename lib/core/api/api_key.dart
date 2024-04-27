@@ -10,6 +10,7 @@ class ApiKey {
   static const String profilePhoto = "profilePhoto";
   static const String image = "image";
   static const String file = "file";
+  static const String url = "url";
 
   static const String password = "password";
   static const String confirmPassword = "confirmPassword";

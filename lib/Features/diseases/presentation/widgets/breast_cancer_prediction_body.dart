@@ -24,7 +24,6 @@ class _BreastCancerPredictionBodyState
       
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     WidgetsBinding.instance
         .addPostFrameCallback((_) => ShowCaseWidget.of(context).startShowCase([

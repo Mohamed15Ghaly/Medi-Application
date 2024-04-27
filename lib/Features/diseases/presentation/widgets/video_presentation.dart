@@ -35,7 +35,7 @@ class _VideoPresentationState extends State<VideoPresentation> {
       width: context.width,
       height: context.height / 2.3,
       child: ClipRRect(
-        // borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10),
         child: FlickVideoPlayer(
           flickVideoWithControls: FlickVideoWithControls(
             controls: IconTheme(
