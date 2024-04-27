@@ -19,7 +19,7 @@ class PredictionHeader extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       children: [
         Container(
-            height: context.height / 8,
+            height: context.height / 7.5,
             width: context.width,
             decoration: BoxDecoration(
               color: MediColors.primaryColor,
