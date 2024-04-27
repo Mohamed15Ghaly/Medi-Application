@@ -6,6 +6,7 @@ import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/service_locator.dart';
 import 'package:team/medi_app.dart';
 import 'package:device_preview/device_preview.dart';
+
 main() {
   WidgetsFlutterBinding.ensureInitialized();
   CacheHelper().init();
@@ -17,12 +18,11 @@ main() {
     DeviceOrientation.portraitUp,
     DeviceOrientation.landscapeLeft,
     DeviceOrientation.landscapeRight,
-  ]).then((_){
+  ]).then((_) {
     runApp(
       DevicePreview(
-        enabled: true,
-        builder: (context) =>
-        const MediApplication(),
+        enabled: false,
+        builder: (context) => const MediApplication(),
       ),
     );
   });
