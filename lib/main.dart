@@ -10,7 +10,6 @@ import 'package:device_preview/device_preview.dart';
 main() {
   WidgetsFlutterBinding.ensureInitialized();
   CacheHelper().init();
-  // OneSignal.Debug.setLogLevel(OSLogLevel.error);
   setUp();
   OneSignal.initialize("ec41f94c-6ea2-44e8-8be5-5cb8a9469eda");
   OneSignal.Notifications.requestPermission(true);
