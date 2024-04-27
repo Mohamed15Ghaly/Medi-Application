@@ -104,7 +104,7 @@ class UserActionsCubit extends Cubit<UserActionsState> {
       emit(const UserActionsFailure(error: "No Internet Connection"));
     } else if (newPassword.text.trim() != confirmNewPassword.text.trim()) {
       emit(const UserActionsFailure(
-          error: "Passwords Don't Match With Confirm Password"));
+          error: "NewPassword Not Match With ConfirmNewPassword"));
     } else if (resetPasswordFormKey.currentState!.validate()) {
       resetPassword();
     } else {
