@@ -106,7 +106,7 @@ class DiseasesCubit extends Cubit<DiseasesState> {
     } else if (sex.text.trim().toUpperCase() != "MALE" &&
         sex.text.trim().toUpperCase() != "FEMALE") {
       emit(const DiseasesFailure(
-          error: "please Enter Your ${ApiKey.sex} As Male Or Female"));
+          error: "Please Enter Your ${ApiKey.sex} As Male Or Female"));
     } else if (DataValidation.validInput(
         input: trestbps.text.trim(), integer: true)) {
       emit(const DiseasesFailure(

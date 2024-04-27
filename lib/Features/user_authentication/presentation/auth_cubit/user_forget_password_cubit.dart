@@ -18,8 +18,7 @@ class UserForgetPasswordCubit extends Cubit<UserForgetPasswordState> {
   forgetPasswordValidation() async {
     if (await networkConnectionChecker.hasConnection == false) {
       emit(const UserForgetPasswordFailure(error: "No Internet Connection"));
-    }
-    else if (forgetPasswordFormKey.currentState!.validate()) {
+    } else if (forgetPasswordFormKey.currentState!.validate()) {
       forgetPassword();
     } else {
       emit(const UserForgetPasswordFailure(error: "Please Enter Email"));
@@ -33,7 +32,7 @@ class UserForgetPasswordCubit extends Cubit<UserForgetPasswordState> {
   forgetPassword() async {
     emit(UserForgetPasswordLoading());
     final response = await userRepository.forgetPassword(
-        forgetPasswordEmail: forgetPasswordEmail.text);
+        forgetPasswordEmail: forgetPasswordEmail.text.trim());
     response.fold((error) => emit(UserForgetPasswordFailure(error: error)),
         (r) => emit(UserForgetPasswordSuccess()));
   }

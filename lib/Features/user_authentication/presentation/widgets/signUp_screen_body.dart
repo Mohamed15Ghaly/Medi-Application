@@ -98,7 +98,7 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
                       onPressed: () {
                         Get.back();
                       },
-                      child: const Text("Sign In"))
+                      child: const Text("Log In"))
                 ],
               ),
             )
