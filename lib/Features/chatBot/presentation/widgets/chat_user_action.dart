@@ -19,17 +19,15 @@ class ChatBotTextFelid extends StatelessWidget {
       builder: (context, state) {
         return SizedBox(
           width: context.width,
-          child: Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                state is ChatBotOperationStartRecording
-                    ? const StartRecording()
-                    : const TextFelidChat(),
-                 const ChatBotButton(),
-              ],
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              state is ChatBotOperationStartRecording
+                  ? const StartRecording()
+                  : const TextFelidChat(),
+              const ChatBotButton(),
+            ],
           ),
         );
       },

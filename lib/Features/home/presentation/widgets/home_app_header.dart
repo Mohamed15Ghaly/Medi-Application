@@ -63,14 +63,12 @@ class HomeAppHeader extends StatelessWidget {
                         child: SizedBox(
                           width: width / 2,
                           child: AutoSizeText(
-                            maxLines: 6,
-                            overflow: TextOverflow.ellipsis,
                             "In medi app you serve you with all love , work for your comfort and all our concern is your health , "
                             "Fell free to contact us if you have problem or need any help.",
                             style: TextStyle(
                               color: MediColors.secondaryColor,
                               fontSize: getResponseFontSize(
-                                  context: context, fontSize: 14),
+                                  context: context, fontSize: 12),
                             ),
                           ),
                         ),
@@ -120,19 +118,20 @@ class HomeAppHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Flexible(
-                flex:2,
+                flex: 2,
                 child: Image.asset(
                   MediImage.homeAppBody,
                 ),
               ),
               Flexible(
                 child: SizedBox(
-                  height: context.height/13,
+                  height: context.height / 13,
                   child: AutoSizeText(
                     "Let's take a look about the symptoms and causes of each disease ",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: getResponseFontSize(context: context, fontSize: 16),
+                      fontSize:
+                          getResponseFontSize(context: context, fontSize: 16),
                       fontWeight: FontWeight.bold,
                       color: MediColors.primaryColor,
                     ),
