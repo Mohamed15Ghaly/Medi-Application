@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:team/core/components/custom_material_button.dart';
@@ -15,20 +16,32 @@ class NotDiagnosed extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset(MediImage.notDiagnosed),
-        Text(response,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: getResponseFontSize(context: context, fontSize: 18),
-              fontWeight: FontWeight.bold,
-            )),
+        Image.asset(height: context.height/3.5,MediImage.notDiagnosed),
+        SizedBox(
+          height: context.height/30,
+          width: context.width,
+          child: FittedBox(
+            child: AutoSizeText(response,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: getResponseFontSize(context: context, fontSize: 18),
+                  fontWeight: FontWeight.bold,
+                )),
+          ),
+        ),
         const Divider(),
-        const Align(
-          alignment: Alignment.center,
-          child: Text(
-            "Your health is fine now , I'm glad to tell you that .",
-            textAlign: TextAlign.center,
-            style: TextStyle(color: MediColors.fourthColor, fontSize: 8),
+        SizedBox(
+          height: context.height/30,
+          width: context.width,
+          child: const Align(
+            alignment: Alignment.center,
+            child: FittedBox(
+              child: AutoSizeText(
+                "Your health is fine now , I'm glad to tell you that .",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: MediColors.fourthColor, fontSize: 8),
+              ),
+            ),
           ),
         ),
         const Divider(),

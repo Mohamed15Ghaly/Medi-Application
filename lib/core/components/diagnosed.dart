@@ -1,3 +1,5 @@
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:team/core/components/custom_material_button.dart';
@@ -17,28 +19,43 @@ class Diagnosed extends StatelessWidget {
     return Column(
       children: [
         Image.asset(
+          height: context.height/3.5,
           MediImage.diagnosed,
         ),
-        Text(response,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: getResponseFontSize(context: context, fontSize: 16),
-              fontWeight: FontWeight.bold,
-            )),
-        const Divider(),
-        const Align(
-          alignment: Alignment.center,
-          child: Text(
-            "You should visit your doctor and take care of yourself.",
-            style: TextStyle(color: MediColors.fourthColor, fontSize: 8),
+        SizedBox(
+          height: context.height/30,
+          width: context.width,
+          child: FittedBox(
+            child: AutoSizeText(response,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: getResponseFontSize(context: context, fontSize: 16),
+                  fontWeight: FontWeight.bold,
+                )),
           ),
         ),
         const Divider(),
-        CustomButton(
-            title: "Ok",
-            onPressed: () {
-              Get.back();
-            }),
+        SizedBox(
+          height: context.height/30,
+          width: context.width,
+          child: const Align(
+            alignment: Alignment.center,
+            child: FittedBox(
+              child: Text(
+                "You should visit your doctor and take care of yourself.",
+                style: TextStyle(color: MediColors.fourthColor, fontSize: 8),
+              ),
+            ),
+          ),
+        ),
+        const Divider(),
+        FittedBox(
+          child: CustomButton(
+              title: "Ok",
+              onPressed: () {
+                Get.back();
+              }),
+        ),
       ],
     );
   }

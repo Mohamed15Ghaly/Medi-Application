@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:card_swiper/card_swiper.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:team/Features/home/data/view_model/article.dart';
@@ -119,13 +120,14 @@ class HomeAppHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Flexible(
-                flex:3,
+                flex:2,
                 child: Image.asset(
                   MediImage.homeAppBody,
                 ),
               ),
               Flexible(
                 child: SizedBox(
+                  height: context.height/13,
                   child: AutoSizeText(
                     "Let's take a look about the symptoms and causes of each disease ",
                     textAlign: TextAlign.center,

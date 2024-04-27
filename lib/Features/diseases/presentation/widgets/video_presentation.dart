@@ -33,7 +33,7 @@ class _VideoPresentationState extends State<VideoPresentation> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: context.width,
-      height: context.height / 4,
+      height: context.height / 2.3,
       child: ClipRRect(
         // borderRadius: BorderRadius.circular(10),
         child: FlickVideoPlayer(

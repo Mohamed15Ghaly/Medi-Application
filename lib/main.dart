@@ -20,7 +20,7 @@ main() {
   ]).then((_){
     runApp(
       DevicePreview(
-        enabled: false,
+        enabled: true,
         builder: (context) =>
         const MediApplication(),
       ),
