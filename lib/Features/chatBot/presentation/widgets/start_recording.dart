@@ -17,10 +17,8 @@ class StartRecording extends StatelessWidget {
         return Expanded(
           flex: 1,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              LottieBuilder.asset(
-                MediImage.chatBotSoundWave,
-              ),
               LottieBuilder.asset(
                 MediImage.chatBotSoundWave,
               ),
