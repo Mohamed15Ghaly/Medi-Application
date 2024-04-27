@@ -30,7 +30,7 @@ class UserLoginCubit extends Cubit<UserLoginState> {
     } else {
       emit(UserLoginFailure(
           error:
-              "Please Enter ${loginEmail.text.isEmpty ? 'Email' : 'Password'}"));
+              "Please Enter ${loginEmail.text.trim().isEmpty ? 'Email' : 'Password'}"));
     }
   }
 
