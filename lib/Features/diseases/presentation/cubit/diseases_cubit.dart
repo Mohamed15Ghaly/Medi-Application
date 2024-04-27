@@ -85,7 +85,7 @@ class DiseasesCubit extends Cubit<DiseasesState> {
   setInitialState() {
     emit(DiseasesInitial());
   }
-  
+
   setDiseaseScreen(
       {required Widget diseasesScreen,
       required Widget diseasesPredictionScreen,
@@ -102,51 +102,51 @@ class DiseasesCubit extends Cubit<DiseasesState> {
     } else if (DataValidation.validInput(
         input: age.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.age} Without ',' or '.'"));
-    } else if (sex.text.trim().toUpperCase() != "MALE" ||
+          error: "Please Enter ${ApiKey.age} A Valid Input"));
+    } else if (sex.text.trim().toUpperCase() != "MALE" &&
         sex.text.trim().toUpperCase() != "FEMALE") {
       emit(const DiseasesFailure(
-          error: "please Enter Your ${ApiKey.sex} as Male or Female"));
+          error: "please Enter Your ${ApiKey.sex} As Male Or Female"));
     } else if (DataValidation.validInput(
         input: trestbps.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.trestbps} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.trestbps} As Valid Input"));
     } else if (DataValidation.validInput(
         input: chol.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.chol} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.chol} As Valid Input"));
     } else if (DataValidation.validInput(
         input: fbs.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.fbs} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.fbs} As Valid Input'"));
     } else if (DataValidation.validInput(
         input: restecg.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.restecg} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.restecg} As Valid Input"));
     } else if (DataValidation.validInput(
         input: thalach.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.thalach} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.thalach} As Valid Input "));
     } else if (DataValidation.validInput(
         input: exang.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.exang} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.exang} As Valid Input"));
     } else if (DataValidation.validInput(
         input: oldpeak.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.oldpeak} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.oldpeak} As Valid Input"));
     } else if (DataValidation.validInput(
         input: slope.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.slope} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.slope} As Valid Input"));
     } else if (DataValidation.validInput(
         input: ca.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.ca} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.ca} As Valid Input"));
     } else if (DataValidation.validInput(
         input: thal.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.thal} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.thal} As Valid Input"));
     } else if (heartDiseaseFormKey.currentState!.validate()) {
       heartDiseasePrediction();
     } else {
@@ -185,44 +185,43 @@ class DiseasesCubit extends Cubit<DiseasesState> {
     } else if (DataValidation.validInput(
         input: clumpThickness.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.clumpThickness} Without ',' or '.'"));
+          error: "Please Enter ${ApiKey.clumpThickness} As Valid Input"));
     } else if (DataValidation.validInput(
         input: uniformCellSize.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.uniformCellSize} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.uniformCellSize} As Valid Input"));
     } else if (DataValidation.validInput(
         input: uniformCellShape.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.uniformCellShape} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.uniformCellShape} As Valid Input"));
     } else if (DataValidation.validInput(
         input: uniformCellShape.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.marginalAdhesion} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.marginalAdhesion} As Valid Input"));
     } else if (DataValidation.validInput(
         input: marginalAdhesion.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error:
-              "Please Enter ${ApiKey.singleEpithelialSize} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.singleEpithelialSize} As Valid Input"));
     } else if (DataValidation.validInput(
         input: singleEpithelialSize.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.singleEpithelialSize} without ','"));
+          error: "Please Enter ${ApiKey.singleEpithelialSize} As Valid Input"));
     } else if (DataValidation.validInput(
         input: bareNuclei.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.bareNuclei} without ',' "));
+          error: "Please Enter ${ApiKey.bareNuclei} As Valid Input "));
     } else if (DataValidation.validInput(
         input: blandChromatin.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.blandChromatin} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.blandChromatin} As Valid Input"));
     } else if (DataValidation.validInput(
         input: normalNucleoli.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.normalNucleoli} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.normalNucleoli} As Valid Input"));
     } else if (DataValidation.validInput(
         input: mitoses.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.mitoses} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.mitoses} As Valid Input"));
     } else if (breastCancerFormKey.currentState!.validate()) {
       breastCancerPrediction();
     } else {
@@ -251,118 +250,94 @@ class DiseasesCubit extends Cubit<DiseasesState> {
   parkinsonPredictionValidation() async {
     if (await dataConnectionChecker.hasConnection == false) {
       emit(const DiseasesFailure(error: "No Internet Connection"));
-    } else if (DataValidation.notValid(input: mdvpFoHz.text.trim()) ||
-        DataValidation.notValid(input: mdvpFhiHz.text.trim()) ||
-        DataValidation.notValid(input: mdvpFloHz.text.trim()) ||
-        DataValidation.notValid(input: mdvpJitterPercentage.text.trim()) ||
-        DataValidation.notValid(input: mdvpJitterAbs.text.trim()) ||
-        DataValidation.notValid(input: mdvpRap.text.trim()) ||
-        DataValidation.notValid(input: mdvpPpq.text.trim()) ||
-        DataValidation.notValid(input: jitterDdf.text.trim()) ||
-        DataValidation.notValid(input: mdvpShimmer.text.trim()) ||
-        DataValidation.notValid(input: mdvpShimmerDb.text.trim()) ||
-        DataValidation.notValid(input: shimmerApq3.text.trim()) ||
-        DataValidation.notValid(input: shimmerApq3.text.trim()) ||
-        DataValidation.notValid(input: shimmerApq5.text.trim()) ||
-        DataValidation.notValid(input: shimmerDda.text.trim()) ||
-        DataValidation.notValid(input: nhr.text.trim()) ||
-        DataValidation.notValid(input: hnr.text.trim()) ||
-        DataValidation.notValid(input: rpde.text.trim()) ||
-        DataValidation.notValid(input: dfa.text.trim()) ||
-        DataValidation.notValid(input: spread1.text.trim()) ||
-        DataValidation.notValid(input: spread2.text.trim()) ||
-        DataValidation.notValid(input: d2.text.trim()) ||
-        DataValidation.notValid(input: ppe.text.trim())) {
-      emit(const DiseasesFailure(error: "Please Enter Valid Input"));
     } else if (DataValidation.validInput(
         input: mdvpFoHz.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.mdvpFoHz} Without ',' or '.'"));
+          error: "Please Enter ${ApiKey.mdvpFoHz} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: mdvpFhiHz.text.trim(), integer: true)) {
+        input: mdvpFhiHz.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter  ${ApiKey.mdvpFhiHz} without ',' or '.'"));
+          error: "Please Enter  ${ApiKey.mdvpFhiHz} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: mdvpFloHz.text.trim(), integer: true)) {
+        input: mdvpFloHz.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.mdvpFloHz} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.mdvpFloHz} As Valid Input"));
     } else if (DataValidation.validInput(
         input: mdvpJitterPercentage.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error:
-              "Please Enter ${ApiKey.mdvpJitterPercentage} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.mdvpJitterPercentage} As Valid Input"));
     } else if (DataValidation.validInput(
         input: mdvpJitterAbs.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.mdvpJitterAbs} without ','"));
+          error: "Please Enter ${ApiKey.mdvpJitterAbs} As Valid Input"));
     } else if (DataValidation.validInput(
         input: mdvpRap.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.mdvpRap} without ',' "));
+          error: "Please Enter ${ApiKey.mdvpRap} As Valid Input "));
     } else if (DataValidation.validInput(
-        input: mdvpPpq.text.trim(), integer: true)) {
+        input: mdvpPpq.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.mdvpPpq} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.mdvpPpq} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: jitterDdf.text.trim(), integer: true)) {
+        input: jitterDdf.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.jitterDdf} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.jitterDdf} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: mdvpShimmer.text.trim(), integer: true)) {
+        input: mdvpShimmer.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.mdvpShimmer} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.mdvpShimmer} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: mdvpShimmerDb.text.trim(), integer: true)) {
+        input: mdvpShimmerDb.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.mdvpShimmerDb} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.mdvpShimmerDb} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: shimmerApq3.text.trim(), integer: true)) {
+        input: shimmerApq3.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.shimmerApq3} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.shimmerApq3} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: shimmerApq5.text.trim(), integer: true)) {
+        input: shimmerApq5.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.shimmerApq5} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.shimmerApq5} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: mdvpApq.text.trim(), integer: true)) {
+        input: mdvpApq.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.mdvpPpq} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.mdvpPpq} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: shimmerDda.text.trim(), integer: true)) {
+        input: shimmerDda.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.shimmerDda} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.shimmerDda} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: nhr.text.trim(), integer: true)) {
+        input: nhr.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.nhr} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.nhr} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: hnr.text.trim(), integer: true)) {
+        input: hnr.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.hnr} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.hnr} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: rpde.text.trim(), integer: true)) {
+        input: rpde.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.hnr} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.hnr} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: dfa.text.trim(), integer: true)) {
+        input: dfa.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.dfa} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.dfa} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: spread1.text.trim(), integer: true)) {
+        input: spread1.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.spread1} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.spread1} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: spread2.text.trim(), integer: true)) {
+        input: spread2.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.spread2} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.spread2} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: d2.text.trim(), integer: true)) {
+        input: d2.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.d2} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.d2} As Valid Input"));
     } else if (DataValidation.validInput(
-        input: ppe.text.trim(), integer: true)) {
+        input: ppe.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.ppe} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.ppe} As Valid Input"));
     } else if (parkinsonFormKey.currentState!.validate()) {
       parkinsonPrediction();
     } else {
@@ -407,42 +382,39 @@ class DiseasesCubit extends Cubit<DiseasesState> {
   diabetesPredictionValidation() async {
     if (await dataConnectionChecker.hasConnection == false) {
       emit(const DiseasesFailure(error: "No Internet Connection"));
-    } else if (DataValidation.notValid(input: bmi.text.trim()) ||
-        DataValidation.notValid(input: bmi.text.trim())) {
-      emit(const DiseasesFailure(error: "Please Enter Valid Input "));
     } else if (DataValidation.validInput(
         input: pregnancies.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.pregnancies} Without ',' or '.'"));
+          error: "Please Enter ${ApiKey.pregnancies} As Valid Input"));
     } else if (DataValidation.validInput(
         input: glucose.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.glucose} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.glucose} As Valid Input"));
     } else if (DataValidation.validInput(
         input: bloodPressure.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.bloodPressure} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.bloodPressure} As Valid Input"));
     } else if (DataValidation.validInput(
         input: skinThickness.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.skinThickness} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.skinThickness} As Valid Input"));
     } else if (DataValidation.validInput(
         input: insulin.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.insulin} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.insulin} As Valid Input"));
     } else if (DataValidation.validInput(
         input: bmi.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.bmi} without ','"));
+          error: "Please Enter ${ApiKey.bmi} As Valid Input"));
     } else if (DataValidation.validInput(
         input: diabetesPedigreeFunction.text.trim(), integer: false)) {
       emit(const DiseasesFailure(
           error:
-              "Please Enter ${ApiKey.diabetesPedigreeFunction} without ',' "));
+              "Please Enter ${ApiKey.diabetesPedigreeFunction} As Valid Input "));
     } else if (DataValidation.validInput(
         input: age.text.trim(), integer: true)) {
       emit(const DiseasesFailure(
-          error: "Please Enter ${ApiKey.age} without ',' or '.'"));
+          error: "Please Enter ${ApiKey.age} As Valid Input"));
     } else if (diabetesFormKey.currentState!.validate()) {
       diabetesPrediction();
     } else {
