@@ -100,10 +100,10 @@ class Disease extends StatelessWidget {
             BlocProvider.of<DiseasesCubit>(context).setDiseaseScreen(
                 diseasesScreen: const DiabetesScreen(),
                 diseasesPredictionScreen: const DiabetesPredictionScreen(),
-                diseaseName: 'Diagnosis');
+                diseaseName: 'Diabetes');
             Get.to(() => const DiseasesScreen());
           },
-          title: Text('Diagnosis',
+          title: Text('Diabetes',
               style: TextStyle(
                   color: MediColors.primaryColor,
                   fontSize:
