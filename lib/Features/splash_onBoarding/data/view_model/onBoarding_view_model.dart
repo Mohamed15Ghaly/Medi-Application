@@ -29,9 +29,9 @@ class OnBoardingViewModel{
     ),
     OnBoardingModel(
       image: MediImage.onBoarding5,
-      title: "Dangerous diagnoses",
+      title: "Dangerous diseases",
       description:
-          "Today's world has a lot of dangerous diagnoses such as diabetes, heart attack, breast cancer, Parkinson etc... For more information about these diagnoses in details and some first aid you can check this in our app",
+          "Today's world has a lot of Dangerous diseases such as diabetes, heart attack, breast cancer, Parkinson etc... For more information about these diagnoses in details and some first aid you can check this in our app",
     ),
     OnBoardingModel(
       image: MediImage.onBoarding6,

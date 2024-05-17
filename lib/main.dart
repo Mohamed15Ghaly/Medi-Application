@@ -11,7 +11,7 @@ main() {
   WidgetsFlutterBinding.ensureInitialized();
   CacheHelper().init();
   setUp();
-  OneSignal.initialize("ec41f94c-6ea2-44e8-8be5-5cb8a9469eda");
+  OneSignal.initialize("0bc3f975-7b9c-4974-8c69-885134648e47");
   OneSignal.Notifications.requestPermission(true);
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

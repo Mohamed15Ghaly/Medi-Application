@@ -14,15 +14,15 @@ class ApiUrl {
   static const String deleteAccount =
       "https://clinic-server-1.onrender.com/api/users/";
   static const String diabetesPrediction =
-      "https://web-production-59d8.up.railway.app/diabetes_prediction";
+      "https://diabetes-prediction-api-zrzh.onrender.com/diabetes_prediction";
   static const String heartDiseasePrediction =
-      "https://web-production-6fc8.up.railway.app/heart_disease_prediction";
+      "https://heart-attack-api.onrender.com/heart_disease_prediction";
   static const String breastCancerPrediction =
-      "https://web-production-b81f.up.railway.app/Breast_cancer_prediction";
+      "https://breast-cancer-api-rca7.onrender.com/Breast_cancer_prediction";
   static const String parkinsonPrediction =
-      "https://web-production-fc13.up.railway.app/parkinson_prediction";
+      "https://parkinsons-api-grfd.onrender.com/parkinson_prediction";
   static const String chatBotText =
-      "https://web-production-be4b5.up.railway.app/medi_text";
+      "https://medi-chatbot.onrender.com/medi_text";
   static const String chatBotVoice =
-      "https://web-production-be4b5.up.railway.app/medi_voice";
+      "https://medi-chatbot.onrender.com/medi_voice";
 }
