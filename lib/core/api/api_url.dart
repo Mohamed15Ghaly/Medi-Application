@@ -22,7 +22,7 @@ class ApiUrl {
   static const String parkinsonPrediction =
       "https://parkinsons-api-grfd.onrender.com/parkinson_prediction";
   static const String chatBotText =
-      "https://medi-chatbot.onrender.com/medi_text";
+      "https://web-production-c0fc2.up.railway.app/medi_text";
   static const String chatBotVoice =
       "https://medi-chatbot.onrender.com/medi_voice";
 }

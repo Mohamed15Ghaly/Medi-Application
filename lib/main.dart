@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:team/core/cache/cache_helper.dart';
 import 'package:team/core/utils/medi_colors.dart';
+import 'package:team/core/utils/medi_share.dart';
 import 'package:team/core/utils/service_locator.dart';
 import 'package:team/medi_app.dart';
 import 'package:device_preview/device_preview.dart';
@@ -11,7 +12,7 @@ main() {
   WidgetsFlutterBinding.ensureInitialized();
   CacheHelper().init();
   setUp();
-  OneSignal.initialize("0bc3f975-7b9c-4974-8c69-885134648e47");
+  OneSignal.initialize(MediShare.appNotification);
   OneSignal.Notifications.requestPermission(true);
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

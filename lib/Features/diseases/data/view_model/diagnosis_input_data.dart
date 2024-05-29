@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,7 +12,7 @@ class DiagnosisInputData {
       padding: const EdgeInsets.all(16.0),
       child: Row(
         children: [
-          Image.asset(MediImage.predictionInput),
+          ZoomIn(child: Image.asset(MediImage.predictionInput)),
           Expanded(
             child: AnimatedTextKit(
               animatedTexts: [

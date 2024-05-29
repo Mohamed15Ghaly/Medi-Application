@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:team/core/utils/medi_colors.dart';
@@ -31,24 +32,27 @@ class _VideoPresentationState extends State<VideoPresentation> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: context.width,
-      height: context.height / 2.3,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(10),
-        child: FlickVideoPlayer(
-          flickVideoWithControls: FlickVideoWithControls(
-            controls: IconTheme(
-                data: const IconThemeData(color: MediColors.thirdColor),
-                child: FlickPortraitControls(
-                  progressBarSettings: FlickProgressBarSettings(
-                    bufferedColor: MediColors.secondaryColor.withOpacity(0.2),
-                    playedColor: MediColors.thirdColor,
-                    handleColor: MediColors.thirdColor,
-                  ),
-                )),
+    return FadeInDown(
+      duration: const Duration(milliseconds: 1250),
+      child: SizedBox(
+        width: context.width,
+        height: context.height / 2.3,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: FlickVideoPlayer(
+            flickVideoWithControls: FlickVideoWithControls(
+              controls: IconTheme(
+                  data: const IconThemeData(color: MediColors.thirdColor),
+                  child: FlickPortraitControls(
+                    progressBarSettings: FlickProgressBarSettings(
+                      bufferedColor: MediColors.secondaryColor.withOpacity(0.2),
+                      playedColor: MediColors.thirdColor,
+                      handleColor: MediColors.thirdColor,
+                    ),
+                  )),
+            ),
+            flickManager: _flickManager,
           ),
-          flickManager: _flickManager,
         ),
       ),
     );

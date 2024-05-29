@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:team/core/utils/medi_colors.dart';
 
@@ -14,12 +15,17 @@ class QuestionsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-        title:DefaultText(txt:question,color: Colors.black,),
+        title: DefaultText(
+          txt: question,
+          color: Colors.black,
+        ),
         childrenPadding: const EdgeInsets.all(8),
         children: [
-          DefaultText(
-            txt : answer,
-        color: MediColors.fourthColor,
+          BounceInDown(
+            child: DefaultText(
+              txt: answer,
+              color: MediColors.fourthColor,
+            ),
           ),
         ]);
   }

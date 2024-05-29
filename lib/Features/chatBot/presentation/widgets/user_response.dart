@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,101 +11,74 @@ import 'package:team/core/utils/medi_colors.dart';
 import 'package:team/core/utils/medi_media_query.dart';
 import 'package:team/core/utils/response_font_size.dart';
 
-class UserResponse extends StatefulWidget {
+class UserResponse extends StatelessWidget {
   const UserResponse({
     super.key,
     required this.question,
   });
   final String question;
   @override
-  State<UserResponse> createState() => _UserState();
-}
-
-class _UserState extends State<UserResponse>
-    with SingleTickerProviderStateMixin {
-  late AnimationController userAnimationController;
-  late Animation<Offset> userSlideAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-    userAnimationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 750),
-    );
-    userSlideAnimation = Tween<Offset>(
-      begin: const Offset(0, 2),
-      end: const Offset(0, 0),
-    ).animate(userAnimationController);
-    userAnimationController.forward();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: userAnimationController,
-      builder: (context, child) => SlideTransition(
-        position: userSlideAnimation,
-        child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Flexible(
-                flex: 3,
-                child: CupertinoContextMenu(
-                  actions: [
-                    CupertinoContextMenuAction(
-                        onPressed: () {
-                          Clipboard.setData(
-                              ClipboardData(text: widget.question));
-                        },
-                        trailingIcon: CupertinoIcons.doc,
-                        child: const Text("Copy")),
-                    CupertinoContextMenuAction(
-                        onPressed: () {
-                          ChatBotFeatures().listening(text: widget.question);
-                        },
-                        trailingIcon: CupertinoIcons.speaker_1,
-                        child: const Text("Listen")),
-                  ],
-                  child: Container(
-                    constraints: BoxConstraints(maxWidth: context.width),
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        bottomRight: Radius.circular(10),
-                        bottomLeft: Radius.circular(10),
-                      ),
-                      color: MediColors.fourthColor.withOpacity(.25),
+    return FadeInUp(
+      duration: const Duration(milliseconds: 1000),
+      child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Flexible(
+              flex: 3,
+              child: CupertinoContextMenu(
+                actions: [
+                  CupertinoContextMenuAction(
+                      onPressed: () {
+                        Clipboard.setData(ClipboardData(text: question));
+                      },
+                      trailingIcon: CupertinoIcons.doc,
+                      child: const Text("Copy")),
+                  CupertinoContextMenuAction(
+                      onPressed: () {
+                        ChatBotFeatures().listening(text: question);
+                      },
+                      trailingIcon: CupertinoIcons.speaker_1,
+                      child: const Text("Listen")),
+                ],
+                child: Container(
+                  constraints: BoxConstraints(maxWidth: context.width),
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                      bottomLeft: Radius.circular(10),
                     ),
-                    child: Text(
-                      widget.question,
-                      style: TextStyle(
-                        color: MediColors.thirdColor,
-                        decoration: TextDecoration.none,
-                        fontSize: getResponseFontSize(
-                          context: context,
-                          fontSize: 14,
-                        ),
+                    color: MediColors.fourthColor.withOpacity(.25),
+                  ),
+                  child: Text(
+                    question,
+                    style: TextStyle(
+                      color: MediColors.thirdColor,
+                      decoration: TextDecoration.none,
+                      fontSize: getResponseFontSize(
+                        context: context,
+                        fontSize: 14,
                       ),
                     ),
                   ),
                 ),
               ),
-              Gap(context.height * .005),
-              Flexible(
-                child: FittedBox(
-                  child: CircleAvatar(
-                    radius: 20,
-                    backgroundImage: CachedNetworkImageProvider(
-                      CacheHelper().getData(key: ApiKey.profilePhoto),
-                    ),
+            ),
+            Gap(context.height * .005),
+            Flexible(
+              child: FittedBox(
+                child: CircleAvatar(
+                  radius: 20,
+                  backgroundImage: CachedNetworkImageProvider(
+                    CacheHelper().getData(key: ApiKey.profilePhoto),
                   ),
                 ),
               ),
-            ]),
-      ),
+            ),
+          ]),
     );
   }
 }

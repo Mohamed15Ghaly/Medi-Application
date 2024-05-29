@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team/Features/home/presentation/views/main_screen.dart';
 import 'package:team/Features/splash_onBoarding/presentation/widgets/splash_screen_body.dart';
 import 'package:team/core/cache/cache_helper.dart';
 import 'package:team/core/utils/medi_colors.dart';
@@ -25,7 +26,9 @@ class SplashScreen extends StatelessWidget {
                 var ans =
                     CacheHelper().getData(key: MediShare.appViewOnBoarding);
                 if (ans == true) {
-                  return const LoginScreen();
+                  ans =
+                      CacheHelper().getData(key: MediShare.userLogin) ?? false;
+                  return ans ? const MainScreen() : const LoginScreen();
                 } else {
                   return const OnBoardingScreen();
                 }
