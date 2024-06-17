@@ -1,28 +1,28 @@
 class ApiUrl {
   static const String userSignUp =
-      "https://clinic-server-1.onrender.com/api/users/register";
+      "https://clinicserver-production.up.railway.app/api/users/register";
   static const String userLogIn =
-      "https://clinic-server-4pyg.vercel.app/api/users/login";
+      "https://clinicserver-production.up.railway.app/api/users/login";
   static const String userForgetPassword =
-      "https://clinic-server-1.onrender.com/api/users/forgotpassword";
+      "https://clinicserver-production.up.railway.app/api/users/forgotpassword";
   static const String userUpdate =
-      "https://clinic-server-1.onrender.com/api/users/";
+      "https://clinicserver-production.up.railway.app/api/users/";
   static const String userUpdatePhoto =
-      "https://clinic-server-1.onrender.com/api/users/uplodePhoto/";
+      "https://clinicserver-production.up.railway.app/api/users/uplodePhoto/";
   static const String resetPassword =
-      "https://clinic-server-1.onrender.com/api/users/resetpassword/";
+      "https://clinicserver-production.up.railway.app/api/users/";
   static const String deleteAccount =
-      "https://clinic-server-1.onrender.com/api/users/";
+      "https://clinicserver-production.up.railway.app/api/users/";
   static const String diabetesPrediction =
-      "https://diabetes-prediction-api-zrzh.onrender.com/diabetes_prediction";
+      "https://web-production-812c.up.railway.app/diabetes_prediction";
   static const String heartDiseasePrediction =
-      "https://heart-attack-api.onrender.com/heart_disease_prediction";
+      "https://web-production-1070.up.railway.app/heart_disease_prediction";
   static const String breastCancerPrediction =
-      "https://breast-cancer-api-rca7.onrender.com/Breast_cancer_prediction";
+      "https://web-production-74d8.up.railway.app/Breast_cancer_prediction";
   static const String parkinsonPrediction =
-      "https://parkinsons-api-grfd.onrender.com/parkinson_prediction";
+      "https://web-production-aa75.up.railway.app/parkinson_prediction";
   static const String chatBotText =
       "https://web-production-c0fc2.up.railway.app/medi_text";
   static const String chatBotVoice =
-      "https://medi-chatbot.onrender.com/medi_voice";
+      "https://web-production-c0fc2.up.railway.app/medi_voice";
 }

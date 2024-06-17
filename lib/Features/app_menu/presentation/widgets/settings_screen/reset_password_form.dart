@@ -44,15 +44,15 @@ class ResetPasswordForm extends StatelessWidget {
                 DefaultTextFelidForm(
                     textFelidFormModel: TextFelidFormModel(
                   obscureText: BlocProvider.of<UserOnPressedCubit>(context)
-                      .confirmNewPassword,
-                  hintText: "Enter Your Confirm New Password",
-                  labelText: "Confirm New Password",
+                      .oldPassword,
+                  hintText: "Enter Your Old Password",
+                  labelText: "Old Password",
                   prefixIcon: Icons.lock,
                   controller: BlocProvider.of<UserActionsCubit>(context)
-                      .confirmNewPassword,
+                      .oldPassword,
                   textInputType: TextInputType.visiblePassword,
                   suffixIcon: BlocProvider.of<UserOnPressedCubit>(context)
-                          .confirmNewPassword
+                          .oldPassword
                       ? Icons.visibility_off
                       : Icons.visibility,
                   suffixOnPressed: () {

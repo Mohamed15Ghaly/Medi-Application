@@ -14,6 +14,7 @@ class ApiKey {
 
   static const String password = "password";
   static const String confirmPassword = "confirmPassword";
+  static const String oldPassword = "oldPassword";
 
   static const String pregnancies = "Pregnancies";
   static const String glucose = "Glucose";

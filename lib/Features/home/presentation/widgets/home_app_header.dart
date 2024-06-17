@@ -112,25 +112,24 @@ class HomeAppHeader extends StatelessWidget {
         Gap(context.height * .01),
         SizedBox(
           width: width,
-          height: height / 3.5,
+          height: height / 4,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Flexible(
-                flex: 2,
+                flex: 4,
                 child: Image.asset(
                   MediImage.homeAppBody,
                 ),
               ),
               Flexible(
                 child: SizedBox(
-                  height: context.height / 13,
                   child: AutoSizeText(
-                    "Let's take a look about the symptoms and causes of each disease ",
+                    "Let's take a look about each disease ",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize:
-                          getResponseFontSize(context: context, fontSize: 16),
+                          getResponseFontSize(context: context, fontSize: 18),
                       fontWeight: FontWeight.bold,
                       color: MediColors.primaryColor,
                     ),

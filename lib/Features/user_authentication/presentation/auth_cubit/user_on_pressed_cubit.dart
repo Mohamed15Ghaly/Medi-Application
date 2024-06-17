@@ -9,7 +9,7 @@ class UserOnPressedCubit extends Cubit<UserOnPressedState> {
   bool signUpObscureTextConfirmPassword = true;
   bool userAcceptPrivacy = false;
   bool newPassword = false;
-  bool confirmNewPassword = false;
+  bool oldPassword = false;
 
   void changeAcceptPrivacy() {
     userAcceptPrivacy = !userAcceptPrivacy;
@@ -37,7 +37,7 @@ class UserOnPressedCubit extends Cubit<UserOnPressedState> {
   }
 
   void changeResetConfirmPasswordObscureText() {
-    confirmNewPassword = !confirmNewPassword;
+    oldPassword = !oldPassword;
     emit(UserOnPressedSuccess());
   }
 }

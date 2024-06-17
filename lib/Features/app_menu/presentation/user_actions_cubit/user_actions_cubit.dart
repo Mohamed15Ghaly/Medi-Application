@@ -20,7 +20,7 @@ class UserActionsCubit extends Cubit<UserActionsState> {
   TextEditingController newUserName = TextEditingController();
   TextEditingController oldPassword = TextEditingController();
   TextEditingController newPassword = TextEditingController();
-  TextEditingController confirmNewPassword = TextEditingController();
+  // TextEditingController confirmNewPassword = TextEditingController();
   TextEditingController rateUs = TextEditingController();
   XFile? profilePhoto;
   File? pickedFile;
@@ -102,10 +102,12 @@ class UserActionsCubit extends Cubit<UserActionsState> {
   resetPasswordValidation() async {
     if (await networkConnectionChecker.hasConnection == false) {
       emit(const UserActionsFailure(error: "No Internet Connection"));
-    } else if (newPassword.text.trim() != confirmNewPassword.text.trim()) {
-      emit(const UserActionsFailure(
-          error: "NewPassword Not Match With ConfirmNewPassword"));
-    } else if (resetPasswordFormKey.currentState!.validate()) {
+    }
+    //  else if (newPassword.text.trim() != confirmNewPassword.text.trim()) {
+    //   emit(const UserActionsFailure(
+    //       error: "NewPassword Not Match With ConfirmNewPassword"));
+    // } 
+    else if (resetPasswordFormKey.currentState!.validate()) {
       resetPassword();
     } else {
       emit(const UserActionsFailure(error: "Please Enter Your Passwords"));
@@ -126,6 +128,7 @@ class UserActionsCubit extends Cubit<UserActionsState> {
   resetPassword() async {
     emit(UserActionsLoading());
     final response = await userActionsRepository.resetPassword(
+        oldPassword: oldPassword.text.trim(),
         newPassword: newPassword.text.trim());
     response.fold((l) => emit(UserActionsFailure(error: l)), (r) {
       emit(const UserActionsSuccess(
