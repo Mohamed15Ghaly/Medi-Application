@@ -42,6 +42,19 @@ https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/55b5a9e8-fd3
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/2d413da1-5ee8-4c4c-9239-d1e5f0188777" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/348e7856-169f-42a3-a1b8-885b96ad8fe6" width="250" >
 
+# ⚡ Medi Application Disease Prediction  :-
+
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/b17f274d-b854-414a-b59a-b1c03955c4c0" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/41b49829-d998-48c6-86a5-e155f50832b2" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/513c1cd9-74d6-41f3-a66b-4394227355a4" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/ba3cb7a5-e622-4114-a613-b5fad7eb1b94" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/1d2bc4b7-a58e-4dbb-bba4-e130a4bc0965" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/cb92b61c-86fd-4a06-9814-4e8264ada856" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/584ca3a1-53cb-4b2b-8469-92da5fb512f1" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/a4d2cfdb-d448-4a3c-b15f-24fc468a60b3" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/586e14a9-ae14-40c3-8f44-891430f52c2c" width="250" >
+
+
 
 
 
