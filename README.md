@@ -70,6 +70,16 @@ https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/55b5a9e8-fd3
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/f1b215a7-e006-473a-a214-1e7a7d5e94a4" width="250" >
 
 
+# ⚡ Medi Application Settings  :-
+
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/03a08589-ec68-4aec-a594-cf08e2d257ac" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/ef237005-5225-4699-a955-e15f848b547e" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/21932528-09e1-4ae6-b23f-86780b3052cf" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/b547e7b0-6f0c-48c6-a9e7-3892473dd520" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/083a342e-a887-482b-b368-4ceb93802506" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/d489ac13-d20a-4217-af39-951a7538d019" width="250" >
+
+
 
 
 
