@@ -11,7 +11,6 @@ https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/55b5a9e8-fd3
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/0089b77a-3329-4a17-988f-99b7e6fed41b" width="250" >
 
 # ⚡ Medi Application OnBoarding :-
-
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/209c5d8a-f3dd-4eb8-94fc-644f2a9b7fde" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/9a6273d5-f6d9-4ed7-8ace-77fb3208c776" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/d4c55ced-15cc-4794-8c1d-914e5239f6b9" width="250" >
@@ -35,22 +34,7 @@ https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/55b5a9e8-fd3
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/3662445b-d07a-4106-ac91-3c257c180a33" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/6d78effc-7a77-4294-bf01-35c650245a59" width="250" >
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ⚡ Medi Application MediChatBot :-
-
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/66f6ca30-5c58-41a1-ab66-139f7bae4356" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/f1635bed-b694-4473-855e-45a65dee0270" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/10d5a758-0f7a-4e7d-93e0-fd71757b5d25" width="250" >
@@ -60,7 +44,7 @@ https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/55b5a9e8-fd3
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/348e7856-169f-42a3-a1b8-885b96ad8fe6" width="250" >
 
 # ⚡ Medi Application Disease Prediction  :-
-
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/75a7567d-7db1-489d-8d25-019af1ca1dcd" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/b17f274d-b854-414a-b59a-b1c03955c4c0" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/41b49829-d998-48c6-86a5-e155f50832b2" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/513c1cd9-74d6-41f3-a66b-4394227355a4" width="250" >
@@ -79,7 +63,6 @@ https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/55b5a9e8-fd3
 
 
 # ⚡ Medi Application Profile  :-
-
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/445ebaff-615f-444e-a08e-4c5f3872bbf8" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/b2702a17-67c9-4431-88e2-aa914e7b53ad" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/05af3453-83c3-490a-9d15-16b88d3271c4" width="250" >
@@ -87,7 +70,6 @@ https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/55b5a9e8-fd3
 
 
 # ⚡ Medi Application Settings  :-
-
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/d489ac13-d20a-4217-af39-951a7538d019" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/083a342e-a887-482b-b368-4ceb93802506" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/b547e7b0-6f0c-48c6-a9e7-3892473dd520" width="250" >
@@ -97,7 +79,6 @@ https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/55b5a9e8-fd3
 
 
 # ⚡ Medi Application Help  :-
-
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/ae6e393e-4f71-47df-a13a-c1d0357e5055" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/ca6d36c8-9653-4dc5-bb5c-c6f9de25d889" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/36f1fec5-b4d1-4994-9f44-3a9a53c047be" width="250" >
@@ -105,6 +86,13 @@ https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/55b5a9e8-fd3
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/18a3870a-97c0-42fb-9f90-b902ba8aba86" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/53c240e9-8595-422a-b812-0e56e446349f" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/e09f34f7-5684-452f-929c-0d48eb126b31" width="250" >
+
+# ⚡ Medi Application Notification  :-
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/faa77fd2-dcdd-45e3-9c4d-dd29a1493311" width="250" >
+
+# ⚡ Medi Application LogOut  :-
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/3ee7cffd-d5c3-4fe7-84a7-6b6cf5c8aea4" width="250" >
+
 
 
 
