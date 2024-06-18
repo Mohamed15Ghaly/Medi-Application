@@ -1,16 +1,6 @@
 # Medi Application
+Mobile application about the smart medical diagnoses by prediction and a medical chatbot "Medi".
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot_٢٠٢٤-٠٤-٣٠-١٢-١٤-١٠-٣٨٢_com example team](https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/c99f8087-619b-453e-a281-370c1ad4cc97)
