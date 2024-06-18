@@ -1,4 +1,4 @@
-# team
+# Medi Application
 
 A new Flutter project.
 
