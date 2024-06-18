@@ -1,17 +1,14 @@
-![Screenshot_٢٠٢٤-٠٤-٣٠-١٢-١٥-٠٧-٩٤٨_com example team](https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/4fb2f6e0-23bf-40f8-a2c1-28e5a969f388)# Medi Application
+# Medi Application Splash Screen :-
 Mobile application about the smart medical diagnoses by prediction and a medical chatbot "Medi".
-
+<br>
 https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/55b5a9e8-fd33-44ad-af0d-4ae36fda7cfa
+<br>
+
 
 # ⚡ Medi Application Splash Screen :-
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/0089b77a-3329-4a17-988f-99b7e6fed41b" width="250" >
 
 # ⚡ Medi Application OnBoarding :-
-
-
-
-
-
 
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/a1b63ef9-ddbf-478a-bd2d-5e8a7dc33013" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/e9c9e8ac-017c-433f-8753-9ad0aa119e7d" width="250" >
