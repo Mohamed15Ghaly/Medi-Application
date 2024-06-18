@@ -30,12 +30,7 @@ https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/55b5a9e8-fd3
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/926eb3c8-048e-406a-93bc-071acb2621fa" width="250" >
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/bae13c85-212f-495d-8c3d-e005cc3108b0" width="250" >
 
+# ⚡ Medi Application Home Screen :-
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/3e919476-1ce9-4396-a07b-1f8765e3fb2b" width="250" >
 
-
-<br>
-
-<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/3e919476-1ce9-4396-a07b-1f8765e3fb2b" width="250" >
-<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/3e919476-1ce9-4396-a07b-1f8765e3fb2b" width="250" >
-<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/3e919476-1ce9-4396-a07b-1f8765e3fb2b" width="250" >
-<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/3e919476-1ce9-4396-a07b-1f8765e3fb2b" width="250" >
 
