@@ -1,4 +1,3 @@
-![WhatsApp Image 2024-06-19 at 13 45 40_8a1c5a89](https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/7db51b3b-0d00-435e-b967-a343b880d219)# Medi Application Splash Screen :-
 Mobile application about the smart medical diagnoses by prediction and a medical chatbot "Medi".
 <br>
 
