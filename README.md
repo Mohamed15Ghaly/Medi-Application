@@ -35,13 +35,17 @@ https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/55b5a9e8-fd3
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/6d78effc-7a77-4294-bf01-35c650245a59" width="250" >
 
 # ⚡ Medi Application MediChatBot :-
-<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/66f6ca30-5c58-41a1-ab66-139f7bae4356" width="250" >
-<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/f1635bed-b694-4473-855e-45a65dee0270" width="250" >
-<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/10d5a758-0f7a-4e7d-93e0-fd71757b5d25" width="250" >
-<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/1105d398-53cb-44ee-8617-2bf36e501daa" width="250" >
-<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/bf64dce5-a72b-4ccf-9f99-c10257effdad" width="250" >
-<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/2d413da1-5ee8-4c4c-9239-d1e5f0188777" width="250" >
-<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/348e7856-169f-42a3-a1b8-885b96ad8fe6" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/6659c378-af4c-4169-8a4e-724384ed83c4" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/d06b180a-802f-4042-8b0d-4314850f2ae7" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/9d62fa49-7572-4959-b095-cccad7c8d3af" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/9bceb6a2-0c07-448e-9b58-728e281e31a3" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/26a80708-5af4-4589-b5fb-025071c504eb" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/990e1df1-bb3b-4a36-8bf0-a2a733dbedce" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/5b0e3ea2-d6a5-48f6-8c2f-286919681b3c" width="250" >
+
+
+
+
 
 # ⚡ Medi Application Disease Prediction  :-
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/75a7567d-7db1-489d-8d25-019af1ca1dcd" width="250" >
