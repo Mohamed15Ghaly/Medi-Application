@@ -4,9 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:team/Features/chatBot/presentation/view/chat_screen.dart';
 import 'package:team/Features/home/presentation/home_cubit/home_cubit.dart';
-import 'package:team/core/cache/cache_helper.dart';
 import 'package:team/core/utils/medi_colors.dart';
-import 'package:team/core/utils/medi_share.dart';
 import 'package:team/core/utils/response_font_size.dart';
 import 'package:team/Features/app_menu/presentation/views/help_screen.dart';
 import 'package:team/Features/app_menu/presentation/views/settings_screen.dart';
@@ -103,7 +101,6 @@ class MenuList extends StatelessWidget {
             title: "Logout",
             desc: "Are you sure you want to logout?",
             btnOkOnPress: () {
-              CacheHelper().saveData(key:  MediShare.userLogin,value:  false);
               Get.offAll(() => const LoginScreen());
             },
             btnCancelOnPress: () {},

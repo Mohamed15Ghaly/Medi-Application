@@ -4,8 +4,6 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:team/Features/user_authentication/data/models/login_model.dart';
 import 'package:team/Features/user_authentication/data/repository/user_repository.dart';
-import 'package:team/core/cache/cache_helper.dart';
-import 'package:team/core/utils/medi_share.dart';
 part 'user_log_in_state.dart';
 
 class UserLoginCubit extends Cubit<UserLoginState> {
@@ -47,7 +45,6 @@ class UserLoginCubit extends Cubit<UserLoginState> {
         loginPassword: loginPassword.text.trim());
     response.fold((l) => emit(UserLoginFailure(error: l)), (r) {
       userLogIn = r;
-      CacheHelper().saveData(key: MediShare.userLogin, value: true);
       emit(UserLoginSuccess());
     });
   }
