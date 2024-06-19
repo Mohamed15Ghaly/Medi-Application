@@ -1,4 +1,4 @@
-# Medi Application Splash Screen :-
+![WhatsApp Image 2024-06-19 at 13 45 40_8a1c5a89](https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/7db51b3b-0d00-435e-b967-a343b880d219)# Medi Application Splash Screen :-
 Mobile application about the smart medical diagnoses by prediction and a medical chatbot "Medi".
 <br>
 
@@ -31,8 +31,8 @@ https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/55b5a9e8-fd3
 
 # ⚡ Medi Application Home  :-
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/3e919476-1ce9-4396-a07b-1f8765e3fb2b" width="250" >
-<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/3662445b-d07a-4106-ac91-3c257c180a33" width="250" >
-<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/6d78effc-7a77-4294-bf01-35c650245a59" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/09df0a4a-c623-4feb-8433-3cbf132a5bd9" width="250" >
+<img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/7af8713f-e3fa-48d0-b65e-a06f070c583b" width="250" >
 
 # ⚡ Medi Application MediChatBot :-
 <img src="https://github.com/Mohamed15Ghaly/Medi-Application/assets/116199022/5b0e3ea2-d6a5-48f6-8c2f-286919681b3c" width="250" >
