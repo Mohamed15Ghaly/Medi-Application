@@ -1,7 +1,7 @@
 
 # 🔥 Medi Application
 
-✨ Fluuter mobile application about the smart medical diagnoses by prediction and a medical chatbot "Medi".
+✨ Flutter mobile application about the smart medical diagnoses by prediction and a medical chatbot "Medi".
 <br>
 
 # 📹 Medi Application Representation Video : -
